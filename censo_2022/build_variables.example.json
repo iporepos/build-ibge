@@ -1,0 +1,162 @@
+{
+  "assemble_config": "assemble_tables.example.json",
+  "dictionary_folder": "/path/to/IBGE/CENSO-2022/V200/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "report_folder": "variables_report",
+  "glossary": "glossary_pt_en.json",
+  "name_pattern": "IBGE_CENSO-2022_VARIABLES_X_X.csv",
+  "dictionaries": {
+    "basico": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário Básico"
+    },
+    "domicilio01": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Características do Domicílio - Parte 1"
+      }
+    },
+    "domicilio02": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Características do Domicílio - Parte 2"
+      }
+    },
+    "domicilio03": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Características do Domicílio - Parte 3"
+      }
+    },
+    "alfabetizacao": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Alfabetização"
+      }
+    },
+    "demografia": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Demografia"
+      }
+    },
+    "parentesco": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Parentesco"
+      }
+    },
+    "obitos": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Óbitos"
+      }
+    },
+    "corraca": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário não PCT",
+      "filter": {
+        "Tema": "Cor ou Raça"
+      }
+    },
+    "domicilioindigena": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário PCT - Indígenas",
+      "filter": {
+        "Tipo": "Domicílio"
+      }
+    },
+    "pessoaindigena": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário PCT - Indígenas",
+      "filter": {
+        "Tipo": "Pessoas"
+      }
+    },
+    "domicilioquilombola": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário PCT - Quilombolas",
+      "filter": {
+        "Tipo": "Domicílio"
+      }
+    },
+    "pessoaquilombola": {
+      "file": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário PCT - Quilombolas",
+      "filter": {
+        "Tipo": "Pessoas"
+      }
+    },
+    "entornodomicilio": {
+      "file": "dicionarios_de_dados_entorno/dicionario_entorno_domicilios.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "bracket"
+    },
+    "entornomorador": {
+      "file": "dicionarios_de_dados_entorno/dicionario_entorno_pessoas.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "bracket"
+    },
+    "entornoface": {
+      "file": "dicionarios_de_dados_entorno/dicionario_entorno_faces.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "bracket"
+    },
+    "responsavelrenda": {
+      "file": "dicionario_de_dados_renda_responsavel_20260508.xlsx",
+      "code": "Variável",
+      "description": "Descrição",
+      "style": "plain",
+      "sheet": "Dicionário Renda Responsável"
+    }
+  }
+}

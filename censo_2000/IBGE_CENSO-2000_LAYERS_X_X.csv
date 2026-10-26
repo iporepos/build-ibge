@@ -1,0 +1,33 @@
+id;name;theme;description_pt;description_en
+1;basico;basic;Códigos e nomes das subdivisões geográficas, situação e tipo do setor, e informação básica (totais, médias e variâncias de rendimento, anos de estudo e moradores dos responsáveis) por setor censitário.;Codes and names of the geographic subdivisions, tract situation and type, and basic information (totals, means and variances of income, years of schooling and residents of household heads) per census tract.
+2;domicilio;household;Características dos domicílios: espécie, tipo, condição de ocupação, abastecimento de água, banheiros, esgotamento sanitário, destino do lixo e número de moradores.;Household characteristics: kind, type, occupancy condition, water supply, bathrooms, sewage disposal, garbage destination and number of residents.
+3;morador;resident;Moradores por sexo segundo as características do domicílio.;Residents by sex according to household characteristics.
+4;responsavel01;household_head;Primeira planilha de responsáveis por domicílios particulares permanentes: idade, alfabetização, curso freqüentado, série concluída e rendimento.;First worksheet on heads of permanent private households: age, literacy, course attended, completed grade and income.
+5;responsavel02;household_head;Segunda planilha de responsáveis por domicílios particulares permanentes: idade (10 a 21 anos) por anos de estudo.;Second worksheet on heads of permanent private households: age (10 to 21 years) by years of schooling.
+6;responsavel03;household_head;Terceira planilha de responsáveis por domicílios particulares permanentes: idade (22 anos a 30 anos ou mais) por anos de estudo.;Third worksheet on heads of permanent private households: age (22 to 30 years or older) by years of schooling.
+7;responsavel04;household_head;Quarta planilha de responsáveis por domicílios particulares permanentes: homens responsáveis por idade, alfabetização, instrução e rendimento.;Fourth worksheet on heads of permanent private households: male heads by age, literacy, schooling and income.
+8;responsavel05;household_head;Quinta planilha de responsáveis por domicílios particulares permanentes: mulheres responsáveis por idade, alfabetização, instrução e rendimento.;Fifth worksheet on heads of permanent private households: female heads by age, literacy, schooling and income.
+9;pessoa01;age;Pessoas por espécie do domicílio, relação com o responsável e idade.;Persons by household kind, relationship to the head and age.
+10;pessoa02;age;Homens por espécie do domicílio, relação com o responsável e idade.;Men by household kind, relationship to the head and age.
+11;pessoa03;age;Mulheres por espécie do domicílio, relação com o responsável e idade.;Women by household kind, relationship to the head and age.
+12;pessoa04;family;Cônjuges ou companheiros(as) por sexo e idade (anos simples).;Spouses or partners by sex and age (single years).
+13;pessoa05;family;Cônjuges ou companheiros(as) por sexo e grupos de idade.;Spouses or partners by sex and age groups.
+14;pessoa06;family;Filhos(as) ou enteados(as) por sexo e idade.;Children or stepchildren by sex and age.
+15;pessoa07;family;Outros parentes por sexo e grupos de idade.;Other relatives by sex and age groups.
+16;instrucao01;literacy;Pessoas alfabetizadas e não-alfabetizadas por idade.;Literate and illiterate persons by age.
+17;instrucao02;literacy;Alfabetização por relação com o responsável, e filhos(as) ou enteados(as) por anos de estudo e alfabetização dos responsáveis.;Literacy by relationship to the head, and children or stepchildren by the schooling and literacy of the heads.
+18;instrucao03;literacy;Homens alfabetizados e não-alfabetizados por idade.;Literate and illiterate men by age.
+19;instrucao04;literacy;Alfabetização dos homens por relação com o responsável, e filhos ou enteados por anos de estudo e alfabetização dos responsáveis.;Literacy of men by relationship to the head, and sons or stepsons by the schooling and literacy of the heads.
+20;instrucao05;literacy;Mulheres alfabetizadas e não-alfabetizadas por idade.;Literate and illiterate women by age.
+21;instrucao06;literacy;Alfabetização das mulheres por relação com o responsável, e filhas ou enteadas por anos de estudo e alfabetização dos responsáveis.;Literacy of women by relationship to the head, and daughters or stepdaughters by the schooling and literacy of the heads.
+22;unidades;geography;Polígonos das unidades da federação (malha 1:500.000 do Censo 2000).;Federative unit polygons (Census 2000 1:500,000 mesh).
+23;municipios;geography;Polígonos dos municípios (malha 1:500.000 do Censo 2000), incluindo as lagoas dos Patos e Mirim.;Municipality polygons (Census 2000 1:500,000 mesh), including the Patos and Mirim lagoons.
+24;distritos;geography;Polígonos dos distritos (malha 1:500.000 do Censo 2000).;District polygons (Census 2000 1:500,000 mesh).
+25;subdistritos;geography;Polígonos dos subdistritos (malha 1:500.000 do Censo 2000).;Subdistrict polygons (Census 2000 1:500,000 mesh).
+26;sedes;geography;Pontos das sedes municipais (coordenadas da malha municipal 1:500.000).;Municipal seat points (coordinates of the 1:500,000 municipal mesh).
+27;setores;geography;Setores censitários: polígonos rurais da malha 1:500.000 e polígonos urbanos detalhados; setores sem polígono próprio têm geometria nula e o código do grupo (setoresgrupos) que os contém.;Census tracts: rural polygons from the 1:500,000 mesh and detailed urban polygons; tracts without an own polygon have a null geometry and the code of the group (setoresgrupos) that contains them.
+28;setoresgrupos;geography;Polígonos de áreas urbanas da malha 1:500.000 que representam uma faixa de setores (código UFMMMMMDDSDSSSS-NNNN).;Urban-area polygons of the 1:500,000 mesh that represent a range of tracts (code UFMMMMMDDSDSSSS-NNNN).
+29;layers;auxiliary;Tabela auxiliar descritiva das camadas.;Auxiliary descriptive table of the layers.
+30;fields;auxiliary;Tabela auxiliar descritiva dos campos.;Auxiliary descriptive table of the fields.
+31;variables;auxiliary;Tabela auxiliar descritiva das variáveis.;Auxiliary descriptive table of the variables.
+32;consistency;auxiliary;Tabela de consistência: achados da harmonização para revisões futuras (camada, código, problema, valor, ação, nota).;Consistency table: harmonization findings for later revisions (layer, code, issue, value, action, note).

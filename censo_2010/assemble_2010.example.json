@@ -1,0 +1,37 @@
+{
+  "src_folder": "/path/to/IBGE/CENSO-2010/V200/SRC",
+  "output_folder": "/path/to/IBGE/CENSO-2010/V200/T0/ASSETS",
+  "report_folder": "assemble_report",
+  "variables_catalog": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS/IBGE_CENSO-2010_VARIABLES_X_X.csv",
+  "reference_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "output_name": "IBGE_CENSO-2010_{TABLE}_BRASIL_2010.csv",
+  "key_source": "Cod_setor",
+  "key_name": "setor_code",
+  "expected_ufs": ["11", "12", "13", "14", "15", "16", "17", "21", "22", "23", "24", "25", "26", "27", "28", "29",
+                   "31", "32", "33", "35", "41", "42", "43", "50", "51", "52", "53"],
+  "rename_columns": {
+    "pessoa02": {"offset": 85, "first": "V001", "last": "V170"}
+  },
+  "uncatalogued_columns": {
+    "domicilio01": ["V030", "V031", "V032"]
+  },
+  "products": [
+    {
+      "name": "universo",
+      "folder": "universo",
+      "zip_pattern": "*_20260615.zip",
+      "format": "csv",
+      "member_pattern": "(?i)/CSV/(?P<table>[a-z]+\\d*)_[a-z0-9]+\\.csv$",
+      "encoding": "latin-1",
+      "delimiter": ";"
+    },
+    {
+      "name": "sinopse",
+      "folder": "sinopse",
+      "zip_pattern": "Base_informacoes_setores2010_sinopse_*.zip",
+      "format": "xls",
+      "member_pattern": "(?i)sinopse[^/]*\\.xls$",
+      "table": "sinopse"
+    }
+  ]
+}

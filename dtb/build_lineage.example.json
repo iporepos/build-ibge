@@ -1,0 +1,40 @@
+{
+  "input_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "mesh_pattern": "IBGE_DTB_MUNICIPIOS_BRASIL_{YEAR}.gpkg",
+  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "report_folder": "lineage_report",
+  "output_name": "IBGE_DTB_LINHAGEM_BRASIL_{YEAR}.csv",
+  "area_crs": "ESRI:102033",
+  "_snapshots": "snapshot year -> cartographic base; pairs on different bases use transfer.different_base",
+  "snapshots": {
+    "1872": "evolucao-1991",
+    "1900": "evolucao-1991",
+    "1911": "evolucao-1991",
+    "1920": "evolucao-1991",
+    "1933": "evolucao-1991",
+    "1940": "evolucao-1991",
+    "1950": "evolucao-1991",
+    "1960": "evolucao-1991",
+    "1970": "evolucao-1991",
+    "1980": "evolucao-1991",
+    "1991": "evolucao-1991",
+    "2000": "malha-2000-500k",
+    "2010": "malha-2010-250k",
+    "2022": "malha-2022"
+  },
+  "genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "noise_share": 0.001,
+  "parent_share": 0.05,
+  "recode_share": 0.9,
+  "transfer": {
+    "same_base": {
+      "share": 0.01,
+      "min_km2": 1.0
+    },
+    "different_base": {
+      "share": 0.1,
+      "min_km2": 10.0
+    }
+  }
+}

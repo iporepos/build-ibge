@@ -1,0 +1,198 @@
+{
+  "output_folder": "pyramid_report",
+  "groups": [
+    [
+      0,
+      4
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      10,
+      14
+    ],
+    [
+      15,
+      19
+    ],
+    [
+      20,
+      24
+    ],
+    [
+      25,
+      29
+    ],
+    [
+      30,
+      34
+    ],
+    [
+      35,
+      39
+    ],
+    [
+      40,
+      44
+    ],
+    [
+      45,
+      49
+    ],
+    [
+      50,
+      54
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      60,
+      64
+    ],
+    [
+      65,
+      69
+    ],
+    [
+      70,
+      79
+    ],
+    [
+      80,
+      null
+    ]
+  ],
+  "censuses": [
+    {
+      "year": 1991,
+      "folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+      "table_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.csv",
+      "variables": "IBGE_CENSO-1991_VARIABLES_X_X.csv",
+      "male": [
+        {
+          "table": "pessoa01",
+          "regex": "^Male residents aged (?P<lo>\\d+) (?:to (?P<hi>\\d+)|(?P<open>or over))$"
+        }
+      ],
+      "female": [
+        {
+          "table": "pessoa01",
+          "regex": "^Female residents aged (?P<lo>\\d+) (?:to (?P<hi>\\d+)|(?P<open>or over))$"
+        }
+      ],
+      "population": {
+        "table": "pessoa01",
+        "variable": "V0114"
+      }
+    },
+    {
+      "year": 2000,
+      "folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+      "table_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.csv",
+      "variables": "IBGE_CENSO-2000_VARIABLES_X_X.csv",
+      "male": [
+        {
+          "table": "pessoa02",
+          "regex": "^Men aged (?P<lo>\\d+)(?: (?P<open>or older))?(?: \\(Note:.*)?$"
+        }
+      ],
+      "female": [
+        {
+          "table": "pessoa03",
+          "regex": "^Women aged (?P<lo>\\d+)(?: (?P<open>or older))?(?: \\(Note:.*)?$"
+        }
+      ],
+      "population": {
+        "table": "morador",
+        "variable": "V0237"
+      }
+    },
+    {
+      "year": 2010,
+      "folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+      "table_pattern": "IBGE_CENSO-2010_{NAME}_BRASIL_2010.csv",
+      "variables": "IBGE_CENSO-2010_VARIABLES_X_X.csv",
+      "male": [
+        {
+          "table": "sinopse",
+          "regex": "^Male residents - (?P<lo>\\d+) (?:to (?P<hi>\\d+) )?years? old(?: (?P<open>or more))?$"
+        }
+      ],
+      "female": [
+        {
+          "table": "sinopse",
+          "regex": "^Female residents - (?P<lo>\\d+) (?:to (?P<hi>\\d+) )?years? old(?: (?P<open>or more))?$"
+        }
+      ],
+      "population": {
+        "table": "sinopse",
+        "variable": "V014"
+      }
+    },
+    {
+      "year": 2022,
+      "folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+      "table_pattern": "IBGE_CENSO-2022_{NAME}_BRASIL_2022.csv",
+      "variables": "IBGE_CENSO-2022_VARIABLES_X_X.csv",
+      "male": [
+        {
+          "table": "demografia",
+          "regex": "^Male, (?P<lo>\\d+) to (?P<hi>\\d+) years$",
+          "max_age": 14
+        },
+        {
+          "table": "alfabetizacao",
+          "regex": "^Male, (?P<lo>\\d+) (?:to (?P<hi>\\d+) years|years (?P<open>or older))$"
+        }
+      ],
+      "female": [
+        {
+          "table": "demografia",
+          "regex": "^Female, (?P<lo>\\d+) to (?P<hi>\\d+) years$",
+          "max_age": 14
+        },
+        {
+          "table": "alfabetizacao",
+          "regex": "^Female, (?P<lo>\\d+) (?:to (?P<hi>\\d+) years|years (?P<open>or older))$"
+        }
+      ],
+      "population": {
+        "table": "basico",
+        "variable": "V0001"
+      }
+    }
+  ],
+  "states": {
+    "11": "RO",
+    "12": "AC",
+    "13": "AM",
+    "14": "RR",
+    "15": "PA",
+    "16": "AP",
+    "17": "TO",
+    "21": "MA",
+    "22": "PI",
+    "23": "CE",
+    "24": "RN",
+    "25": "PB",
+    "26": "PE",
+    "27": "AL",
+    "28": "SE",
+    "29": "BA",
+    "31": "MG",
+    "32": "ES",
+    "33": "RJ",
+    "35": "SP",
+    "41": "PR",
+    "42": "SC",
+    "43": "RS",
+    "50": "MS",
+    "51": "MT",
+    "52": "GO",
+    "53": "DF"
+  }
+}

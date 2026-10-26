@@ -1,0 +1,9 @@
+{
+  "input_folder": "/path/to/outputs/ibge_setores_2010",
+  "output_folder": "/path/to/outputs/ibge_setores_2010_merged",
+  "admin_levels": {
+    "distritos": "{uf}_distritos.zip",
+    "subdistritos": "{uf}_subdistritos.zip"
+  },
+  "output_crs": "EPSG:4674"
+}

@@ -1,0 +1,21 @@
+{
+  "label": "IBGE Census 2000",
+  "input_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2000/V100/T2/ASSETS",
+  "report_folder": "database_report",
+  "output_name": "IBGE_CENSO-2000_BD_BRASIL_2000.gpkg",
+  "table_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.csv",
+  "geography_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.gpkg",
+  "geography_layer_pattern": "ibge_censo_2000_{name}",
+  "key_name": "setor_code",
+  "population_table": "basico",
+  "skip_themes": ["geography", "auxiliary"],
+  "cross_check": ["setores", "basico"],
+  "real_variables": {},
+  "catalogs": {
+    "layers": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_LAYERS_X_X.csv",
+    "fields": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_FIELDS_X_X.csv",
+    "variables": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_VARIABLES_X_X.csv",
+    "consistency": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_CONSISTENCY_X_X.csv"
+  }
+}

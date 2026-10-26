@@ -1,0 +1,58 @@
+{
+  "_comment": "universe_variable V0068 = domicilio NDOMPARTIC (private households, permanent + improvised); the sample side sums PESO of households whose ESPECIE is not collective. validation: tract share of the sample (micro_variable in micro_codes, permanent private households) vs the universe (sum of tract_numerator / tract_denominator); report only.",
+  "microdata_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Dados",
+  "microdata_glob": "*/CD91AMOUP*.DBF",
+  "lineage": "microdata_report/lineage_households.csv.gz",
+  "basico": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_BASICO_BRASIL_1991.csv",
+  "domicilio": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_DOMICILIO_BRASIL_1991.csv",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "output_name": "IBGE_CENSO-1991_MICRODADOS-SETORES_BRASIL_1991.csv",
+  "report_folder": "infer_report",
+  "consistency_name": "IBGE_CENSO-1991_CONSISTENCY_X_X.csv",
+  "universe_variable": "V0068",
+  "collective_especie": 3,
+  "max_blocks": 40,
+  "situacao_penalty": 3.0,
+  "merge_penalty": 1.0,
+  "workers": 8,
+  "validation": [
+    {
+      "name": "apartment",
+      "micro_variable": "LOCALIZA",
+      "micro_codes": [
+        4,
+        5,
+        6
+      ],
+      "tract_numerator": [
+        "V0007"
+      ],
+      "tract_denominator": "V0002"
+    },
+    {
+      "name": "water_network",
+      "micro_variable": "AGUA",
+      "micro_codes": [
+        1,
+        4
+      ],
+      "tract_numerator": [
+        "V0013",
+        "V0017"
+      ],
+      "tract_denominator": "V0002"
+    },
+    {
+      "name": "garbage_collected",
+      "micro_variable": "LIXO",
+      "micro_codes": [
+        1,
+        2
+      ],
+      "tract_numerator": [
+        "V0047"
+      ],
+      "tract_denominator": "V0002"
+    }
+  ]
+}

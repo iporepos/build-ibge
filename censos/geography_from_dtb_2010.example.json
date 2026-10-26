@@ -1,0 +1,12 @@
+{
+  "year": 2010,
+  "dtb_unidades": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_UNIDADES_BRASIL_2010.gpkg",
+  "alias_source": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS/IBGE_CENSO-2010_DISTRITOS_BRASIL_2010.gpkg",
+  "output_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "report_folder": "geography_report",
+  "regioes": {"1": "Norte", "2": "Nordeste", "3": "Sudeste", "4": "Sul", "5": "Centro-Oeste"},
+  "layers": ["unidades", "uniao"],
+  "pais_name": "Brasil",
+  "area_crs": "ESRI:102033",
+  "fill_holes_km2": 1.0
+}

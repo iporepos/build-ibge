@@ -1,0 +1,220 @@
+{
+  "src_folder": "/path/to/IBGE/POP/V1/SRC",
+  "output_folder": "/path/to/IBGE/POP/V1/T1/ASSETS",
+  "report_folder": "population_report",
+  "name_pattern": "IBGE_POP_{NAME}_BRASIL_{YEAR}.csv",
+  "consistency_name": "IBGE_POP_CONSISTENCY_X_X.csv",
+  "census_csv": "/path/to/IBGE/DTB/V1/SRC/dtb_evolucao_pop_1872-2010.csv",
+  "census_years": [
+    1872,
+    1900,
+    1920,
+    1940,
+    1950,
+    1960,
+    1970,
+    1980,
+    1991,
+    2000,
+    2010
+  ],
+  "_census_totals": "published national totals used as a check (only the ones verified in earlier census work)",
+  "census_totals": {
+    "1991": 146825475,
+    "2000": 169799170,
+    "2010": 190755799,
+    "2022": 203080756
+  },
+  "_census_tracts": "census years after the genealogy table: copy of the census T1 tract table (from /media .../CENSO-2022/V200/T1/ASSETS); urban / rural by situacao_type",
+  "census_tracts": [
+    {
+      "year": 2022,
+      "path": "IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
+      "total": "V0001",
+      "situacao": "situacao_type",
+      "urban": "Urbana",
+      "rural": "Rural"
+    }
+  ],
+  "dtb_quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "dtb_genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "unidades": {
+    "RONDONIA": "11",
+    "ACRE": "12",
+    "AMAZONAS": "13",
+    "RORAIMA": "14",
+    "PARA": "15",
+    "AMAPA": "16",
+    "TOCANTINS": "17",
+    "MARANHAO": "21",
+    "PIAUI": "22",
+    "CEARA": "23",
+    "RIO GRANDE DO NORTE": "24",
+    "PARAIBA": "25",
+    "PERNAMBUCO": "26",
+    "ALAGOAS": "27",
+    "SERGIPE": "28",
+    "BAHIA": "29",
+    "MINAS GERAIS": "31",
+    "ESPIRITO SANTO": "32",
+    "RIO DE JANEIRO": "33",
+    "SAO PAULO": "35",
+    "PARANA": "41",
+    "SANTA CATARINA": "42",
+    "RIO GRANDE DO SUL": "43",
+    "MATO GROSSO DO SUL": "50",
+    "MATO GROSSO": "51",
+    "GOIAS": "52",
+    "DISTRITO FEDERAL": "53"
+  },
+  "regioes": {
+    "NORTE": "1",
+    "NORDESTE": "2",
+    "SUDESTE": "3",
+    "SUL": "4",
+    "CENTRO OESTE": "5"
+  },
+  "estimates": [
+    {
+      "year": 1992,
+      "path": "estimativa_populacao_1992_ods.zip",
+      "member": "estimativa_populacao_1992.ods"
+    },
+    {
+      "year": 1993,
+      "path": "estimativa_populacao_1993_ods.zip",
+      "member": "estimativa_populacao_1993.ods"
+    },
+    {
+      "year": 1994,
+      "path": "estimativa_populacao_1994_ods.zip",
+      "member": "estimativa_populacao_1994.ods"
+    },
+    {
+      "year": 1995,
+      "path": "estimativa_populacao_1995_ods.zip",
+      "member": "estimativa_populacao_1995.ods"
+    },
+    {
+      "year": 1997,
+      "path": "estimativa_populacao_1997_ods.zip",
+      "member": "estimativa_populacao_1997.ods"
+    },
+    {
+      "year": 1998,
+      "path": "estimativa_populacao_1998_ods.zip",
+      "member": "estimativa_populacao_1998.ods"
+    },
+    {
+      "year": 1999,
+      "path": "estimativa_populacao_1999_ods.zip",
+      "member": "estimativa_populacao_1999.ods"
+    },
+    {
+      "year": 2000,
+      "path": "UF_Municipio_2000.zip",
+      "member": "POP-00-DOU.xls"
+    },
+    {
+      "year": 2001,
+      "path": "UF_Municipio_2001.zip",
+      "member": "UF_Municipio.xls"
+    },
+    {
+      "year": 2002,
+      "path": "UF_Municipio_2002.zip",
+      "member": "POP-2002-DOU.xls"
+    },
+    {
+      "year": 2003,
+      "path": "UF_Municipio_2003.zip",
+      "member": "POP-2003-TCU.xls"
+    },
+    {
+      "year": 2004,
+      "path": "UF_Municipio_2004.zip",
+      "member": "POP2004-TCU.xls"
+    },
+    {
+      "year": 2005,
+      "path": "UF_Municipio_2005.zip",
+      "member": "POP-2005-DOU.xls"
+    },
+    {
+      "year": 2006,
+      "path": "UF_Municipio_2006.zip",
+      "member": "POP2006-TCU.xls"
+    },
+    {
+      "year": 2008,
+      "path": "UF_Municipio_2008.zip",
+      "member": "POP2008_DOU.xls"
+    },
+    {
+      "year": 2009,
+      "path": "UF_Municipio_2009.zip",
+      "member": "UF_Municipio.xls"
+    },
+    {
+      "year": 2011,
+      "path": "UF_Municipio_2011.zip",
+      "member": "UF_Municipio.xls"
+    },
+    {
+      "year": 2012,
+      "path": "estimativa_2012_DOU_28_08_2012_ods.zip",
+      "member": "estimativa_2012_DOU_28_08_2012_ods.ods"
+    },
+    {
+      "year": 2013,
+      "path": "estimativa_2013_dou_ods.zip",
+      "member": "estimativa_2013_dou_ods.ods"
+    },
+    {
+      "year": 2014,
+      "path": "estimativa_dou_2014_ods.zip",
+      "member": "estimativas_dou_2014_ods.ods"
+    },
+    {
+      "year": 2015,
+      "path": "estimativa_dou_2015_20150915.ods"
+    },
+    {
+      "year": 2016,
+      "path": "estimativa_dou_2016_20160913.ods"
+    },
+    {
+      "year": 2017,
+      "path": "estimativa_dou_2017.ods"
+    },
+    {
+      "year": 2018,
+      "path": "estimativa_dou_2018_20181019.ods"
+    },
+    {
+      "year": 2019,
+      "path": "estimativa_dou_2019.ods"
+    },
+    {
+      "year": 2020,
+      "path": "estimativa_dou_2020.ods"
+    },
+    {
+      "year": 2021,
+      "path": "estimativa_dou_2021.ods"
+    },
+    {
+      "year": 2024,
+      "path": "estimativa_dou_2024.ods"
+    },
+    {
+      "year": 2025,
+      "path": "estimativa_dou_2025.ods"
+    },
+    {
+      "year": 2026,
+      "path": "estimativa_dou_2026.ods"
+    }
+  ],
+  "dtb_min_year": 1991
+}

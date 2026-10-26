@@ -1,0 +1,34 @@
+{
+  "_comment": [
+    "Template config for build_database.py, IBGE Census 2000.",
+    "Run from the folder holding the downloaded files: python build_database.py --config build_database_2000.json --overwrite",
+    "Relative paths are resolved from the current folder; replace them with absolute paths to run from elsewhere.",
+    "Files may stay gzipped (.csv.gz, .gpkg.gz); keep the names below without .gz.",
+    "The optional keys below show their defaults; see the header of build_database.py for every option."
+  ],
+  "label": "IBGE Census 2000",
+  "input_folder": ".",
+  "output_folder": "./database",
+  "report_folder": "./database",
+  "output_name": "IBGE_CENSO-2000_BD_BRASIL_2000.gpkg",
+  "table_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.csv",
+  "geography_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.gpkg",
+  "geography_layer_pattern": "ibge_censo_2000_{name}",
+  "key_name": "setor_code",
+  "population_table": "basico",
+  "skip_themes": [
+    "geography",
+    "auxiliary"
+  ],
+  "cross_check": [
+    "setores",
+    "basico"
+  ],
+  "real_variables": {},
+  "catalogs": {
+    "layers": "./IBGE_CENSO-2000_LAYERS_X_X.csv",
+    "fields": "./IBGE_CENSO-2000_FIELDS_X_X.csv",
+    "variables": "./IBGE_CENSO-2000_VARIABLES_X_X.csv",
+    "consistency": "./IBGE_CENSO-2000_CONSISTENCY_X_X.csv"
+  }
+}

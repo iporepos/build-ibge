@@ -1,0 +1,40 @@
+{
+  "legacy_gpkg": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/legacy/censo2000_malhas.gpkg",
+  "rural_layer": "censo2000_setores_rural_v0",
+  "rural_code": "CODIGO",
+  "urban_layer": "censo2000_setores_urbano_v0",
+  "urban_code": "cd_setor",
+  "urban_t0_folder": "/path/to/IBGE/CENSO-2000/V100/T0/ASSETS/setores_urbanos",
+  "urban_t0_code": "ID_",
+  "admin_folder": "/path/to/IBGE/CENSO-2000/V100/SRC/br_setor_rural",
+  "basico_csv": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_BASICO_BRASIL_2000.csv",
+  "output_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "report_folder": "geography_report",
+  "consistency_csv": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_CONSISTENCY_X_X.csv",
+  "name_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.gpkg",
+  "layer_pattern": "ibge_censo_2000_{name}",
+  "output_crs": "EPSG:4674",
+  "metric_crs": "EPSG:5880",
+  "source_encoding": "cp850",
+  "text_no_data": "NA",
+  "hole_cover_threshold": 0.9,
+  "prefer_urban": true,
+  "offset_threshold_km": 5.0,
+  "urban_utm_epsg_base": 32700,
+  "urban_zone_candidates": [18, 19, 20, 21, 22, 23, 24, 25],
+  "urban_reproject": {
+    "2702900": "auto",
+    "2708808": "auto",
+    "3170107": "auto",
+    "3302205": "auto",
+    "3304524": "auto",
+    "3522208": "auto"
+  },
+  "admin": {
+    "unidades": {"source": "55uf500g.shp", "entity": "unidade", "code_length": 2},
+    "municipios": {"source": "55mu500g.shp", "entity": "municipio", "code_length": 7},
+    "distritos": {"source": "55ds500g.shp", "entity": "distrito", "code_length": 9},
+    "subdistritos": {"source": "55sd500g.shp", "entity": "subdistrito", "code_length": 11}
+  },
+  "sedes": {"source": "55mu500g.shp", "flag": "SEDE", "x": "LONGITUDES", "y": "LATITUDESE"}
+}

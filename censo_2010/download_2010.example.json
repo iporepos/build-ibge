@@ -1,0 +1,28 @@
+{
+  "output_folder": "/path/to/IBGE/CENSO-2010/V200/SRC",
+  "log_folder": "download_report",
+  "manifest_name": "IBGE_CENSO-2010_DOWNLOADS_X_X.csv",
+  "timeout": 120,
+  "retries": 3,
+  "products": [
+    {
+      "name": "universo",
+      "base_url": "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_do_Universo/Agregados_por_Setores_Censitarios",
+      "folder": "universo",
+      "release": "20260615",
+      "template": "{item}_{release}.zip",
+      "items": ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE",
+                "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP_Capital", "SP_Exceto_Capital", "TO"],
+      "files": ["1_Atualizacoes_20260615.txt", "Documentacao_Agregado_dos_Setores_2010_20231030.zip"]
+    },
+    {
+      "name": "sinopse",
+      "base_url": "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Sinopse/Agregados_por_Setores_Censitarios",
+      "folder": "sinopse",
+      "template": "Base_informacoes_setores2010_sinopse_{item}.zip",
+      "items": ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE",
+                "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP_Exclusive RM",
+                "SP_RM_Sao_Paulo_Santos_20190218", "TO"]
+    }
+  ]
+}

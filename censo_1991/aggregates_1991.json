@@ -1,0 +1,31 @@
+{
+  "_comment": "Variables of the T1 table agregados-municipios: values published by IBGE per municipality, copied as shipped (no estimation). Read by assemble_aggregates.py (sources) and build_variables.py (VARIABLES catalog). source: fracamo = FRACAMO.TXT of the sample microdata (columns fraction, households, persons); xls = folder of zipped per-UF spreadsheets, column = header label in the spreadsheet. sum_checks: {total: [[parts], ...]} must hold exactly in every municipality. additive (default true): the UF total row of the spreadsheet must equal the sum of its municipalities.",
+  "table": "agregados-municipios",
+  "sum_checks": {"V001": [["V004", "V005"], ["V006", "V007"]]},
+  "variables": [
+    {"name": "V001", "source": "fracamo", "column": "persons", "class": "quantity", "source_name": "FRACAMO.TXT: população",
+     "description_pt": "População residente (universo), segundo o arquivo auxiliar FRACAMO.TXT dos microdados da amostra",
+     "description_en": "Resident population (universe), according to the auxiliary file FRACAMO.TXT of the sample microdata"},
+    {"name": "V002", "source": "fracamo", "column": "households", "class": "quantity", "source_name": "FRACAMO.TXT: domicílios",
+     "description_pt": "Domicílios particulares permanentes (universo), segundo FRACAMO.TXT",
+     "description_en": "Permanent private households (universe), according to FRACAMO.TXT"},
+    {"name": "V003", "source": "fracamo", "column": "fraction", "class": "quantity", "additive": false, "source_name": "FRACAMO.TXT: fração amostral",
+     "description_pt": "Fração amostral efetiva (%), segundo FRACAMO.TXT",
+     "description_en": "Effective sampling fraction (%), according to FRACAMO.TXT"},
+    {"name": "V004", "source": "xls", "folder": "pop_rural_urbana", "column": "Urbana", "class": "quantity", "source_name": "POPS91<UF>.XLS: Urbana",
+     "description_pt": "População residente urbana",
+     "description_en": "Urban resident population"},
+    {"name": "V005", "source": "xls", "folder": "pop_rural_urbana", "column": "Rural", "class": "quantity", "source_name": "POPS91<UF>.XLS: Rural",
+     "description_pt": "População residente rural",
+     "description_en": "Rural resident population"},
+    {"name": "V006", "source": "xls", "folder": "pop_sexo", "column": "Masculino", "class": "quantity", "source_name": "POPU91<UF>.XLS: Masculino",
+     "description_pt": "População residente masculina",
+     "description_en": "Male resident population"},
+    {"name": "V007", "source": "xls", "folder": "pop_sexo", "column": "Feminino", "class": "quantity", "source_name": "POPU91<UF>.XLS: Feminino",
+     "description_pt": "População residente feminina",
+     "description_en": "Female resident population"},
+    {"name": "V008", "source": "xls", "folder": "gini", "column": "1991", "class": "quantity", "additive": false, "source_name": "GINI91<UF>.XLS: 1991",
+     "description_pt": "Índice de Gini publicado pelo IBGE (planilhas GINI91, 1995). O conceito de renda não é documentado na fonte, não é reproduzido exatamente pelos microdados da amostra (o rendimento do chefe do domicílio é o mais próximo). -9999 onde a planilha não traz o município",
+     "description_en": "Gini index published by IBGE (GINI91 spreadsheets, 1995). The income concept is not documented in the source, and the sample microdata do not reproduce it exactly (the household head's income is the closest). -9999 where the spreadsheet lacks the municipality"}
+  ]
+}

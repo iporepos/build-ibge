@@ -1,0 +1,15 @@
+# Python 3.12; versions as tested on the data-warehouse machine (2026-10).
+# Also needed on PATH: GDAL command line (ogr2ogr), poppler (pdftotext, censo_2000/build_variables.py)
+# and Graphviz (dot, dtb/plot_lineage.py).
+numpy==2.5.3
+pandas==3.0.6
+pyarrow==25.0.1
+geopandas==1.2.0
+shapely==2.1.2
+pyogrio==0.13.0
+pyproj==3.8.0
+matplotlib==3.11.2
+xlrd==2.0.1
+python-calamine==0.9.0
+# only censo_2010/download_malhas.py
+requests==2.32.3

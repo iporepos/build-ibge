@@ -1,0 +1,73 @@
+{
+  "censos_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_CENSOS-MUNICIPIOS_BRASIL_1872-2022.csv",
+  "estimativas_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_ESTIMATIVAS-MUNICIPIOS_BRASIL_1992-2026.csv",
+  "unidades_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_ESTIMATIVAS-UNIDADES_BRASIL_1992-2026.csv",
+  "mesh_2022": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_MUNICIPIOS_BRASIL_2022.gpkg",
+  "output_folder": "visual_checks",
+  "unidade_siglas": {
+    "11": "RO",
+    "12": "AC",
+    "13": "AM",
+    "14": "RR",
+    "15": "PA",
+    "16": "AP",
+    "17": "TO",
+    "21": "MA",
+    "22": "PI",
+    "23": "CE",
+    "24": "RN",
+    "25": "PB",
+    "26": "PE",
+    "27": "AL",
+    "28": "SE",
+    "29": "BA",
+    "31": "MG",
+    "32": "ES",
+    "33": "RJ",
+    "34": "GB",
+    "35": "SP",
+    "41": "PR",
+    "42": "SC",
+    "43": "RS",
+    "50": "MS",
+    "51": "MT",
+    "52": "GO",
+    "53": "DF",
+    "30": "DF (RJ capital)",
+    "20": "FN"
+  },
+  "outlier_growth": 0.15,
+  "census_pairs": [
+    [
+      1992,
+      1991
+    ],
+    [
+      2000,
+      2000
+    ],
+    [
+      2011,
+      2010
+    ],
+    [
+      2021,
+      2022
+    ],
+    [
+      2024,
+      2022
+    ]
+  ],
+  "map_growth": [
+    2011,
+    2021
+  ],
+  "growth_map_limit": 3,
+  "simplify_deg": 0.01,
+  "dpi": 130,
+  "growth_censuses": [
+    2010,
+    2022
+  ]
+}

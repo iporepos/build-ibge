@@ -1,0 +1,14 @@
+{
+  "data_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Dados",
+  "data_glob": "*/CD91AMOUP*.DBF",
+  "dtb_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Divisao Territorial do Brasil/DTB Municipios 1991.xls",
+  "recode": "recode_1991.json",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "report_folder": "microdata_report",
+  "table_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.csv",
+  "consistency_name": "IBGE_CENSO-1991_CONSISTENCY_X_X.csv",
+  "situacao_type": {"1": "Urbana", "2": "Urbana", "3": "Urbana", "4": "Rural", "5": "Rural",
+                    "6": "Rural", "7": "Rural", "8": "Rural"},
+  "collective_parendom": "20",
+  "workers": 4
+}

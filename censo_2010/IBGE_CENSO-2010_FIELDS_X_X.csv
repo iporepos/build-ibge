@@ -1,0 +1,10 @@
+id;field;description_pt;description_en;dtype_actual;dtype_stored;scale;no_data;hidden_data;uncertain_data
+1;id;Identificador local (chave única);Local identifier (unique key);integer;integer;1;-9999;;
+2;code;Código alfanumérico;Alphanumeric code;text;text;;NA;;
+3;name;Nome;Name;text;text;;NA;;
+4;alias;Sigla ou nome abreviado;Acronym or abbreviated name;text;text;;NA;;
+5;description_pt;Descrição em português;Description in Portuguese;text;text;;NA;;
+6;description_en;Descrição em inglês;Description in English;text;text;;NA;;
+7;theme;Temática;Theme;text;text;;NA;;
+8;table;Tabela de dados original do Censo;Original Census data table;text;text;;NA;;
+9;V;Prefixo de variável quantitativa;Quantitative variable prefix;misc;misc;1;-9999;-1;-2

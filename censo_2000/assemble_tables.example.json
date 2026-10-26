@@ -1,0 +1,78 @@
+{
+  "input_folder": "/path/to/IBGE/CENSO-2000/V100/T0/ASSETS/universo",
+  "output_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "report_folder": "tables_report",
+  "name_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.csv",
+  "key_name": "setor_code",
+  "source_key": "Cod_setor",
+  "text_no_data": "NA",
+  "flags": {
+    "no_data": -9999,
+    "hidden": -1
+  },
+  "zero_rules": [
+    {"reference": "morador.V0237", "tables": "*"}
+  ],
+  "sources": {
+    "basico": "Basico",
+    "domicilio": "Domicilio",
+    "morador": "Morador",
+    "responsavel01": "Responsavel1",
+    "responsavel02": "Responsavel2",
+    "responsavel03": "Responsavel3",
+    "responsavel04": "Responsavel4",
+    "responsavel05": "Responsavel5",
+    "pessoa01": "Pessoa1",
+    "pessoa02": "Pessoa2",
+    "pessoa03": "Pessoa3",
+    "pessoa04": "Pessoa4",
+    "pessoa05": "Pessoa5",
+    "pessoa06": "Pessoa6",
+    "pessoa07": "Pessoa7",
+    "instrucao01": "Instrucao1",
+    "instrucao02": "Instrucao2",
+    "instrucao03": "Instrucao3",
+    "instrucao04": "Instrucao4",
+    "instrucao05": "Instrucao5",
+    "instrucao06": "Instrucao6"
+  },
+  "basico_table": "basico",
+  "check_columns": {
+    "Situacao": "situacao_code",
+    "Tipo_do_setor": "tipo_code"
+  },
+  "basico_rename": {
+    "Var01": "V01", "Var02": "V02", "Var03": "V03", "Var04": "V04", "Var05": "V05",
+    "Var06": "V06", "Var07": "V07", "Var08": "V08", "Var09": "V09", "Var10": "V10",
+    "Var11": "V11", "Var12": "V12", "Var13": "V13", "Var14": "V14"
+  },
+  "placeholder_names": ["Não existe / não identificado", "Não pertence"],
+  "placeholder_code_columns": {
+    "Nome_do_bairro": "Cod_bairro",
+    "Nome_da_RM": "Cod_RM"
+  },
+  "situacao_type": {
+    "1": "Urbana", "2": "Urbana", "3": "Urbana",
+    "4": "Rural", "5": "Rural", "6": "Rural", "7": "Rural", "8": "Rural"
+  },
+  "column_map": {
+    "Cod_UF": "unidade_code",
+    "Nome_da_UF": "unidade_name",
+    "Cod_meso": "regiaomeso_code",
+    "Nome_da_meso": "regiaomeso_name",
+    "Cod_micro": "regiaomicro_code",
+    "Nome_da_micro": "regiaomicro_name",
+    "Cod_RM": "regiaometropolitana_code",
+    "Nome_da_RM": "regiaometropolitana_name",
+    "Cod_municipio": "municipio_code",
+    "Nome_do_municipio": "municipio_name",
+    "Cod_distrito": "distrito_code",
+    "Nome_do_distrito": "distrito_name",
+    "Cod_subdistrito": "subdistrito_code",
+    "Nome_do_subdistrito": "subdistrito_name",
+    "Cod_bairro": "bairro_code",
+    "Nome_do_bairro": "bairro_name",
+    "Situacao": "situacao_code",
+    "Tipo_do_setor": "tipo_code"
+  }
+}

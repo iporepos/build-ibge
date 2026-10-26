@@ -1,3 +1,26 @@
+.idea/
+.claude/
+prompts/
+scripts/
+*local.*
+
+# Reports and check outputs (logs, CSV reports, PNG figures)
+*_report/
+visual_checks/
+
+# Partial outputs left by an interrupted run
+*.part
+*.part.gpkg
+*.part.*
+
+# Data that should never land in the repo by accident
+*.gpkg
+*.gpkg.gz
+*.csv.gz
+*.zip
+*.parquet
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

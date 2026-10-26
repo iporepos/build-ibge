@@ -1,0 +1,20 @@
+{
+  "input_folder": "/path/to/IBGE/CENSO-2010/V200/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "report_folder": "harmonize_report",
+  "other_files_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "file_pattern": "IBGE_CENSO-2010_*_BRASIL_2010.csv",
+  "exclude": [
+    "_X_X"
+  ],
+  "key_name": "setor_code",
+  "reference_table": "domicilio01",
+  "flags": {
+    "no_data": -9999,
+    "hidden": -1,
+    "uncertain": -2,
+    "hidden_token": "X",
+    "uncertain_token": "."
+  },
+  "max_unreadable_logged": 20
+}

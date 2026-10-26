@@ -1,0 +1,209 @@
+{
+  "_comment": [
+    "Template config for build_database_1991.py, IBGE Census 1991.",
+    "Decompress the downloaded files first (gunzip *.gz): this builder reads plain .csv and .gpkg files.",
+    "Run from the folder holding the files: python build_database_1991.py --config build_database_1991.json --overwrite",
+    "Relative paths are resolved from the current folder; replace them with absolute paths to run from elsewhere.",
+    "Needs Python 3 with numpy, pandas and pyarrow, the GDAL tool ogr2ogr in the PATH, about 30 GB of RAM and a few GB of free disk.",
+    "See the header of build_database_1991.py for every option."
+  ],
+  "label": "IBGE Census 1991",
+  "input_folder": ".",
+  "output_folder": "./database",
+  "report_folder": "./database",
+  "output_name": "IBGE_CENSO-1991_BD_BRASIL_1991.gpkg",
+  "table_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.csv",
+  "geography_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.gpkg",
+  "geography_layer_pattern": "ibge_censo_1991_{name}",
+  "catalog_pattern": "IBGE_CENSO-1991_{NAME}_X_X.csv",
+  "aggregates_table": "agregados-municipios",
+  "tables": [
+    {
+      "name": "basico",
+      "key": "setor_code",
+      "units": "tracts"
+    },
+    {
+      "name": "domicilio",
+      "key": "setor_code"
+    },
+    {
+      "name": "morador",
+      "key": "setor_code"
+    },
+    {
+      "name": "responsavel",
+      "key": "setor_code"
+    },
+    {
+      "name": "pessoa01",
+      "key": "setor_code"
+    },
+    {
+      "name": "pessoa02",
+      "key": "setor_code"
+    },
+    {
+      "name": "instrucao01",
+      "key": "setor_code"
+    },
+    {
+      "name": "instrucao02",
+      "key": "setor_code"
+    },
+    {
+      "name": "comparabilidade-2022",
+      "key": "setor_code_1991",
+      "unique": false
+    }
+  ],
+  "weight": {
+    "table": "microdados-domicilios",
+    "column": "V0927",
+    "key": "household_code"
+  },
+  "estimates": [
+    {
+      "table": "estimativas-setores-domicilios",
+      "source": "microdados-domicilios",
+      "group": {
+        "column": "setor_code_inferred",
+        "link": "microdados-setores",
+        "units": "tracts"
+      },
+      "after": "instrucao02",
+      "check": {
+        "table": "domicilio",
+        "variable": "V0002"
+      },
+      "theme": "household",
+      "unit_pt": "domicílios",
+      "unit_en": "households",
+      "description_pt": "ESTIMATIVAS DA AMOSTRA POR SETOR INFERIDO, não valores do IBGE. Calculadas na harmonização a partir dos microdados da amostra (microdados-domicilios, ponderados pelo peso V0927), agrupados pelo setor inferido (setor_code_inferred de microdados-setores, inferido pela ordem dos registros, não código do IBGE): para cada variável categórica ou booleana, o número estimado de domicílios em cada categoria, para cada quantidade, o número de domicílios com valor válido, a soma e a média ponderadas. Uma linha por setor de basico; setores sem amostra têm n_sample 0. A amostra de um setor é pequena (fração de 10% ou 20%) e pode não ser representativa: ver n_sample antes de usar. Para os itens do questionário básico, prefira as tabelas do universo (basico ... instrucao02). Cada pessoa em domicílio coletivo conta como um domicílio próprio.",
+      "description_en": "SAMPLE ESTIMATES BY INFERRED TRACT, not IBGE values. Computed during harmonization from the sample microdata (microdados-domicilios, weighted by V0927), grouped by the inferred tract (setor_code_inferred of microdados-setores, inferred from the record order, not an IBGE code): for each categorical or boolean variable, the estimated number of households in each category, for each quantity, the number of households with a valid value, the weighted sum and the weighted mean. One row per tract of basico; tracts without sample have n_sample 0. The sample of a tract is small (10% or 20% fraction) and may not be representative: check n_sample before use. For the items of the basic questionnaire, prefer the universe tables (basico ... instrucao02). Each person in a collective dwelling counts as a household of its own."
+    },
+    {
+      "table": "estimativas-setores-pessoas",
+      "source": "microdados-pessoas",
+      "group": {
+        "column": "setor_code_inferred",
+        "link": "microdados-setores",
+        "units": "tracts"
+      },
+      "after": "estimativas-setores-domicilios",
+      "check": {
+        "table": "pessoa01",
+        "variable": "V0114"
+      },
+      "theme": "person",
+      "unit_pt": "pessoas",
+      "unit_en": "persons",
+      "description_pt": "ESTIMATIVAS DA AMOSTRA POR SETOR INFERIDO, não valores do IBGE. Calculadas na harmonização a partir dos microdados da amostra (microdados-pessoas, ponderados pelo peso V0927 do domicílio), agrupados pelo setor inferido do domicílio (setor_code_inferred de microdados-setores, inferido pela ordem dos registros, não código do IBGE): para cada variável categórica ou booleana, o número estimado de pessoas em cada categoria, para cada quantidade, o número de pessoas com valor válido, a soma e a média ponderadas. Uma linha por setor de basico; setores sem amostra têm n_sample 0. A amostra de um setor é pequena (fração de 10% ou 20%; as pessoas vêm agrupadas por domicílio, ver n_sample_households) e pode não ser representativa: ver n_sample antes de usar. Para os itens do questionário básico, prefira as tabelas do universo (basico ... instrucao02).",
+      "description_en": "SAMPLE ESTIMATES BY INFERRED TRACT, not IBGE values. Computed during harmonization from the sample microdata (microdados-pessoas, weighted by the household weight V0927), grouped by the inferred tract of the household (setor_code_inferred of microdados-setores, inferred from the record order, not an IBGE code): for each categorical or boolean variable, the estimated number of persons in each category, for each quantity, the number of persons with a valid value, the weighted sum and the weighted mean. One row per tract of basico; tracts without sample have n_sample 0. The sample of a tract is small (10% or 20% fraction; persons come clustered in households, see n_sample_households) and may not be representative: check n_sample before use. For the items of the basic questionnaire, prefer the universe tables (basico ... instrucao02)."
+    },
+    {
+      "table": "estimativas-municipios-domicilios",
+      "source": "microdados-domicilios",
+      "after": "agregados-municipios",
+      "check": {
+        "table": "agregados-municipios",
+        "variable": "V002"
+      },
+      "theme": "household",
+      "unit_pt": "domicílios",
+      "unit_en": "households",
+      "description_pt": "Estimativas da amostra por município calculadas na harmonização a partir dos microdados (microdados-domicilios, ponderados pelo peso V0927): para cada variável categórica ou booleana, o número estimado de domicílios em cada categoria, para cada quantidade, o número de domicílios com valor válido, a soma e a média ponderadas. Não são valores publicados pelo IBGE (ver agregados-municipios e as tabelas de setores do universo); ver n_sample. Cada pessoa em domicílio coletivo conta como um domicílio próprio.",
+      "description_en": "Sample estimates per municipality computed during harmonization from the microdata (microdados-domicilios, weighted by V0927): for each categorical or boolean variable, the estimated number of households in each category, for each quantity, the number of households with a valid value, the weighted sum and the weighted mean. These are not values published by IBGE (see agregados-municipios and the universe tract tables); check n_sample. Each person in a collective dwelling counts as a household of its own."
+    },
+    {
+      "table": "estimativas-municipios-pessoas",
+      "source": "microdados-pessoas",
+      "after": "estimativas-municipios-domicilios",
+      "check": {
+        "table": "agregados-municipios",
+        "variable": "V001"
+      },
+      "theme": "person",
+      "unit_pt": "pessoas",
+      "unit_en": "persons",
+      "description_pt": "Estimativas da amostra por município calculadas na harmonização a partir dos microdados (microdados-pessoas, ponderados pelo peso V0927 do domicílio): para cada variável categórica ou booleana, o número estimado de pessoas em cada categoria, para cada quantidade, o número de pessoas com valor válido, a soma e a média ponderadas. Não são valores publicados pelo IBGE (ver agregados-municipios e as tabelas de setores do universo); ver n_sample.",
+      "description_en": "Sample estimates per municipality computed during harmonization from the microdata (microdados-pessoas, weighted by the household weight V0927): for each categorical or boolean variable, the estimated number of persons in each category, for each quantity, the number of persons with a valid value, the weighted sum and the weighted mean. These are not values published by IBGE (see agregados-municipios and the universe tract tables); check n_sample."
+    }
+  ],
+  "exclude": {
+    "microdados-domicilios": [
+      "V0927"
+    ],
+    "microdados-pessoas": [
+      "V1102",
+      "V1155",
+      "V1154"
+    ]
+  },
+  "extra_categorical": {
+    "microdados-domicilios": {
+      "situacao_code": [
+        "Situação do setor",
+        "Tract situation"
+      ]
+    }
+  },
+  "decimals": 4,
+  "column_batch": 24,
+  "fields_add": [
+    [
+      "n_sample",
+      "Número de registros da amostra (domicílios ou pessoas) usados na linha (município ou setor inferido), sem ponderação. Pequeno = estimativa pouco confiável; 0 = sem amostra",
+      "Number of sample records (households or persons) used for the row (municipality or inferred tract), unweighted. Small = unreliable estimate; 0 = no sample",
+      "integer",
+      "integer",
+      "1",
+      "NA",
+      "",
+      ""
+    ],
+    [
+      "n_sample_households",
+      "Nas tabelas de estimativas de pessoas: número de domicílios distintos da amostra a que pertencem as pessoas de n_sample (as pessoas vêm agrupadas por domicílio)",
+      "In the person estimate tables: number of distinct sample households the persons of n_sample belong to (persons come clustered in households)",
+      "integer",
+      "integer",
+      "1",
+      "NA",
+      "",
+      ""
+    ],
+    [
+      "total",
+      "Total estimado (soma dos pesos V0927) de domicílios ou pessoas da linha (município ou setor inferido)",
+      "Estimated total (sum of the V0927 weights) of households or persons of the row (municipality or inferred tract)",
+      "real",
+      "real",
+      "1",
+      "NA",
+      "",
+      ""
+    ],
+    [
+      "V_estimativa",
+      "Colunas das tabelas estimativas_*: V<número>_<código> = número estimado de unidades na categoria <código> da variável (rótulo em variables), V<número>_ign = unidades com valor ignorado, V<número>_n / _sum / _mean = unidades com valor válido, soma e média ponderadas de uma quantidade (-9999 quando não há valor válido)",
+      "Columns of the estimativas_* tables: V<number>_<code> = estimated number of units in category <code> of the variable (label in variables), V<number>_ign = units with an ignored value, V<number>_n / _sum / _mean = units with a valid value, weighted sum and weighted mean of a quantity (-9999 when there is no valid value)",
+      "real",
+      "real",
+      "1",
+      "-9999",
+      "",
+      ""
+    ]
+  ],
+  "fields_update": {
+    "class": [
+      "Classe da variável: quantity (valor real), boolean (1/0), categorical (código do IBGE), identifier, nas tabelas de estimativas: estimate_count (unidades na categoria), estimate_n (unidades com valor válido), estimate_sum (soma ponderada), estimate_mean (média ponderada)",
+      "Variable class: quantity (real value), boolean (1/0), categorical (IBGE code), identifier, in the estimate tables: estimate_count (units in the category), estimate_n (units with a valid value), estimate_sum (weighted sum), estimate_mean (weighted mean)"
+    ],
+    "setor_code_inferred": [
+      "Setor censitário inferido (mesmo formato de setor_code), chave das tabelas estimativas_setores_*. Inferido para cada domicílio da amostra pela ordem dos registros e pela calibração do peso (microdados-setores), não código do IBGE",
+      "Inferred census tract (same format as setor_code), key of the estimativas_setores_* tables. Inferred for each sample household from the record order and the weight calibration (microdados-setores), not an IBGE code"
+    ]
+  }
+}

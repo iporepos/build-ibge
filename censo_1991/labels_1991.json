@@ -1,0 +1,2163 @@
+{
+  "_comment": "Category labels of the 1991 dictionary: exact source text -> [Portuguese with accents and typos fixed, English].",
+  "Nao metropolitana": [
+    "Não metropolitana",
+    "Non-metropolitan"
+  ],
+  "Belem": [
+    "Belém",
+    "Belém"
+  ],
+  "Fortaleza": [
+    "Fortaleza",
+    "Fortaleza"
+  ],
+  "Recife": [
+    "Recife",
+    "Recife"
+  ],
+  "Salvador": [
+    "Salvador",
+    "Salvador"
+  ],
+  "Belo Horizonte": [
+    "Belo Horizonte",
+    "Belo Horizonte"
+  ],
+  "Rio de Janeiro": [
+    "Rio de Janeiro",
+    "Rio de Janeiro"
+  ],
+  "Sao Paulo": [
+    "São Paulo",
+    "São Paulo"
+  ],
+  "Curitiba": [
+    "Curitiba",
+    "Curitiba"
+  ],
+  "Porto Alegre": [
+    "Porto Alegre",
+    "Porto Alegre"
+  ],
+  "Brasilia": [
+    "Brasília",
+    "Brasília"
+  ],
+  "Vitoria": [
+    "Vitória",
+    "Vitória"
+  ],
+  "Area urbanizada": [
+    "Área urbanizada",
+    "Urbanized area"
+  ],
+  "Area nao urbanizada": [
+    "Área não urbanizada",
+    "Non-urbanized area"
+  ],
+  "Area urbanizada isolada": [
+    "Área urbanizada isolada",
+    "Isolated urbanized area"
+  ],
+  "Aglomerao rural de extensão urbana": [
+    "Aglomerado rural de extensão urbana",
+    "Rural agglomeration of urban extension"
+  ],
+  "Aglomerado rural - povoado": [
+    "Aglomerado rural - povoado",
+    "Rural agglomeration - settlement (povoado)"
+  ],
+  "Aglomerado rural - nucleo": [
+    "Aglomerado rural - núcleo",
+    "Rural agglomeration - nucleus"
+  ],
+  "Outros aglomerados": [
+    "Outros aglomerados rurais",
+    "Other rural agglomerations"
+  ],
+  "Area rural (exclusive aglomerado rural)": [
+    "Área rural (exclusive aglomerado rural)",
+    "Rural area (excluding rural agglomerations)"
+  ],
+  "Com canalização interna - Rede geral": [
+    "Com canalização interna - rede geral",
+    "With indoor plumbing - general network"
+  ],
+  "Com canalização interna - Poço ou Nascente": [
+    "Com canalização interna - poço ou nascente",
+    "With indoor plumbing - well or spring"
+  ],
+  "Com canalização interna - Outra forma": [
+    "Com canalização interna - outra forma",
+    "With indoor plumbing - other source"
+  ],
+  "Sem canalização interna - Rede geral": [
+    "Sem canalização interna - rede geral",
+    "Without indoor plumbing - general network"
+  ],
+  "Sem canalização interna - Poço ou Nascente": [
+    "Sem canalização interna - poço ou nascente",
+    "Without indoor plumbing - well or spring"
+  ],
+  "Sem canalização interna - Outra forma": [
+    "Sem canalização interna - outra forma",
+    "Without indoor plumbing - other source"
+  ],
+  "NSA": [
+    "Não se aplica",
+    "Not applicable"
+  ],
+  "Nao paga": [
+    "Não paga",
+    "Pays no rent"
+  ],
+  "Ate 0,25 salário mínimo": [
+    "Até 0,25 salário mínimo",
+    "Up to 0.25 minimum wage"
+  ],
+  "Mais de 0,25 a 0,5 salário mínimo": [
+    "Mais de 0,25 a 0,5 salário mínimo",
+    "More than 0.25 to 0.5 minimum wage"
+  ],
+  "Mais de 0,5 a 1 salario minimo": [
+    "Mais de 0,5 a 1 salário mínimo",
+    "More than 0.5 to 1 minimum wage"
+  ],
+  "Mais de 1 a 2 salarios minimos": [
+    "Mais de 1 a 2 salários mínimos",
+    "More than 1 to 2 minimum wages"
+  ],
+  "Mais de 2 a 3 salarios minimos": [
+    "Mais de 2 a 3 salários mínimos",
+    "More than 2 to 3 minimum wages"
+  ],
+  "Mais de 3 a 4 salarios minimos": [
+    "Mais de 3 a 4 salários mínimos",
+    "More than 3 to 4 minimum wages"
+  ],
+  "Mais de 4 a 5 salarios minimos": [
+    "Mais de 4 a 5 salários mínimos",
+    "More than 4 to 5 minimum wages"
+  ],
+  "Mais de 5 salarios minimos": [
+    "Mais de 5 salários mínimos",
+    "More than 5 minimum wages"
+  ],
+  "Sem declaracao": [
+    "Sem declaração",
+    "Not declared"
+  ],
+  "Nao tem": [
+    "Não tem",
+    "Does not have"
+  ],
+  "Tem": [
+    "Tem",
+    "Has"
+  ],
+  "Proprio": [
+    "Próprio",
+    "Own"
+  ],
+  "Cedido": [
+    "Cedido",
+    "Lent"
+  ],
+  "Laje concreto": [
+    "Laje de concreto",
+    "Concrete slab"
+  ],
+  "Telha de barro": [
+    "Telha de barro",
+    "Clay tile"
+  ],
+  "Telha de cimento": [
+    "Telha de cimento",
+    "Cement tile"
+  ],
+  "Zinco": [
+    "Zinco",
+    "Zinc sheet"
+  ],
+  "Madeira": [
+    "Madeira",
+    "Wood"
+  ],
+  "Palha": [
+    "Palha",
+    "Straw"
+  ],
+  "Material aproveitado": [
+    "Material aproveitado",
+    "Reused material"
+  ],
+  "Outro": [
+    "Outro",
+    "Other"
+  ],
+  "Nao tem fogao": [
+    "Não tem fogão",
+    "No stove"
+  ],
+  "Gas canalizado": [
+    "Gás canalizado",
+    "Piped gas"
+  ],
+  "So botijao": [
+    "Só gás de botijão",
+    "Bottled gas only"
+  ],
+  "So lenha": [
+    "Só lenha",
+    "Firewood only"
+  ],
+  "Botijao e lenha": [
+    "Gás de botijão e lenha",
+    "Bottled gas and firewood"
+  ],
+  "Carvao": [
+    "Carvão",
+    "Charcoal"
+  ],
+  "Proprio a construção e terreno": [
+    "Próprio - construção e terreno",
+    "Owned - building and land"
+  ],
+  "Proprio so a construção": [
+    "Próprio - só a construção",
+    "Owned - building only"
+  ],
+  "Alugado": [
+    "Alugado",
+    "Rented"
+  ],
+  "Cedido empregador": [
+    "Cedido por empregador",
+    "Provided by the employer"
+  ],
+  "Cedido particular": [
+    "Cedido por particular",
+    "Provided by a private party"
+  ],
+  "Outra": [
+    "Outra",
+    "Other"
+  ],
+  "Ate 0,5": [
+    "Até 0,5",
+    "Up to 0.5"
+  ],
+  "Mais de 0,5 a 1": [
+    "Mais de 0,5 a 1",
+    "More than 0.5 to 1"
+  ],
+  "Mais de 1 a 1,5": [
+    "Mais de 1 a 1,5",
+    "More than 1 to 1.5"
+  ],
+  "Mais de 1,5 a 2": [
+    "Mais de 1,5 a 2",
+    "More than 1.5 to 2"
+  ],
+  "Mais de 2": [
+    "Mais de 2",
+    "More than 2"
+  ],
+  "Ate 1": [
+    "Até 1",
+    "Up to 1"
+  ],
+  "Mais de 2 a 2,5": [
+    "Mais de 2 a 2,5",
+    "More than 2 to 2.5"
+  ],
+  "Mais de 2,5 a 3": [
+    "Mais de 2,5 a 3",
+    "More than 2.5 to 3"
+  ],
+  "Mais de 3 a 4": [
+    "Mais de 3 a 4",
+    "More than 3 to 4"
+  ],
+  "Mais de 4": [
+    "Mais de 4",
+    "More than 4"
+  ],
+  "Particular - permanente": [
+    "Particular permanente",
+    "Private permanent"
+  ],
+  "Particular - improvisado": [
+    "Particular improvisado",
+    "Private improvised"
+  ],
+  "Coletivo": [
+    "Coletivo",
+    "Collective"
+  ],
+  "Uma porta": [
+    "Uma porta",
+    "One door"
+  ],
+  "Mais de uma porta": [
+    "Mais de uma porta",
+    "More than one door"
+  ],
+  "Eletrica com medidor": [
+    "Elétrica com medidor",
+    "Electric, with meter"
+  ],
+  "Eletrica sem medidor": [
+    "Elétrica sem medidor",
+    "Electric, without meter"
+  ],
+  "Oleo ou querosene": [
+    "Óleo ou querosene",
+    "Oil or kerosene"
+  ],
+  "Coletado diretamente": [
+    "Coletado diretamente",
+    "Collected directly"
+  ],
+  "Coletado indiretamente": [
+    "Coletado indiretamente",
+    "Collected indirectly"
+  ],
+  "Queimado": [
+    "Queimado",
+    "Burned"
+  ],
+  "Enterrado": [
+    "Enterrado",
+    "Buried"
+  ],
+  "Jogado em terreno baldio": [
+    "Jogado em terreno baldio",
+    "Dumped on vacant land"
+  ],
+  "Jogado em rio, lago, etc.": [
+    "Jogado em rio, lago etc.",
+    "Dumped in a river, lake etc."
+  ],
+  "Casa isolada ou de condominio": [
+    "Casa isolada ou de condomínio",
+    "Detached house or house in a condominium"
+  ],
+  "Casa em conjunto residencial popular": [
+    "Casa em conjunto residencial popular",
+    "House in a public housing estate"
+  ],
+  "Casa em aglomerado subnormal": [
+    "Casa em aglomerado subnormal",
+    "House in a subnormal agglomeration (informal settlement)"
+  ],
+  "Apartamento isolado ou de condominio": [
+    "Apartamento isolado ou de condomínio",
+    "Apartment, stand-alone or in a condominium"
+  ],
+  "Apartamento em conjunto residencial": [
+    "Apartamento em conjunto residencial popular",
+    "Apartment in a public housing estate"
+  ],
+  "Apartamento em aglomerado subnormal": [
+    "Apartamento em aglomerado subnormal",
+    "Apartment in a subnormal agglomeration (informal settlement)"
+  ],
+  "Comodo": [
+    "Cômodo",
+    "Room (cômodo)"
+  ],
+  "Alvenaria": [
+    "Alvenaria",
+    "Masonry"
+  ],
+  "Taipa": [
+    "Taipa",
+    "Wattle and daub"
+  ],
+  "Ate 0,25 salario minimo": [
+    "Até 0,25 salário mínimo",
+    "Up to 0.25 minimum wage"
+  ],
+  "Mais de 3 a 5 salarios minimos": [
+    "Mais de 3 a 5 salários mínimos",
+    "More than 3 to 5 minimum wages"
+  ],
+  "Mais de 5 a 10 salarios minimos": [
+    "Mais de 5 a 10 salários mínimos",
+    "More than 5 to 10 minimum wages"
+  ],
+  "Mais de 10 a 15 salarios minimos": [
+    "Mais de 10 a 15 salários mínimos",
+    "More than 10 to 15 minimum wages"
+  ],
+  "Mais de 15 a 20 salarios minimos": [
+    "Mais de 15 a 20 salários mínimos",
+    "More than 15 to 20 minimum wages"
+  ],
+  "Mais de 20 a 30 salarios minimos": [
+    "Mais de 20 a 30 salários mínimos",
+    "More than 20 to 30 minimum wages"
+  ],
+  "Mais de 30 salarios minimos": [
+    "Mais de 30 salários mínimos",
+    "More than 30 minimum wages"
+  ],
+  "Sem rendimento": [
+    "Sem rendimento",
+    "No income"
+  ],
+  "Rede geral": [
+    "Rede geral",
+    "General sewage network"
+  ],
+  "Fossa ligada a rede": [
+    "Fossa ligada à rede",
+    "Cesspit connected to the network"
+  ],
+  "Fossa sem escoadoro": [
+    "Fossa séptica sem escoadouro",
+    "Septic tank without outlet"
+  ],
+  "Fossa rudimentar": [
+    "Fossa rudimentar",
+    "Rudimentary cesspit"
+  ],
+  "Vala negra": [
+    "Vala negra",
+    "Open ditch"
+  ],
+  "Nao sabe": [
+    "Não sabe",
+    "Does not know"
+  ],
+  "So do domicilio": [
+    "Só do domicílio",
+    "Household only"
+  ],
+  "Comum a mais de um domicilio": [
+    "Comum a mais de um domicílio",
+    "Shared with other households"
+  ],
+  "Nuclear": [
+    "Nuclear",
+    "Nuclear"
+  ],
+  "Estendida": [
+    "Estendida",
+    "Extended"
+  ],
+  "Composta": [
+    "Composta",
+    "Composite"
+  ],
+  "Unipessoal": [
+    "Unipessoal",
+    "Single-person"
+  ],
+  "Unica": [
+    "Única",
+    "Only family"
+  ],
+  "Domicilio coletivo": [
+    "Domicílio coletivo",
+    "Collective dwelling"
+  ],
+  "Primeira familia": [
+    "Primeira família",
+    "First family"
+  ],
+  "Segunda familia": [
+    "Segunda família",
+    "Second family"
+  ],
+  "Terceira familia": [
+    "Terceira família",
+    "Third family"
+  ],
+  "Quarta familia": [
+    "Quarta família",
+    "Fourth family"
+  ],
+  "Quinta familia": [
+    "Quinta família",
+    "Fifth family"
+  ],
+  "Mais de 0,5 a 3/4 salário mínimo": [
+    "Mais de 0,5 a 0,75 salário mínimo",
+    "More than 0.5 to 0.75 minimum wage"
+  ],
+  "Mais de 3/4 a 1 salario minimo": [
+    "Mais de 0,75 a 1 salário mínimo",
+    "More than 0.75 to 1 minimum wage"
+  ],
+  "Mais de 1 a 1,25 salarios minimos": [
+    "Mais de 1 a 1,25 salários mínimos",
+    "More than 1 to 1.25 minimum wages"
+  ],
+  "Mais de 1,25 a 1,5 salarios minimos": [
+    "Mais de 1,25 a 1,5 salários mínimos",
+    "More than 1.25 to 1.5 minimum wages"
+  ],
+  "Mais de 1,5 a 2 salarios minimos": [
+    "Mais de 1,5 a 2 salários mínimos",
+    "More than 1.5 to 2 minimum wages"
+  ],
+  "Mais de 20 salarios minimos": [
+    "Mais de 20 salários mínimos",
+    "More than 20 minimum wages"
+  ],
+  "Ate 0,125 salrio minimo": [
+    "Até 0,125 salário mínimo",
+    "Up to 0.125 minimum wage"
+  ],
+  "Mais de 0,125 a 0,25 salario minimo": [
+    "Mais de 0,125 a 0,25 salário mínimo",
+    "More than 0.125 to 0.25 minimum wage"
+  ],
+  "Mais de 0,5 a 0,75 salário mínimo": [
+    "Mais de 0,5 a 0,75 salário mínimo",
+    "More than 0.5 to 0.75 minimum wage"
+  ],
+  "Mais de 0,75 a 1 salário mínimo": [
+    "Mais de 0,75 a 1 salário mínimo",
+    "More than 0.75 to 1 minimum wage"
+  ],
+  "Mais de 10 salarios minimos": [
+    "Mais de 10 salários mínimos",
+    "More than 10 minimum wages"
+  ],
+  "Mais de 0,25 a 0,5 salario minimo": [
+    "Mais de 0,25 a 0,5 salário mínimo",
+    "More than 0.25 to 0.5 minimum wage"
+  ],
+  "Não é": [
+    "Não é aposentado nem pensionista",
+    "Neither retired nor pensioner"
+  ],
+  "Aposentado": [
+    "Aposentado",
+    "Retired"
+  ],
+  "Pensionista": [
+    "Pensionista",
+    "Pensioner"
+  ],
+  "Aposentado e pensionista": [
+    "Aposentado e pensionista",
+    "Retired and pensioner"
+  ],
+  "Organ int rep estr.": [
+    "Organizações internacionais e representações estrangeiras",
+    "International organizations and foreign representations"
+  ],
+  "Outra atividade nao relacionada": [
+    "Outras atividades não compreendidas nos demais ramos",
+    "Other activities not included in the other branches"
+  ],
+  "Atividade mal definida ou não declarada": [
+    "Atividade mal definida ou não declarada",
+    "Ill-defined or undeclared activity"
+  ],
+  "Ignorado": [
+    "Ignorado",
+    "Ignored"
+  ],
+  "Atividades Agropecuarias,extração vegetal e pesca": [
+    "Atividades agropecuárias, extração vegetal e pesca",
+    "Agriculture, livestock, plant extraction and fishing"
+  ],
+  "Industria de Transformação": [
+    "Indústria de transformação",
+    "Manufacturing"
+  ],
+  "Industria da Construcao": [
+    "Indústria da construção",
+    "Construction"
+  ],
+  "Outras Atividades industriais": [
+    "Outras atividades industriais",
+    "Other industrial activities"
+  ],
+  "Comercio de mercadorias": [
+    "Comércio de mercadorias",
+    "Trade in goods"
+  ],
+  "Transp.e comunicacao": [
+    "Transporte e comunicação",
+    "Transport and communication"
+  ],
+  "Servilço auxiliar da atividade economica": [
+    "Serviços auxiliares da atividade econômica",
+    "Services auxiliary to economic activity"
+  ],
+  "Prestação de servicos": [
+    "Prestação de serviços",
+    "Services"
+  ],
+  "Social (comunitárias, médicas, odontológicas e ensino)": [
+    "Social (comunitárias, médicas, odontológicas e ensino)",
+    "Social (community, medical, dental and education)"
+  ],
+  "Administração publica": [
+    "Administração pública",
+    "Public administration"
+  ],
+  "Outras": [
+    "Outras",
+    "Other"
+  ],
+  "Sim": [
+    "Sim",
+    "Yes"
+  ],
+  "Nao empregado": [
+    "Não é empregado",
+    "Not an employee"
+  ],
+  "Nao": [
+    "Não",
+    "No"
+  ],
+  "Nehuma enumerada": [
+    "Nenhuma das enumeradas",
+    "None of those listed"
+  ],
+  "Cegueira": [
+    "Cegueira",
+    "Blindness"
+  ],
+  "Surdez": [
+    "Surdez",
+    "Deafness"
+  ],
+  "Paralisia de um dos lados": [
+    "Paralisia de um dos lados",
+    "Paralysis of one side"
+  ],
+  "Paralisia das pernas": [
+    "Paralisia das pernas",
+    "Paralysis of the legs"
+  ],
+  "Paralisia total": [
+    "Paralisia total",
+    "Total paralysis"
+  ],
+  "Falta de membro(s) ou parte deles": [
+    "Falta de membro(s) ou parte deles",
+    "Missing limb(s) or part of them"
+  ],
+  "Deficiencia mental": [
+    "Deficiência mental",
+    "Mental disability"
+  ],
+  "Mais de uma": [
+    "Mais de uma",
+    "More than one"
+  ],
+  "Nenhum": [
+    "Nenhum",
+    "None"
+  ],
+  "Pre-escolar": [
+    "Pré-escolar",
+    "Pre-school"
+  ],
+  "Alfabetização de Adultos": [
+    "Alfabetização de adultos",
+    "Adult literacy"
+  ],
+  "Supletivo Primeiro Grau": [
+    "Supletivo de primeiro grau",
+    "Supplementary primary (1st level)"
+  ],
+  "Supletivo Segundo Grau": [
+    "Supletivo de segundo grau",
+    "Supplementary secondary (2nd level)"
+  ],
+  "Pre-Vestibular": [
+    "Pré-vestibular",
+    "University entrance preparation"
+  ],
+  "Mestrado ou Doutorado": [
+    "Mestrado ou doutorado",
+    "Master's or doctorate"
+  ],
+  "Nenhum curso": [
+    "Nenhum curso",
+    "No course"
+  ],
+  "Primario ou Elementar (Ensino Geral)": [
+    "Primário ou elementar (ensino geral)",
+    "Primary or elementary (general)"
+  ],
+  "Primario ou Elementar (Ensino Especial)": [
+    "Primário ou elementar (ensino especial)",
+    "Primary or elementary (special education)"
+  ],
+  "Primario ou Elementar (Agricola)": [
+    "Primário ou elementar (agrícola)",
+    "Primary or elementary (agricultural)"
+  ],
+  "Primario ou Elementar (Admistração)": [
+    "Primário ou elementar (administração)",
+    "Primary or elementary (administration)"
+  ],
+  "Primario ou Elementar (Industrial)": [
+    "Primário ou elementar (industrial)",
+    "Primary or elementary (industrial)"
+  ],
+  "Primario ou Elementar (Saúde)": [
+    "Primário ou elementar (saúde)",
+    "Primary or elementary (health)"
+  ],
+  "Primario ou Elementar (Militar)": [
+    "Primário ou elementar (militar)",
+    "Primary or elementary (military)"
+  ],
+  "Primario ou Elementar (Outros)": [
+    "Primário ou elementar (outros)",
+    "Primary or elementary (other)"
+  ],
+  "Ensino Geral - 1ºGrau": [
+    "Ensino geral - 1º grau",
+    "General education - 1st level"
+  ],
+  "Educação Especial - 1ºGrau": [
+    "Educação especial - 1º grau",
+    "Special education - 1st level"
+  ],
+  "Agricola - 1ºGrau": [
+    "Agrícola - 1º grau",
+    "Agricultural - 1st level"
+  ],
+  "Administração - 1ºgrau": [
+    "Administração - 1º grau",
+    "Administration - 1st level"
+  ],
+  "Contabilidade - 1ºGrau": [
+    "Contabilidade - 1º grau",
+    "Accounting - 1st level"
+  ],
+  "Outros - 1ºGrau - Comercial": [
+    "Outros comerciais - 1º grau",
+    "Other commercial - 1st level"
+  ],
+  "Eletrotécnica ou Eletronica - 1ºGrau": [
+    "Eletrotécnica ou eletrônica - 1º grau",
+    "Electrical or electronics - 1st level"
+  ],
+  "Mecanica - 1ºGrau": [
+    "Mecânica - 1º grau",
+    "Mechanics - 1st level"
+  ],
+  "Outro - 1ºGrau Industrial": [
+    "Outros industriais - 1º grau",
+    "Other industrial - 1st level"
+  ],
+  "Enfermagem - 1ºGrau": [
+    "Enfermagem - 1º grau",
+    "Nursing - 1st level"
+  ],
+  "Outros - 1ºGrau - Saude": [
+    "Outros de saúde - 1º grau",
+    "Other health - 1st level"
+  ],
+  "Militar - 1ºGrau": [
+    "Militar - 1º grau",
+    "Military - 1st level"
+  ],
+  "Normal - 1ºGrau": [
+    "Normal (magistério) - 1º grau",
+    "Teacher training - 1st level"
+  ],
+  "Outros - 1ºGrau": [
+    "Outros - 1º grau",
+    "Other - 1st level"
+  ],
+  "Ensino Geral - 2ºGrau": [
+    "Ensino geral - 2º grau",
+    "General education - 2nd level"
+  ],
+  "Educação Especial - 2ºGrau": [
+    "Educação especial - 2º grau",
+    "Special education - 2nd level"
+  ],
+  "Agricola - 2ºGrau": [
+    "Agrícola - 2º grau",
+    "Agricultural - 2nd level"
+  ],
+  "Administração - 2ºGrau": [
+    "Administração - 2º grau",
+    "Administration - 2nd level"
+  ],
+  "Contabilidade - 2ºGrau": [
+    "Contabilidade - 2º grau",
+    "Accounting - 2nd level"
+  ],
+  "Estatistica - 2ºGrau": [
+    "Estatística - 2º grau",
+    "Statistics - 2nd level"
+  ],
+  "Secretariado - 2ºGrau": [
+    "Secretariado - 2º grau",
+    "Secretarial - 2nd level"
+  ],
+  "Outros - 2ºGrau - Comercial": [
+    "Outros comerciais - 2º grau",
+    "Other commercial - 2nd level"
+  ],
+  "Desenho - 2ºGrau": [
+    "Desenho - 2º grau",
+    "Drafting - 2nd level"
+  ],
+  "Eletrotecnica ou Eletronica - 2ºGrau": [
+    "Eletrotécnica ou eletrônica - 2º grau",
+    "Electrical or electronics - 2nd level"
+  ],
+  "Mecanica  -2ºGrau": [
+    "Mecânica - 2º grau",
+    "Mechanics - 2nd level"
+  ],
+  "Quimica - 2ºGrau": [
+    "Química - 2º grau",
+    "Chemistry - 2nd level"
+  ],
+  "Outros - 2ºGrau - Industrial": [
+    "Outros industriais - 2º grau",
+    "Other industrial - 2nd level"
+  ],
+  "Emfermagem - 2ºGrau": [
+    "Enfermagem - 2º grau",
+    "Nursing - 2nd level"
+  ],
+  "Laboratorista de analise clinica - 2ºGrau": [
+    "Laboratorista de análises clínicas - 2º grau",
+    "Clinical laboratory technician - 2nd level"
+  ],
+  "Outros - 2ºGrau - Saude": [
+    "Outros de saúde - 2º grau",
+    "Other health - 2nd level"
+  ],
+  "Militar - 2ºGrau": [
+    "Militar - 2º grau",
+    "Military - 2nd level"
+  ],
+  "Normal - 2ºGrau": [
+    "Normal (magistério) - 2º grau",
+    "Teacher training - 2nd level"
+  ],
+  "Outros - 2ºGrau": [
+    "Outros - 2º grau",
+    "Other - 2nd level"
+  ],
+  "Biologia": [
+    "Biologia",
+    "Biology"
+  ],
+  "Educacao Fisica": [
+    "Educação física",
+    "Physical education"
+  ],
+  "Enfermagem": [
+    "Enfermagem",
+    "Nursing"
+  ],
+  "Farmacia": [
+    "Farmácia",
+    "Pharmacy"
+  ],
+  "Medicina": [
+    "Medicina",
+    "Medicine"
+  ],
+  "Odontologia": [
+    "Odontologia",
+    "Dentistry"
+  ],
+  "Outros da Biologia": [
+    "Outros das ciências biológicas",
+    "Other biological sciences"
+  ],
+  "Arquitetura e Urbanismo": [
+    "Arquitetura e urbanismo",
+    "Architecture and urban planning"
+  ],
+  "Ciencias Exatas": [
+    "Ciências exatas",
+    "Exact sciences"
+  ],
+  "Ciencia da Computacao": [
+    "Ciência da computação",
+    "Computer science"
+  ],
+  "Engenharia Civil": [
+    "Engenharia civil",
+    "Civil engineering"
+  ],
+  "Engenharia Eletrica e Eletronica": [
+    "Engenharia elétrica e eletrônica",
+    "Electrical and electronic engineering"
+  ],
+  "Engenharia Mecanica": [
+    "Engenharia mecânica",
+    "Mechanical engineering"
+  ],
+  "Engenharia Quimica e Quimica Industrial": [
+    "Engenharia química e química industrial",
+    "Chemical engineering and industrial chemistry"
+  ],
+  "Engenharia nao classificada ou mal definida": [
+    "Engenharia não classificada ou mal definida",
+    "Engineering, unclassified or ill-defined"
+  ],
+  "Estatistica": [
+    "Estatística",
+    "Statistics"
+  ],
+  "Fisica": [
+    "Física",
+    "Physics"
+  ],
+  "Geologia": [
+    "Geologia",
+    "Geology"
+  ],
+  "Matematica": [
+    "Matemática",
+    "Mathematics"
+  ],
+  "Quimica": [
+    "Química",
+    "Chemistry"
+  ],
+  "Outros da Tecnologia": [
+    "Outros das ciências tecnológicas",
+    "Other technological sciences"
+  ],
+  "Agronomia": [
+    "Agronomia",
+    "Agronomy"
+  ],
+  "Medicina Veterinaria": [
+    "Medicina veterinária",
+    "Veterinary medicine"
+  ],
+  "Outros Agrarios": [
+    "Outros das ciências agrárias",
+    "Other agricultural sciences"
+  ],
+  "Administracao": [
+    "Administração",
+    "Business administration"
+  ],
+  "Biblioteconomia": [
+    "Biblioteconomia",
+    "Library science"
+  ],
+  "Ciencias Contabeis e Atuarias": [
+    "Ciências contábeis e atuariais",
+    "Accounting and actuarial science"
+  ],
+  "Ciencias Economicas": [
+    "Ciências econômicas",
+    "Economics"
+  ],
+  "Ciencias e Estudos Sociais": [
+    "Ciências e estudos sociais",
+    "Social sciences and studies"
+  ],
+  "Comunicacao Social": [
+    "Comunicação social",
+    "Social communication (media)"
+  ],
+  "Direito": [
+    "Direito",
+    "Law"
+  ],
+  "Filosofia": [
+    "Filosofia",
+    "Philosophy"
+  ],
+  "Geografia": [
+    "Geografia",
+    "Geography"
+  ],
+  "Historia": [
+    "História",
+    "History"
+  ],
+  "Pedagogia": [
+    "Pedagogia",
+    "Pedagogy"
+  ],
+  "Psicologia": [
+    "Psicologia",
+    "Psychology"
+  ],
+  "Servico Social": [
+    "Serviço social",
+    "Social work"
+  ],
+  "Teologia": [
+    "Teologia",
+    "Theology"
+  ],
+  "Outros de Humanas": [
+    "Outros das ciências humanas",
+    "Other humanities"
+  ],
+  "Letras": [
+    "Letras",
+    "Languages and literature"
+  ],
+  "Artes": [
+    "Artes",
+    "Arts"
+  ],
+  "Defesa Nacional (militar)": [
+    "Defesa nacional (militar)",
+    "National defense (military)"
+  ],
+  "Outros cursosde grau superior": [
+    "Outros cursos de grau superior",
+    "Other higher-education courses"
+  ],
+  "Mestrado ou Doutorado - Medicina": [
+    "Mestrado ou doutorado - medicina",
+    "Master's or doctorate - medicine"
+  ],
+  "Mestrado ou doutorado - Outro (Biologia)": [
+    "Mestrado ou doutorado - outros (ciências biológicas)",
+    "Master's or doctorate - other (biological sciences)"
+  ],
+  "Mestrado ou doutorado - Engenharia": [
+    "Mestrado ou doutorado - engenharia",
+    "Master's or doctorate - engineering"
+  ],
+  "Mestrado ou doutorado - Outros (Ciencias Teclogicas)": [
+    "Mestrado ou doutorado - outros (ciências tecnológicas)",
+    "Master's or doctorate - other (technological sciences)"
+  ],
+  "Mestrado ou doutorado - Ciencias Agrarias": [
+    "Mestrado ou doutorado - ciências agrárias",
+    "Master's or doctorate - agricultural sciences"
+  ],
+  "Mestrado ou doutorado - Administração": [
+    "Mestrado ou doutorado - administração",
+    "Master's or doctorate - business administration"
+  ],
+  "Mestrado ou doutorado - Ciencias Economicas, Contsbeis, etc.": [
+    "Mestrado ou doutorado - ciências econômicas, contábeis etc.",
+    "Master's or doctorate - economics, accounting etc."
+  ],
+  "Mestrado ou doutorado - Direito": [
+    "Mestrado ou doutorado - direito",
+    "Master's or doctorate - law"
+  ],
+  "Mestrado ou doutorado - Pedagogia": [
+    "Mestrado ou doutorado - pedagogia",
+    "Master's or doctorate - pedagogy"
+  ],
+  "Mestrado ou doutorado - Outros (Ciencias Humanas e Sociais)": [
+    "Mestrado ou doutorado - outros (ciências humanas e sociais)",
+    "Master's or doctorate - other (humanities and social sciences)"
+  ],
+  "Mestrado ou doutorado - Letras e Artes": [
+    "Mestrado ou doutorado - letras e artes",
+    "Master's or doctorate - languages, literature and arts"
+  ],
+  "Mestrado ou doutorado - (Área não especificada)": [
+    "Mestrado ou doutorado - área não especificada",
+    "Master's or doctorate - unspecified field"
+  ],
+  "Primeiro grau": [
+    "Primeiro grau",
+    "1st level (primary)"
+  ],
+  "Segundo grau": [
+    "Segundo grau",
+    "2nd level (secondary)"
+  ],
+  "Superior": [
+    "Superior",
+    "Higher education"
+  ],
+  "Supletivo - Primeiro grau": [
+    "Supletivo - primeiro grau",
+    "Supplementary - 1st level"
+  ],
+  "Supletivo - Segundo grau": [
+    "Supletivo - segundo grau",
+    "Supplementary - 2nd level"
+  ],
+  "Ler e escrever": [
+    "Sabe ler e escrever",
+    "Can read and write"
+  ],
+  "Nenhuma": [
+    "Nenhuma",
+    "None"
+  ],
+  "Primeira serie": [
+    "Primeira série",
+    "First grade"
+  ],
+  "Segunda serie": [
+    "Segunda série",
+    "Second grade"
+  ],
+  "Terceira serie": [
+    "Terceira série",
+    "Third grade"
+  ],
+  "Quarta serie": [
+    "Quarta série",
+    "Fourth grade"
+  ],
+  "Quinta serie": [
+    "Quinta série",
+    "Fifth grade"
+  ],
+  "Sexta serie": [
+    "Sexta série",
+    "Sixth grade"
+  ],
+  "Setima serie": [
+    "Sétima série",
+    "Seventh grade"
+  ],
+  "Oitava serie": [
+    "Oitava série",
+    "Eighth grade"
+  ],
+  "Curso de Alfabetização de adultos": [
+    "Curso de alfabetização de adultos",
+    "Adult literacy course"
+  ],
+  "Primario ou elementar": [
+    "Primário ou elementar",
+    "Primary or elementary"
+  ],
+  "Ginasial ou Medio 1ºciclo": [
+    "Ginasial ou médio 1º ciclo",
+    "Lower secondary (ginasial, 1st cycle)"
+  ],
+  "Colegial Medio 2ºciclo": [
+    "Colegial ou médio 2º ciclo",
+    "Upper secondary (colegial, 2nd cycle)"
+  ],
+  "Nunca frequentou": [
+    "Nunca frequentou",
+    "Never attended"
+  ],
+  "Um ou dois": [
+    "Um ou dois",
+    "One or two"
+  ],
+  "Tres ou quatro": [
+    "Três ou quatro",
+    "Three or four"
+  ],
+  "Cinco a nove": [
+    "Cinco a nove",
+    "Five to nine"
+  ],
+  "Dez ou mais": [
+    "Dez ou mais",
+    "Ten or more"
+  ],
+  "Trabalha sozinho": [
+    "Trabalha sozinho",
+    "Works alone"
+  ],
+  "Com socio ou não remunerado": [
+    "Com sócio ou trabalhador não remunerado",
+    "With a partner or unpaid worker"
+  ],
+  "Afazeres domesticos": [
+    "Afazeres domésticos",
+    "Household chores"
+  ],
+  "Presumida": [
+    "Presumida",
+    "Presumed"
+  ],
+  "Declarada": [
+    "Declarada",
+    "Declared"
+  ],
+  "No domicilio sem local exclusivo": [
+    "No domicílio, sem local exclusivo",
+    "At home, without a dedicated space"
+  ],
+  "No domicilio com local exclusivo": [
+    "No domicílio, com local exclusivo",
+    "At home, with a dedicated space"
+  ],
+  "Via publica com equipamento pesado": [
+    "Via pública, com equipamento pesado",
+    "Public road, with heavy equipment"
+  ],
+  "Via publica com equipamento leve": [
+    "Via pública, com equipamento leve",
+    "Public road, with light equipment"
+  ],
+  "Propriedade agropecuaria": [
+    "Propriedade agropecuária",
+    "Farm"
+  ],
+  "Empresa ou firma": [
+    "Empresa ou firma",
+    "Company or firm"
+  ],
+  "Em casa do cliente ou do patrao": [
+    "Em casa do cliente ou do patrão",
+    "At the client's or employer's home"
+  ],
+  "RO": [
+    "Rondônia",
+    "Rondônia"
+  ],
+  "AC": [
+    "Acre",
+    "Acre"
+  ],
+  "AM": [
+    "Amazonas",
+    "Amazonas"
+  ],
+  "RR": [
+    "Roraima",
+    "Roraima"
+  ],
+  "PA": [
+    "Pará",
+    "Pará"
+  ],
+  "AP": [
+    "Amapá",
+    "Amapá"
+  ],
+  "TO": [
+    "Tocantins",
+    "Tocantins"
+  ],
+  "MA": [
+    "Maranhão",
+    "Maranhão"
+  ],
+  "PI": [
+    "Piauí",
+    "Piauí"
+  ],
+  "CE": [
+    "Ceará",
+    "Ceará"
+  ],
+  "RN": [
+    "Rio Grande do Norte",
+    "Rio Grande do Norte"
+  ],
+  "PB": [
+    "Paraíba",
+    "Paraíba"
+  ],
+  "PE": [
+    "Pernambuco",
+    "Pernambuco"
+  ],
+  "AL": [
+    "Alagoas",
+    "Alagoas"
+  ],
+  "SE": [
+    "Sergipe",
+    "Sergipe"
+  ],
+  "BA": [
+    "Bahia",
+    "Bahia"
+  ],
+  "MG": [
+    "Minas Gerais",
+    "Minas Gerais"
+  ],
+  "ES": [
+    "Espírito Santo",
+    "Espírito Santo"
+  ],
+  "RJ": [
+    "Rio de Janeiro",
+    "Rio de Janeiro"
+  ],
+  "SP": [
+    "São Paulo",
+    "São Paulo"
+  ],
+  "PR": [
+    "Paraná",
+    "Paraná"
+  ],
+  "SC": [
+    "Santa Catarina",
+    "Santa Catarina"
+  ],
+  "RS": [
+    "Rio Grande do Sul",
+    "Rio Grande do Sul"
+  ],
+  "MS": [
+    "Mato Grosso do Sul",
+    "Mato Grosso do Sul"
+  ],
+  "MT": [
+    "Mato Grosso",
+    "Mato Grosso"
+  ],
+  "GO": [
+    "Goiás",
+    "Goiás"
+  ],
+  "DF": [
+    "Distrito Federal",
+    "Distrito Federal"
+  ],
+  "Brasil nao especificado": [
+    "Brasil, unidade da federação não especificada",
+    "Brazil, federative unit not specified"
+  ],
+  "Pais estrangeiro ou mal definido": [
+    "País estrangeiro ou mal definido",
+    "Foreign country or ill-defined"
+  ],
+  "Urbana": [
+    "Urbana",
+    "Urban"
+  ],
+  "Rural": [
+    "Rural",
+    "Rural"
+  ],
+  "Ignorada": [
+    "Ignorada",
+    "Ignored"
+  ],
+  "Neste municipio": [
+    "Neste município",
+    "In this municipality"
+  ],
+  "So urbana": [
+    "Só urbana",
+    "Urban only"
+  ],
+  "So rural": [
+    "Só rural",
+    "Rural only"
+  ],
+  "Urbana e rural": [
+    "Urbana e rural",
+    "Urban and rural"
+  ],
+  "Brasileiro nato": [
+    "Brasileiro nato",
+    "Born Brazilian"
+  ],
+  "Naturalizado brasileiro": [
+    "Brasileiro naturalizado",
+    "Naturalized Brazilian"
+  ],
+  "Estrangeiro": [
+    "Estrangeiro",
+    "Foreigner"
+  ],
+  "Sempre morou": [
+    "Nasceu e sempre morou neste município",
+    "Born here and always lived here"
+  ],
+  "Morou em outro": [
+    "Nasceu neste município e morou em outro",
+    "Born here and lived in another municipality"
+  ],
+  "Nao nasceu": [
+    "Não nasceu neste município",
+    "Not born in this municipality"
+  ],
+  "Brasil sem especificação": [
+    "Brasil, unidade da federação não especificada",
+    "Brazil, federative unit not specified"
+  ],
+  "Argentina": [
+    "Argentina",
+    "Argentina"
+  ],
+  "Bolivia": [
+    "Bolívia",
+    "Bolivia"
+  ],
+  "Canada": [
+    "Canadá",
+    "Canada"
+  ],
+  "Chile": [
+    "Chile",
+    "Chile"
+  ],
+  "Colombia": [
+    "Colômbia",
+    "Colombia"
+  ],
+  "Costa Rica": [
+    "Costa Rica",
+    "Costa Rica"
+  ],
+  "Cuba": [
+    "Cuba",
+    "Cuba"
+  ],
+  "Equador": [
+    "Equador",
+    "Ecuador"
+  ],
+  "Estados Unidos": [
+    "Estados Unidos",
+    "United States"
+  ],
+  "Guatemala": [
+    "Guatemala",
+    "Guatemala"
+  ],
+  "Guiana Inglesa": [
+    "Guiana",
+    "Guyana"
+  ],
+  "Guiana Francesa": [
+    "Guiana Francesa",
+    "French Guiana"
+  ],
+  "Haiti": [
+    "Haiti",
+    "Haiti"
+  ],
+  "Honduras": [
+    "Honduras",
+    "Honduras"
+  ],
+  "Belize": [
+    "Belize",
+    "Belize"
+  ],
+  "Jamaica": [
+    "Jamaica",
+    "Jamaica"
+  ],
+  "Mexico": [
+    "México",
+    "Mexico"
+  ],
+  "Nicaragua": [
+    "Nicarágua",
+    "Nicaragua"
+  ],
+  "Paraguai": [
+    "Paraguai",
+    "Paraguay"
+  ],
+  "Peru": [
+    "Peru",
+    "Peru"
+  ],
+  "Republica Dominicana": [
+    "República Dominicana",
+    "Dominican Republic"
+  ],
+  "El Salvador": [
+    "El Salvador",
+    "El Salvador"
+  ],
+  "Suriname": [
+    "Suriname",
+    "Suriname"
+  ],
+  "Uruguai": [
+    "Uruguai",
+    "Uruguay"
+  ],
+  "Venezuela": [
+    "Venezuela",
+    "Venezuela"
+  ],
+  "Outros America": [
+    "Outros países da América",
+    "Other countries of the Americas"
+  ],
+  "Alemanha": [
+    "Alemanha",
+    "Germany"
+  ],
+  "Austria": [
+    "Áustria",
+    "Austria"
+  ],
+  "Belgica": [
+    "Bélgica",
+    "Belgium"
+  ],
+  "Bulgaria": [
+    "Bulgária",
+    "Bulgaria"
+  ],
+  "Dinamarca": [
+    "Dinamarca",
+    "Denmark"
+  ],
+  "Eespanha": [
+    "Espanha",
+    "Spain"
+  ],
+  "Finlandia": [
+    "Finlândia",
+    "Finland"
+  ],
+  "Franca": [
+    "França",
+    "France"
+  ],
+  "Gra Bretanha": [
+    "Grã-Bretanha",
+    "Great Britain"
+  ],
+  "Grecia": [
+    "Grécia",
+    "Greece"
+  ],
+  "Holanda": [
+    "Holanda",
+    "Netherlands"
+  ],
+  "Hungria": [
+    "Hungria",
+    "Hungary"
+  ],
+  "Irlanda": [
+    "Irlanda",
+    "Ireland"
+  ],
+  "Italia": [
+    "Itália",
+    "Italy"
+  ],
+  "Iugoslavia": [
+    "Iugoslávia",
+    "Yugoslavia"
+  ],
+  "Noruega": [
+    "Noruega",
+    "Norway"
+  ],
+  "Polonia": [
+    "Polônia",
+    "Poland"
+  ],
+  "Portugal": [
+    "Portugal",
+    "Portugal"
+  ],
+  "Romenia": [
+    "Romênia",
+    "Romania"
+  ],
+  "Suecia": [
+    "Suécia",
+    "Sweden"
+  ],
+  "Suica": [
+    "Suíça",
+    "Switzerland"
+  ],
+  "Tchecoslovaquia": [
+    "Tchecoslováquia",
+    "Czechoslovakia"
+  ],
+  "U.R.S.S.": [
+    "URSS",
+    "USSR"
+  ],
+  "Outros Europa": [
+    "Outros países da Europa",
+    "Other countries of Europe"
+  ],
+  "Angola": [
+    "Angola",
+    "Angola"
+  ],
+  "Egito": [
+    "Egito",
+    "Egypt"
+  ],
+  "Mocambique": [
+    "Moçambique",
+    "Mozambique"
+  ],
+  "Outros Africa": [
+    "Outros países da África",
+    "Other countries of Africa"
+  ],
+  "China Continental": [
+    "China continental",
+    "Mainland China"
+  ],
+  "China Formosa": [
+    "China (Formosa)",
+    "Taiwan"
+  ],
+  "Coreia": [
+    "Coreia",
+    "Korea"
+  ],
+  "India": [
+    "Índia",
+    "India"
+  ],
+  "Israel": [
+    "Israel",
+    "Israel"
+  ],
+  "Japao": [
+    "Japão",
+    "Japan"
+  ],
+  "Libano": [
+    "Líbano",
+    "Lebanon"
+  ],
+  "Paquistao": [
+    "Paquistão",
+    "Pakistan"
+  ],
+  "Siria": [
+    "Síria",
+    "Syria"
+  ],
+  "Turquia": [
+    "Turquia",
+    "Turkey"
+  ],
+  "Outros Asia": [
+    "Outros países da Ásia",
+    "Other countries of Asia"
+  ],
+  "Australia": [
+    "Austrália",
+    "Australia"
+  ],
+  "Outros Oceania": [
+    "Outros países da Oceania",
+    "Other countries of Oceania"
+  ],
+  "Estrangeiro nao especificado": [
+    "País estrangeiro não especificado",
+    "Foreign country not specified"
+  ],
+  "Viva nao reside": [
+    "Viva, não reside no domicílio",
+    "Alive, not living in the household"
+  ],
+  "Falecida": [
+    "Falecida",
+    "Deceased"
+  ],
+  "Mal definida": [
+    "Mal definida",
+    "Ill-defined"
+  ],
+  "Administrativas": [
+    "Administrativas",
+    "Administrative"
+  ],
+  "Tecnicas, Cientificas, Artisticas e Assemlhadas": [
+    "Técnicas, científicas, artísticas e assemelhadas",
+    "Technical, scientific, artistic and related"
+  ],
+  "Agropecuaria e da Produção Extrativa Vegetal e Animal": [
+    "Agropecuária e da produção extrativa vegetal e animal",
+    "Agriculture, livestock and plant and animal extraction"
+  ],
+  "Producao Extrativa Mineral": [
+    "Produção extrativa mineral",
+    "Mineral extraction"
+  ],
+  "Industria de Transfoemação e Construção Civil": [
+    "Indústria de transformação e construção civil",
+    "Manufacturing and construction"
+  ],
+  "Comercio e Atividades Auxiliares": [
+    "Comércio e atividades auxiliares",
+    "Trade and auxiliary activities"
+  ],
+  "Transporte e Comunicações": [
+    "Transporte e comunicações",
+    "Transport and communications"
+  ],
+  "Prestacao de Servicos": [
+    "Prestação de serviços",
+    "Services"
+  ],
+  "Defesa Nacional e Segurança Publica": [
+    "Defesa nacional e segurança pública",
+    "National defense and public security"
+  ],
+  "Outras Ocupações, ocupações mal definidas ou não declaradas": [
+    "Outras ocupações, ocupações mal definidas ou não declaradas",
+    "Other, ill-defined or undeclared occupations"
+  ],
+  "Chefe": [
+    "Chefe",
+    "Head"
+  ],
+  "Conjuge": [
+    "Cônjuge",
+    "Spouse"
+  ],
+  "Filho(a)": [
+    "Filho(a)",
+    "Son or daughter"
+  ],
+  "Enteado(a)": [
+    "Enteado(a)",
+    "Stepchild"
+  ],
+  "Pai ou Mae": [
+    "Pai ou mãe",
+    "Father or mother"
+  ],
+  "Sogro(a)": [
+    "Sogro(a)",
+    "Father- or mother-in-law"
+  ],
+  "Avo ou Bisavo": [
+    "Avô(ó) ou bisavô(ó)",
+    "Grandparent or great-grandparent"
+  ],
+  "Neto(a) Bisneto(a)": [
+    "Neto(a) ou bisneto(a)",
+    "Grandchild or great-grandchild"
+  ],
+  "Genro ou Nora": [
+    "Genro ou nora",
+    "Son- or daughter-in-law"
+  ],
+  "Irma(o)": [
+    "Irmão(ã)",
+    "Brother or sister"
+  ],
+  "Cunhado(a)": [
+    "Cunhado(a)",
+    "Brother- or sister-in-law"
+  ],
+  "Outros Parentes": [
+    "Outros parentes",
+    "Other relatives"
+  ],
+  "Agregado(a)": [
+    "Agregado(a)",
+    "Non-relative living with the household (agregado)"
+  ],
+  "Empregado domestico": [
+    "Empregado(a) doméstico(a)",
+    "Domestic worker"
+  ],
+  "Parente do empregado domestico": [
+    "Parente do(a) empregado(a) doméstico(a)",
+    "Relative of the domestic worker"
+  ],
+  "Individual": [
+    "Individual em domicílio coletivo",
+    "Individual in a collective dwelling"
+  ],
+  "Outro Parente": [
+    "Outro parente",
+    "Other relative"
+  ],
+  "Trabalhador agricola volante": [
+    "Trabalhador agrícola volante",
+    "Itinerant farm worker"
+  ],
+  "Parceiro ou Meeiro - Empregado": [
+    "Parceiro ou meeiro - empregado",
+    "Sharecropper - employee"
+  ],
+  "Parceiro ou Meeiro - Autonomo ou conta propria": [
+    "Parceiro ou meeiro - autônomo ou conta própria",
+    "Sharecropper - self-employed"
+  ],
+  "Trabalhador Domestico - Empregado": [
+    "Trabalhador doméstico - empregado",
+    "Domestic worker - employee"
+  ],
+  "Trabalhador Domestico - Autonomo ou Conta propria": [
+    "Trabalhador doméstico - autônomo ou conta própria",
+    "Domestic worker - self-employed"
+  ],
+  "Empregado do setor privado": [
+    "Empregado do setor privado",
+    "Private-sector employee"
+  ],
+  "Empregado do Setor Publico - Servidor Publico": [
+    "Empregado do setor público - servidor público",
+    "Public-sector employee - civil servant"
+  ],
+  "Empregado do Setor Publico - Empresa Estatal": [
+    "Empregado do setor público - empresa estatal",
+    "Public-sector employee - state-owned company"
+  ],
+  "Autonomo ou Conta propria": [
+    "Autônomo ou conta própria",
+    "Self-employed"
+  ],
+  "Empregador": [
+    "Empregador",
+    "Employer"
+  ],
+  "Sem remuneracao": [
+    "Sem remuneração",
+    "Unpaid"
+  ],
+  "Branca": [
+    "Branca",
+    "White"
+  ],
+  "Preta": [
+    "Preta",
+    "Black"
+  ],
+  "Amarela": [
+    "Amarela",
+    "Asian (amarela)"
+  ],
+  "Parda": [
+    "Parda",
+    "Brown (parda)"
+  ],
+  "Indigena": [
+    "Indígena",
+    "Indigenous"
+  ],
+  "Mais de +20 salarios minimos": [
+    "Mais de 20 salários mínimos",
+    "More than 20 minimum wages"
+  ],
+  "Sem religiao": [
+    "Sem religião",
+    "No religion"
+  ],
+  "Catolica Apostolica Romana": [
+    "Católica Apostólica Romana",
+    "Roman Catholic"
+  ],
+  "Catolica Apostolica Brasileira": [
+    "Católica Apostólica Brasileira",
+    "Brazilian Catholic Apostolic"
+  ],
+  "Catolica Ortodoxa": [
+    "Católica Ortodoxa",
+    "Orthodox Catholic"
+  ],
+  "Evangelica Tradiconal Luterana": [
+    "Evangélica tradicional - Luterana",
+    "Traditional Protestant - Lutheran"
+  ],
+  "Evangelica Tradiconal Prebisteriana": [
+    "Evangélica tradicional - Presbiteriana",
+    "Traditional Protestant - Presbyterian"
+  ],
+  "Evangelica Tradiconal Metodista": [
+    "Evangélica tradicional - Metodista",
+    "Traditional Protestant - Methodist"
+  ],
+  "Evangelica Tradiconal Batista": [
+    "Evangélica tradicional - Batista",
+    "Traditional Protestant - Baptist"
+  ],
+  "Evangelica Tradiconal Congregacional": [
+    "Evangélica tradicional - Congregacional",
+    "Traditional Protestant - Congregational"
+  ],
+  "Evangelica Tradiconal Adventista": [
+    "Evangélica tradicional - Adventista",
+    "Traditional Protestant - Adventist"
+  ],
+  "Evangelica Tradiconal Episcopal Anglicana": [
+    "Evangélica tradicional - Episcopal Anglicana",
+    "Traditional Protestant - Episcopal Anglican"
+  ],
+  "Evangelica Tradiconal Menonita": [
+    "Evangélica tradicional - Menonita",
+    "Traditional Protestant - Mennonite"
+  ],
+  "Evangelica Tradiconal não determinada": [
+    "Evangélica tradicional - não determinada",
+    "Traditional Protestant - undetermined"
+  ],
+  "Evangelica Tradiconal outras": [
+    "Evangélica tradicional - outras",
+    "Traditional Protestant - other"
+  ],
+  "Evangelica Pentecostal Assembleia de Deus": [
+    "Evangélica pentecostal - Assembleia de Deus",
+    "Pentecostal - Assembly of God"
+  ],
+  "Evangelica Pentecostal Congregação Cristã do Brasil": [
+    "Evangélica pentecostal - Congregação Cristã do Brasil",
+    "Pentecostal - Christian Congregation of Brazil"
+  ],
+  "Evangelica Pentecostal O Brasil para Cristo": [
+    "Evangélica pentecostal - O Brasil para Cristo",
+    "Pentecostal - Brazil for Christ"
+  ],
+  "Evangelica Pentecostal Evangelho Quadrangular": [
+    "Evangélica pentecostal - Evangelho Quadrangular",
+    "Pentecostal - Foursquare Gospel"
+  ],
+  "Evangelica Pentecostal Universal do Reino de Deus": [
+    "Evangélica pentecostal - Universal do Reino de Deus",
+    "Pentecostal - Universal Church of the Kingdom of God"
+  ],
+  "Evangelica Pentecostal Casa da Benção": [
+    "Evangélica pentecostal - Casa da Bênção",
+    "Pentecostal - House of Blessing"
+  ],
+  "Evangelica Pentecostal Casa da Oração": [
+    "Evangélica pentecostal - Casa de Oração",
+    "Pentecostal - House of Prayer"
+  ],
+  "Evangelica Pentecostal Deus é Amor": [
+    "Evangélica pentecostal - Deus é Amor",
+    "Pentecostal - God is Love"
+  ],
+  "Evangelica Pentecostal Maranata": [
+    "Evangélica pentecostal - Maranata",
+    "Pentecostal - Maranatha"
+  ],
+  "Evangelica Pentecostal Tradicional Renovada": [
+    "Evangélica pentecostal - tradicional renovada",
+    "Pentecostal - renewed traditional"
+  ],
+  "Evangelica Pentecostal não determinada": [
+    "Evangélica pentecostal - não determinada",
+    "Pentecostal - undetermined"
+  ],
+  "Evangelica Pentecostal Outras": [
+    "Evangélica pentecostal - outras",
+    "Pentecostal - other"
+  ],
+  "Evangelica não determinada": [
+    "Evangélica não determinada",
+    "Protestant, undetermined"
+  ],
+  "Neo-Cristã Normon": [
+    "Neocristã - Mórmon",
+    "Neo-Christian - Mormon"
+  ],
+  "Neo-Cristã Testemunha de Jeova": [
+    "Neocristã - Testemunha de Jeová",
+    "Neo-Christian - Jehovah's Witness"
+  ],
+  "Neo-Cristã LBV": [
+    "Neocristã - LBV (Legião da Boa Vontade)",
+    "Neo-Christian - LBV (Legion of Good Will)"
+  ],
+  "Neo-Cristã outra": [
+    "Neocristã - outra",
+    "Neo-Christian - other"
+  ],
+  "Mediunica Espirita": [
+    "Mediúnica - Espírita",
+    "Mediumistic - Spiritist"
+  ],
+  "Mediunica Umbandista": [
+    "Mediúnica - Umbanda",
+    "Mediumistic - Umbanda"
+  ],
+  "Mediunica candobleccista": [
+    "Mediúnica - Candomblé",
+    "Mediumistic - Candomblé"
+  ],
+  "Judaica ou Israelita": [
+    "Judaica ou israelita",
+    "Jewish"
+  ],
+  "Oriental budista": [
+    "Oriental - Budista",
+    "Eastern - Buddhist"
+  ],
+  "Oriental Messianica": [
+    "Oriental - Messiânica",
+    "Eastern - Messianic"
+  ],
+  "Oriental Seicho No-Ie": [
+    "Oriental - Seicho-No-Ie",
+    "Eastern - Seicho-No-Ie"
+  ],
+  "Oriental outras": [
+    "Oriental - outras",
+    "Eastern - other"
+  ],
+  "Outras - Islamismo": [
+    "Outras - Islamismo",
+    "Other - Islam"
+  ],
+  "Outras - Esoterica": [
+    "Outras - Esotérica",
+    "Other - Esoteric"
+  ],
+  "Outras - Indigena": [
+    "Outras - tradições indígenas",
+    "Other - Indigenous traditions"
+  ],
+  "Outras - grupo minoritarios": [
+    "Outras - grupos minoritários",
+    "Other - minority groups"
+  ],
+  "não determinada ou mal definidas - Cristã": [
+    "Não determinada ou mal definida - cristã",
+    "Undetermined or ill-defined - Christian"
+  ],
+  "não determinada ou mal definidas - Crente": [
+    "Não determinada ou mal definida - crente",
+    "Undetermined or ill-defined - believer (crente)"
+  ],
+  "não determinada ou mal definidas - Outras": [
+    "Não determinada ou mal definida - outras",
+    "Undetermined or ill-defined - other"
+  ],
+  "Maos de 20 salarios minimos": [
+    "Mais de 20 salários mínimos",
+    "More than 20 minimum wages"
+  ],
+  "Casado em 1ªuniao": [
+    "Casado(a) em primeira união",
+    "Married, first union"
+  ],
+  "Casado outra uniao": [
+    "Casado(a) em outra união",
+    "Married, later union"
+  ],
+  "Casada com numero de uniões ignorado": [
+    "Casado(a), número de uniões ignorado",
+    "Married, number of unions unknown"
+  ],
+  "Separado, divorciada, desquitada ou viuvo": [
+    "Separado(a), desquitado(a), divorciado(a) ou viúvo(a)",
+    "Separated, divorced or widowed"
+  ],
+  "Solteiro": [
+    "Solteiro(a)",
+    "Single"
+  ],
+  "Separado não judicialmente": [
+    "Separado(a) não judicialmente",
+    "Separated, not legally"
+  ],
+  "Desquitado ou separado judicialmente": [
+    "Desquitado(a) ou separado(a) judicialmente",
+    "Legally separated"
+  ],
+  "Divorciado(a)": [
+    "Divorciado(a)",
+    "Divorced"
+  ],
+  "Viuvo(a)": [
+    "Viúvo(a)",
+    "Widowed"
+  ],
+  "Casamento civil e religioso": [
+    "Casamento civil e religioso",
+    "Civil and religious marriage"
+  ],
+  "So casamento civil": [
+    "Só casamento civil",
+    "Civil marriage only"
+  ],
+  "So casamento religioso": [
+    "Só casamento religioso",
+    "Religious marriage only"
+  ],
+  "Uniao consensual": [
+    "União consensual",
+    "Consensual union"
+  ],
+  "Masculino": [
+    "Masculino",
+    "Male"
+  ],
+  "Feminino": [
+    "Feminino",
+    "Female"
+  ],
+  "Sem ocupacao": [
+    "Sem ocupação",
+    "Without occupation"
+  ],
+  "Procurando trabalho - ja trabalhou": [
+    "Procurando trabalho - já trabalhou",
+    "Looking for work - has worked before"
+  ],
+  "Procurando trabalho - nunca trabalhou": [
+    "Procurando trabalho - nunca trabalhou",
+    "Looking for work - never worked"
+  ],
+  "Vive de rendas": [
+    "Vive de rendas",
+    "Lives on investment income"
+  ],
+  "Detento": [
+    "Detento",
+    "Inmate"
+  ],
+  "Estudante": [
+    "Estudante",
+    "Student"
+  ],
+  "Doente ou invalido": [
+    "Doente ou inválido",
+    "Ill or disabled"
+  ],
+  "Habitualmente": [
+    "Habitualmente",
+    "Habitually"
+  ],
+  "Eventualmente": [
+    "Eventualmente",
+    "Occasionally"
+  ],
+  "Nao trabalhou": [
+    "Não trabalhou",
+    "Did not work"
+  ],
+  "Idade presumida": [
+    "Idade presumida",
+    "Presumed age"
+  ],
+  "Idade declarada": [
+    "Idade declarada",
+    "Declared age"
+  ],
+  "Idade ignorada": [
+    "Idade ignorada",
+    "Age ignored"
+  ],
+  "Homem": [
+    "Homem",
+    "Male"
+  ],
+  "Mulher": [
+    "Mulher",
+    "Female"
+  ],
+  "Nao teve": [
+    "Não teve",
+    "Had none"
+  ]
+}

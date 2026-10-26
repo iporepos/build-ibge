@@ -1,0 +1,12 @@
+{
+  "source_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/tabelas_de_comparabilidade",
+  "source_glob": "Comparabilidade_2022_1991_*.csv",
+  "source_encoding": "utf-8-sig",
+  "columns": {"SETOR_2022": "setor_code_2022", "SETOR_1991": "setor_code_1991"},
+  "tract_column": "setor_code_1991",
+  "basico": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_BASICO_BRASIL_1991.csv",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "output_name": "IBGE_CENSO-1991_COMPARABILIDADE-2022_BRASIL_1991.csv",
+  "report_folder": "comparability_report",
+  "consistency_name": "IBGE_CENSO-1991_CONSISTENCY_X_X.csv"
+}

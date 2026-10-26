@@ -1,0 +1,90 @@
+{
+  "output_folder": "coverage_report",
+  "keys": [
+    "setor_code",
+    "municipio_code"
+  ],
+  "ignore_state_codes": [
+    "NA"
+  ],
+  "censuses": [
+    {
+      "year": 1991,
+      "folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+      "pattern": "IBGE_CENSO-1991_*_BRASIL_1991.*",
+      "reference": "basico",
+      "population": {
+        "table": "pessoa01",
+        "variable": "V0114"
+      },
+      "expected_partial": {}
+    },
+    {
+      "year": 2000,
+      "folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+      "pattern": "IBGE_CENSO-2000_*_BRASIL_2000.*",
+      "reference": "setores",
+      "population": {
+        "table": "morador",
+        "variable": "V0237"
+      },
+      "expected_partial": {}
+    },
+    {
+      "year": 2010,
+      "folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+      "pattern": "IBGE_CENSO-2010_*_BRASIL_2010.*",
+      "reference": "setores",
+      "population": {
+        "table": "sinopse",
+        "variable": "V014"
+      },
+      "expected_partial": {"entorno05": "6 populated RO tracts absent from the IBGE source (2026-06-15 release)"}
+    },
+    {
+      "year": 2022,
+      "folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+      "pattern": "IBGE_CENSO-2022_*_BRASIL_2022.*",
+      "reference": "setores",
+      "population": {
+        "table": "basico",
+        "variable": "V0001"
+      },
+      "expected_partial": {
+        "entornodomicilio": "surroundings survey of the street faces, urban areas mostly",
+        "entornoface": "surroundings survey of the street faces, urban areas mostly",
+        "entornomorador": "surroundings survey of the street faces, urban areas mostly",
+        "bairros": "neighbourhoods exist only where the municipality defines them"
+      }
+    }
+  ],
+  "states": {
+    "11": "RO",
+    "12": "AC",
+    "13": "AM",
+    "14": "RR",
+    "15": "PA",
+    "16": "AP",
+    "17": "TO",
+    "21": "MA",
+    "22": "PI",
+    "23": "CE",
+    "24": "RN",
+    "25": "PB",
+    "26": "PE",
+    "27": "AL",
+    "28": "SE",
+    "29": "BA",
+    "31": "MG",
+    "32": "ES",
+    "33": "RJ",
+    "35": "SP",
+    "41": "PR",
+    "42": "SC",
+    "43": "RS",
+    "50": "MS",
+    "51": "MT",
+    "52": "GO",
+    "53": "DF"
+  }
+}

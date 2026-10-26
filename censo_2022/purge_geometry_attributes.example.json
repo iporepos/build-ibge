@@ -1,0 +1,13 @@
+{
+  "folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "report_folder": "geography_report",
+  "keep_backup": true,
+  "basico_csv": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
+  "layers": {
+    "setores": {
+      "gpkg": "IBGE_CENSO-2022_SETORES_BRASIL_2022.gpkg",
+      "layer": "ibge_censo_2022_setores",
+      "keep": ["setor_code"]
+    }
+  }
+}

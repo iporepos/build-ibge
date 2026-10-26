@@ -1,0 +1,861 @@
+{
+  "src_folder": "/path/to/IBGE/DTB/V1/SRC",
+  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "report_folder": "geography_report",
+  "name_pattern": "IBGE_DTB_{NAME}_BRASIL_{YEAR}.gpkg",
+  "layer_pattern": "ibge_dtb_{name}_{year}",
+  "consistency_name": "IBGE_DTB_CONSISTENCY_X_X.csv",
+  "output_crs": "EPSG:4674",
+  "area_crs": "ESRI:102033",
+  "capital_max_distance_m": 5000,
+  "quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "special_codes": {
+    "4300001": {
+      "name": "Lagoa Mirim",
+      "area_type": "lagoa"
+    },
+    "4300002": {
+      "name": "Lagoa dos Patos",
+      "area_type": "lagoa"
+    }
+  },
+  "unidade_names": {
+    "11": "Rondônia",
+    "12": "Acre",
+    "13": "Amazonas",
+    "14": "Roraima",
+    "15": "Pará",
+    "16": "Amapá",
+    "17": "Tocantins",
+    "21": "Maranhão",
+    "22": "Piauí",
+    "23": "Ceará",
+    "24": "Rio Grande do Norte",
+    "25": "Paraíba",
+    "26": "Pernambuco",
+    "27": "Alagoas",
+    "28": "Sergipe",
+    "29": "Bahia",
+    "31": "Minas Gerais",
+    "32": "Espírito Santo",
+    "33": "Rio de Janeiro",
+    "35": "São Paulo",
+    "41": "Paraná",
+    "42": "Santa Catarina",
+    "43": "Rio Grande do Sul",
+    "50": "Mato Grosso do Sul",
+    "51": "Mato Grosso",
+    "52": "Goiás",
+    "53": "Distrito Federal"
+  },
+  "snapshots": {
+    "1872": {
+      "mesh": {
+        "zip": "DTB_1872/05_malha_municipal_1872.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1872/03_sede_municipal_1872.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1872/01_capital_de_imperio_1872.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1872/02_capital_de_provincia_1872.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1872/04_limite_de_provincia_1872.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1900
+    },
+    "1900": {
+      "mesh": {
+        "zip": "DTB_1900/05_malha_municipal_1900.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1900/03_sede_municipal_1900.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1900/01_capital_federal_1900.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1900/02_capital_estadual_1900.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1900/04_limite_estadual_1900.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1911,
+      "code_fixes": {
+        "3200201": "3299905",
+        "3200300": "3299906"
+      },
+      "code_fixes_note": "A malha usa o código da recriação (1933) de Alegre e Alfredo Chaves; a genealogia dá os códigos de extinto 3299905 / 3299906 para 1900-1911",
+      "seats_code_fixes": {
+        "3200201": "3299905",
+        "3200300": "3299906"
+      }
+    },
+    "1911": {
+      "mesh": {
+        "zip": "DTB_1911/05_malha_municipal_1911.zip",
+        "code": "GEOCODIGO",
+        "name": "NOMEMUNI",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1911/03_sede_municipal_1911.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1911/01_capital_federal_1911.zip",
+        "code": "GEOCODIGO",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1911/02_capital_estadual_1911.zip",
+        "code": "GEOCODIGO",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1911/04_limite_estadual_1911.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1920,
+      "code_fixes": {
+        "3200201": "3299905",
+        "3200300": "3299906"
+      },
+      "code_fixes_note": "A malha usa o código da recriação (1933) de Alegre e Alfredo Chaves; a genealogia dá os códigos de extinto 3299905 / 3299906 para 1900-1911",
+      "seats_code_fixes": {
+        "3200201": "3299905",
+        "3200300": "3299906"
+      }
+    },
+    "1920": {
+      "mesh": {
+        "zip": "DTB_1920/05-malha_municipal_1920.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1920/03_sede_municipal_1920.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1920/01_capital_federal_1920.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1920/02_capital_estadual_1920.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1920/04_limite_estadual_1920.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "mesh",
+        "genealogy"
+      ],
+      "reference_seats_year": 1933,
+      "_comment": "names from the mesh first: it keeps the 1920 spelling (Barcellos, Coary), the genealogy modernizes 1920 names",
+      "code_fixes": {
+        "2399909": "4199906",
+        "4199906": "2399909"
+      },
+      "code_fix_notes": {
+        "2399909": "Polígonos de Entre Rios (CE 2399909) e Entre Rios (PR 4199906) com códigos trocados na malha de 1920 (as sedes confirmam)",
+        "4199906": "Polígonos de Entre Rios (CE 2399909) e Entre Rios (PR 4199906) com códigos trocados na malha de 1920 (as sedes confirmam)"
+      }
+    },
+    "1933": {
+      "mesh": {
+        "zip": "DTB_1993/05_malha_municipal_1933.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1993/03_sede_municipal_1933.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1993/01_capital_federal_1933.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1993/02_capital_estadual_1933.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1993/04_limite_estadual_1933.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1940
+    },
+    "1940": {
+      "mesh": {
+        "zip": "DTB_1940/05_malha_municipal_1940.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1940/03_sede_municipal_1940.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1940/01_capital_federal_1940.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1940/02_capital_estadual_1940.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1940/04_limite_estadual_1940.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "quadro",
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1950,
+      "litigios": {
+        "zip": "DTB_1940/06_litigio_1940.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      }
+    },
+    "1950": {
+      "mesh": {
+        "zip": "DTB_1950/05_malha_municipal_1950.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1950/03_sede_municipal_1950.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1950/01_capital_federal_1950.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1950/02_capital_estadual_1950.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1950/04_limite_estadual_1950.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "quadro",
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1960,
+      "litigios": {
+        "zip": "DTB_1950/06_litigio_1950.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      }
+    },
+    "1960": {
+      "mesh": {
+        "zip": "DTB_1960/05_malha_municipal_1960.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1960/03_sede_municipal_1960.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1960/01_capital_federal_1960.zip",
+        "code": "CODIGO",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1960/02_capital_estadual_1960.zip",
+        "code": "CODIGO",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1960/04_limite_estadual_1960.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "quadro",
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1970,
+      "litigios": {
+        "zip": "DTB_1960/06_litigio_1960.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186"
+      },
+      "code_fix_notes": {
+        "3515186": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "3548104": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)"
+      },
+      "seats_code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186"
+      }
+    },
+    "1970": {
+      "mesh": {
+        "zip": "DTB_1970/05_malha_municipal_1970.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1970/03_sede_municipal_1970.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1970/01_capital_federal_1970.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1970/02_capital_estadual_1970.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1970/04_limite_estadual_1970.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "quadro",
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1980,
+      "litigios": {
+        "zip": "DTB_1970/06_litigio_1970.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      },
+      "code_fix_notes": {
+        "3515186": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "3548104": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "2901106": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam",
+        "2908507": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam"
+      },
+      "seats_code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      }
+    },
+    "1980": {
+      "mesh": {
+        "zip": "DTB_1980/05_malha_municipal_1980.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1980/03_sede_municipal_1980.zip",
+        "code": "codigo",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1980/01_capital_federal_1980.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1980/02_capital_estadual_1980.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1980/04_limite_estadual_1980.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "quadro",
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 1991,
+      "litigios": {
+        "zip": "DTB_1980/06_litigio_1980.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      },
+      "code_fix_notes": {
+        "3515186": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "3548104": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "2901106": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam",
+        "2908507": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam"
+      },
+      "seats_code_fixes": {
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      }
+    },
+    "1991": {
+      "mesh": {
+        "zip": "DTB_1991/05_malha_municipal_1991.zip",
+        "code": "BR91POLY_I",
+        "name": "NOMEMUNICP",
+        "encoding": "cp1252"
+      },
+      "seats": {
+        "zip": "DTB_1991/03_sede_municipal_1991.zip",
+        "code": "BR91POLY_I",
+        "name": "NOMEMUNICP",
+        "encoding": "cp1252"
+      },
+      "capital_federal": {
+        "zip": "DTB_1991/01_capital_federal_1991.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "capital_estadual": {
+        "zip": "DTB_1991/02_capital_estadual_1991.zip",
+        "code": "codigo",
+        "name": "NOME",
+        "encoding": "cp1252"
+      },
+      "unidades": {
+        "zip": "DTB_1991/04_limite_estadual_1991.zip",
+        "name": "nome",
+        "encoding": "cp1252"
+      },
+      "names": [
+        "genealogy",
+        "mesh"
+      ],
+      "reference_seats_year": 2000,
+      "code_fixes": {
+        "2306045": "2306405",
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      },
+      "code_fixes_note": "Itapipoca: código da malha de 1991 com dígitos trocados (DTB 2306405)",
+      "seats_code_fixes": {
+        "2306405": "2300754",
+        "2300754": "2306405",
+        "3515186": "3548104",
+        "3548104": "3515186",
+        "2901106": "2908507",
+        "2908507": "2901106"
+      },
+      "special_polygons": [
+        {
+          "code": "9999920",
+          "municipio_code": "4300001",
+          "name": "Lagoa Mirim",
+          "area_type": "lagoa"
+        },
+        {
+          "code": "9999910",
+          "municipio_code": "4300002",
+          "name": "Lagoa dos Patos",
+          "area_type": "lagoa"
+        },
+        {
+          "code": "0",
+          "mesh_name": "PI/CE",
+          "municipio_code": "NA",
+          "name": "Área em litígio PI/CE",
+          "area_type": "litigio"
+        },
+        {
+          "code": "0",
+          "mesh_name": null,
+          "municipio_code": "NA",
+          "name": "Ilhas não atribuídas a município",
+          "area_type": "ilha_nao_atribuida"
+        }
+      ],
+      "code_fix_notes": {
+        "3515186": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "3548104": "Espírito Santo do Pinhal e Santo Antônio do Jardim trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam (Pinhal ~389 km², Jardim ~110 km²)",
+        "2901106": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam",
+        "2908507": "Amélia Rodrigues e Conceição do Jacuípe trocados na base da Evolução (malha e sedes); 2000, 2010 e 2022 concordam",
+        "2306045": "Itapipoca: código da malha de 1991 com dígitos trocados (DTB 2306405)"
+      }
+    },
+    "2000": {
+      "mesh": {
+        "zips_glob": "DTB_2000/municipios/*.zip",
+        "code": "GEOCODIGO",
+        "name": "NOME",
+        "encoding": "cp850",
+        "crs": "EPSG:4674"
+      },
+      "seats_from_mesh": {
+        "flag": "SEDE",
+        "lat": "LATITUDESE",
+        "lon": "LONGITUDES"
+      },
+      "unidades": "dissolve",
+      "names": [
+        "genealogy",
+        "quadro",
+        "mesh"
+      ],
+      "reference_seats_year": null,
+      "_comment": "no .prj: coordinates labelled EPSG:4674 without transformation (datum probably SAD69, ~60 m), as in the census 2000 T1",
+      "drop_codes": {
+        "0": "Polígono espúrio de 0,0002 km² com código 0 (litoral do RJ), sem município"
+      }
+    },
+    "2010": {
+      "mesh": {
+        "zips_glob": "DTB_2010/municipios/*.zip",
+        "code": "CD_GEOCODM",
+        "name": "NM_MUNICIP",
+        "encoding": "cp1252"
+      },
+      "unidades": "dissolve",
+      "names": [
+        "genealogy",
+        "quadro",
+        "mesh"
+      ]
+    },
+    "2022": {
+      "mesh": {
+        "zip": "DTB_2022/BR_Municipios_2022.zip",
+        "code": "CD_MUN",
+        "name": "NM_MUN",
+        "encoding": "utf-8"
+      },
+      "unidades": {
+        "zip": "DTB_2022/BR_UF_2022.zip",
+        "code": "CD_UF",
+        "name": "NM_UF",
+        "encoding": "utf-8"
+      },
+      "names": [
+        "quadro",
+        "mesh"
+      ],
+      "extra_layers": {
+        "pais": {
+          "zip": "DTB_2022/BR_Pais_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "pais_name": "NM_PAIS"
+          }
+        },
+        "regioes": {
+          "zip": "DTB_2022/BR_Regioes_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "regiao_name": "NM_REGIAO"
+          },
+          "mapped": {
+            "regiao_code": [
+              "SIGLA_RG",
+              {
+                "N": "1",
+                "NE": "2",
+                "SE": "3",
+                "S": "4",
+                "CO": "5"
+              }
+            ]
+          }
+        },
+        "mesorregioes": {
+          "zip": "DTB_2022/BR_Mesorregioes_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "regiaomeso_code": "CD_MESO",
+            "regiaomeso_name": "NM_MESO"
+          },
+          "mapped": {
+            "unidade_code": [
+              "SIGLA_UF",
+              {
+                "RO": "11",
+                "AC": "12",
+                "AM": "13",
+                "RR": "14",
+                "PA": "15",
+                "AP": "16",
+                "TO": "17",
+                "MA": "21",
+                "PI": "22",
+                "CE": "23",
+                "RN": "24",
+                "PB": "25",
+                "PE": "26",
+                "AL": "27",
+                "SE": "28",
+                "BA": "29",
+                "MG": "31",
+                "ES": "32",
+                "RJ": "33",
+                "SP": "35",
+                "PR": "41",
+                "SC": "42",
+                "RS": "43",
+                "MS": "50",
+                "MT": "51",
+                "GO": "52",
+                "DF": "53"
+              }
+            ]
+          }
+        },
+        "microrregioes": {
+          "zip": "DTB_2022/BR_Microrregioes_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "regiaomicro_code": "CD_MICRO",
+            "regiaomicro_name": "NM_MICRO"
+          },
+          "mapped": {
+            "unidade_code": [
+              "SIGLA_UF",
+              {
+                "RO": "11",
+                "AC": "12",
+                "AM": "13",
+                "RR": "14",
+                "PA": "15",
+                "AP": "16",
+                "TO": "17",
+                "MA": "21",
+                "PI": "22",
+                "CE": "23",
+                "RN": "24",
+                "PB": "25",
+                "PE": "26",
+                "AL": "27",
+                "SE": "28",
+                "BA": "29",
+                "MG": "31",
+                "ES": "32",
+                "RJ": "33",
+                "SP": "35",
+                "PR": "41",
+                "SC": "42",
+                "RS": "43",
+                "MS": "50",
+                "MT": "51",
+                "GO": "52",
+                "DF": "53"
+              }
+            ]
+          }
+        },
+        "regioesintermediarias": {
+          "zip": "DTB_2022/BR_RG_Intermediarias_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "regiaointermediaria_code": "CD_RGINT",
+            "regiaointermediaria_name": "NM_RGINT"
+          },
+          "mapped": {
+            "unidade_code": [
+              "SIGLA_UF",
+              {
+                "RO": "11",
+                "AC": "12",
+                "AM": "13",
+                "RR": "14",
+                "PA": "15",
+                "AP": "16",
+                "TO": "17",
+                "MA": "21",
+                "PI": "22",
+                "CE": "23",
+                "RN": "24",
+                "PB": "25",
+                "PE": "26",
+                "AL": "27",
+                "SE": "28",
+                "BA": "29",
+                "MG": "31",
+                "ES": "32",
+                "RJ": "33",
+                "SP": "35",
+                "PR": "41",
+                "SC": "42",
+                "RS": "43",
+                "MS": "50",
+                "MT": "51",
+                "GO": "52",
+                "DF": "53"
+              }
+            ]
+          }
+        },
+        "regioesimediatas": {
+          "zip": "DTB_2022/BR_RG_Imediatas_2022.zip",
+          "encoding": "utf-8",
+          "columns": {
+            "regiaoimediata_code": "CD_RGI",
+            "regiaoimediata_name": "NM_RGI"
+          },
+          "mapped": {
+            "unidade_code": [
+              "SIGLA_UF",
+              {
+                "RO": "11",
+                "AC": "12",
+                "AM": "13",
+                "RR": "14",
+                "PA": "15",
+                "AP": "16",
+                "TO": "17",
+                "MA": "21",
+                "PI": "22",
+                "CE": "23",
+                "RN": "24",
+                "PB": "25",
+                "PE": "26",
+                "AL": "27",
+                "SE": "28",
+                "BA": "29",
+                "MG": "31",
+                "ES": "32",
+                "RJ": "33",
+                "SP": "35",
+                "PR": "41",
+                "SC": "42",
+                "RS": "43",
+                "MS": "50",
+                "MT": "51",
+                "GO": "52",
+                "DF": "53"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "fill_holes_km2": 1.0,
+  "enclave_share": 0.5
+}

@@ -1,0 +1,107 @@
+{
+  "lineage_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+  "output_folder": "lineage_report/plots",
+  "report_folder": "lineage_report",
+  "max_nodes": 600,
+  "summary": "lineage_summary.png",
+  "styles": {
+    "continuation": {
+      "color": "#8a8984",
+      "style": "solid",
+      "glyph": "━━",
+      "label": "continuação (mesmo código)"
+    },
+    "split": {
+      "color": "#2a78d6",
+      "style": "solid",
+      "glyph": "━━",
+      "label": "desmembramento"
+    },
+    "absorption": {
+      "color": "#eb6834",
+      "style": "dashed",
+      "glyph": "╍╍",
+      "label": "anexação (código extinto)"
+    },
+    "recode": {
+      "color": "#1baf7a",
+      "style": "bold",
+      "glyph": "━━",
+      "label": "recodificação (mesmo território)"
+    },
+    "redistribution": {
+      "color": "#eda100",
+      "style": "dashed",
+      "glyph": "╍╍",
+      "label": "redistribuição (de código extinto)"
+    },
+    "emergence": {
+      "color": "#e87ba4",
+      "style": "dotted",
+      "glyph": "┈┈",
+      "label": "surgimento (litígio / fora da malha)"
+    },
+    "transfer": {
+      "color": "#008300",
+      "style": "dotted",
+      "glyph": "┈┈",
+      "label": "transferência entre municípios"
+    }
+  },
+  "trees": [
+    {
+      "label": "porto-alegre_2022_ancestors",
+      "code": "4314902",
+      "year": 2022,
+      "direction": "ancestors",
+      "min_share": 0.05,
+      "title": "Porto Alegre (2022): ancestrais"
+    },
+    {
+      "label": "porto-alegre_1872_descendants",
+      "code": "4314902",
+      "year": 1872,
+      "direction": "descendants",
+      "min_share": 0.05,
+      "relations": [
+        "continuation",
+        "split",
+        "recode",
+        "redistribution",
+        "absorption"
+      ],
+      "title": "Porto Alegre (1872): descendentes"
+    },
+    {
+      "label": "palmas_2022_ancestors",
+      "code": "1721000",
+      "year": 2022,
+      "direction": "ancestors",
+      "min_share": 0.05,
+      "title": "Palmas-TO (2022): ancestrais"
+    },
+    {
+      "label": "pescaria-brava_2022_ancestors",
+      "code": "4212650",
+      "year": 2022,
+      "direction": "ancestors",
+      "min_share": 0.05,
+      "title": "Pescaria Brava-SC (2022): ancestrais"
+    },
+    {
+      "label": "campinas_1872_descendants",
+      "code": "3509502",
+      "year": 1872,
+      "direction": "descendants",
+      "min_share": 0.05,
+      "relations": [
+        "continuation",
+        "split",
+        "recode",
+        "redistribution",
+        "absorption"
+      ],
+      "title": "Campinas (1872): descendentes"
+    }
+  ]
+}

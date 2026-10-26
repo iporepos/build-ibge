@@ -1,0 +1,10 @@
+{
+  "input_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2000/V100/SRC",
+  "report_folder": "package_report",
+  "prefix": "IBGE_CENSO-2000",
+  "compress": ["*.csv", "*.gpkg"],
+  "copy_as_is": ["*_X_X.*"],
+  "level": 6,
+  "verify": true
+}

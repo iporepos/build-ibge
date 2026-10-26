@@ -1,0 +1,87 @@
+{
+  "input_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "output_folder": "visual_checks",
+  "report_folder": "visual_checks",
+  "lineage_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+  "snapshots": [
+    1872,
+    1900,
+    1911,
+    1920,
+    1933,
+    1940,
+    1950,
+    1960,
+    1970,
+    1980,
+    1991,
+    2000,
+    2010,
+    2022
+  ],
+  "simplify_deg": 0.01,
+  "dpi": 130,
+  "interval_groups": [
+    {
+      "from": 1872,
+      "to": 1933
+    },
+    {
+      "from": 1933,
+      "to": 1960
+    },
+    {
+      "from": 1960,
+      "to": 1991
+    },
+    {
+      "from": 1991,
+      "to": 2022
+    }
+  ],
+  "zooms": [
+    {
+      "label": "porto-alegre",
+      "title": "Região de Porto Alegre: desmembramentos (azul = Porto Alegre)",
+      "bbox": [
+        -52.4,
+        -31.0,
+        -50.2,
+        -29.3
+      ],
+      "years": [
+        1872,
+        1920,
+        1960,
+        1991,
+        2022
+      ],
+      "highlight": [
+        "4314902"
+      ]
+    },
+    {
+      "label": "tocantins",
+      "title": "Norte de Goiás → Tocantins (1988): recodificação e desmembramentos",
+      "bbox": [
+        -50.8,
+        -13.5,
+        -45.6,
+        -5.1
+      ],
+      "years": [
+        1950,
+        1970,
+        1991,
+        2000,
+        2022
+      ],
+      "highlight": [
+        "5221205",
+        "1721208",
+        "5218201",
+        "1718204"
+      ]
+    }
+  ]
+}

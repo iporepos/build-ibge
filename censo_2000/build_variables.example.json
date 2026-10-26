@@ -1,0 +1,68 @@
+{
+  "assemble_config": "assemble_tables.example.json",
+  "documentation_pdf": "/path/to/IBGE/CENSO-2000/V100/Documentação.pdf",
+  "tables_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS",
+  "report_folder": "variables_report",
+  "glossary": "glossary_pt_en.json",
+  "name_pattern": "IBGE_CENSO-2000_VARIABLES_X_X.csv",
+  "table_pattern": "IBGE_CENSO-2000_{NAME}_BRASIL_2000.csv",
+  "basico_descriptions": {
+    "V01": {
+      "pt": "Domicílios particulares permanentes (V0003) ou pessoas responsáveis por domicílios particulares permanentes (V0402 ou V0621) (Nota: Var01 no arquivo original, número de observações usadas no cálculo do rendimento por responsável (V03) e da variância do rendimento (V04))",
+      "en": "Permanent private households (V0003) or heads of permanent private households (V0402 or V0621) (Note: Var01 in the original file, number of observations used to compute the income per head (V03) and the income variance (V04))"
+    },
+    "V02": {
+      "pt": "Total do rendimento nominal mensal das pessoas responsáveis por domicílios particulares permanentes (V0623) (Nota: Var02 no arquivo original)",
+      "en": "Total nominal monthly income of heads of permanent private households (V0623) (Note: Var02 in the original file)"
+    },
+    "V03": {
+      "pt": "Rendimento nominal mensal por pessoa responsável por domicílio particular permanente (Nota: Var03 no arquivo original, medida per capita obtida pela divisão de V02 por V01)",
+      "en": "Nominal monthly income per head of permanent private household (Note: Var03 in the original file, per capita measure obtained by dividing V02 by V01)"
+    },
+    "V04": {
+      "pt": "Variância do rendimento nominal mensal das pessoas responsáveis por domicílios particulares permanentes, considerando os casos de rendimento nulo (Nota: Var04 no arquivo original)",
+      "en": "Variance of the nominal monthly income of heads of permanent private households, including cases of zero income (Note: Var04 in the original file)"
+    },
+    "V05": {
+      "pt": "Pessoas responsáveis por domicílios particulares permanentes com rendimento nominal mensal maior do que zero (V0622) (Nota: Var05 no arquivo original, número de observações usadas no cálculo do rendimento médio dos responsáveis (V06) e da variância do rendimento sem valores nulos (V07))",
+      "en": "Heads of permanent private households with nominal monthly income greater than zero (V0622) (Note: Var05 in the original file, number of observations used to compute the mean income of heads (V06) and the income variance without zero values (V07))"
+    },
+    "V06": {
+      "pt": "Média do rendimento nominal mensal das pessoas responsáveis por domicílios particulares permanentes (Nota: Var06 no arquivo original, obtida pela divisão de V02 por V05)",
+      "en": "Mean nominal monthly income of heads of permanent private households (Note: Var06 in the original file, obtained by dividing V02 by V05)"
+    },
+    "V07": {
+      "pt": "Variância do rendimento nominal mensal das pessoas responsáveis por domicílios particulares permanentes, eliminando os casos de rendimento nulo (Nota: Var07 no arquivo original)",
+      "en": "Variance of the nominal monthly income of heads of permanent private households, excluding cases of zero income (Note: Var07 in the original file)"
+    },
+    "V08": {
+      "pt": "Pessoas responsáveis por domicílios particulares permanentes com número de anos de estudo determinado (V0599) (Nota: Var08 no arquivo original, número de observações usadas no cálculo da média (V10) e da variância (V11) do número de anos de estudo dos responsáveis)",
+      "en": "Heads of permanent private households with determined years of schooling (V0599) (Note: Var08 in the original file, number of observations used to compute the mean (V10) and the variance (V11) of the years of schooling of heads)"
+    },
+    "V09": {
+      "pt": "Total de anos de estudo das pessoas responsáveis por domicílios particulares permanentes (V0601) (Nota: Var09 no arquivo original)",
+      "en": "Total years of schooling of heads of permanent private households (V0601) (Note: Var09 in the original file)"
+    },
+    "V10": {
+      "pt": "Média do número de anos de estudo das pessoas responsáveis por domicílios particulares permanentes (Nota: Var10 no arquivo original, obtida pela divisão de V09 por V08)",
+      "en": "Mean years of schooling of heads of permanent private households (Note: Var10 in the original file, obtained by dividing V09 by V08)"
+    },
+    "V11": {
+      "pt": "Variância do número de anos de estudo das pessoas responsáveis por domicílios particulares permanentes (Nota: Var11 no arquivo original)",
+      "en": "Variance of the years of schooling of heads of permanent private households (Note: Var11 in the original file)"
+    },
+    "V12": {
+      "pt": "Moradores em domicílios particulares permanentes (V0239) ou população residente em domicílios particulares permanentes (V1332) (Nota: Var12 no arquivo original)",
+      "en": "Residents in permanent private households (V0239) or resident population in permanent private households (V1332) (Note: Var12 in the original file)"
+    },
+    "V13": {
+      "pt": "Média do número de moradores em domicílios particulares permanentes (Nota: Var13 no arquivo original, obtida pela divisão de V12 por V01)",
+      "en": "Mean number of residents in permanent private households (Note: Var13 in the original file, obtained by dividing V12 by V01)"
+    },
+    "V14": {
+      "pt": "Variância do número de moradores em domicílios particulares permanentes (Nota: Var14 no arquivo original)",
+      "en": "Variance of the number of residents in permanent private households (Note: Var14 in the original file)"
+    }
+  }
+}

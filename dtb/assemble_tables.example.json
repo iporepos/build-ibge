@@ -1,0 +1,719 @@
+{
+  "src_folder": "/path/to/IBGE/DTB/V1/SRC",
+  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "report_folder": "tables_report",
+  "name_pattern": "IBGE_DTB_{NAME}_BRASIL_{YEAR}.csv",
+  "consistency_name": "IBGE_DTB_CONSISTENCY_X_X.csv",
+  "genealogy_csv": "/path/to/IBGE/DTB/V1/SRC/dtb_evolucao_pop_1872-2010.csv",
+  "genealogy_years": [
+    1872,
+    1900,
+    1911,
+    1920,
+    1933,
+    1940,
+    1950,
+    1960,
+    1970,
+    1980,
+    1991,
+    2000,
+    2010
+  ],
+  "fuzzy_cutoff": 0.85,
+  "unidades": {
+    "RO": "11",
+    "AC": "12",
+    "AM": "13",
+    "RR": "14",
+    "PA": "15",
+    "AP": "16",
+    "TO": "17",
+    "MA": "21",
+    "PI": "22",
+    "CE": "23",
+    "RN": "24",
+    "PB": "25",
+    "PE": "26",
+    "AL": "27",
+    "SE": "28",
+    "BA": "29",
+    "MG": "31",
+    "ES": "32",
+    "RJ": "33",
+    "SP": "35",
+    "PR": "41",
+    "SC": "42",
+    "RS": "43",
+    "MS": "50",
+    "MT": "51",
+    "GO": "52",
+    "DF": "53"
+  },
+  "column_sets": {
+    "list1940": {
+      "unidade_code": "UF",
+      "unidade_name": "NOME_UF",
+      "municipio_code": "UF_MUNIC",
+      "municipio_name": "NOME"
+    },
+    "dtb2003": {
+      "unidade_code": "UF",
+      "unidade_name": "nomeUF",
+      "regiaomeso_code": "Meso",
+      "regiaomeso_name": "nomeMeso",
+      "regiaomicro_code": "Micro",
+      "regiaomicro_name": "nomeMicro",
+      "municipio_code": "Municipio",
+      "municipio_name": "nomeMunicipio",
+      "distrito_code": "Distrito",
+      "distrito_name": "nomeDistrito",
+      "subdistrito_code": "Subdistrito",
+      "subdistrito_name": "nomeSubdistrito"
+    },
+    "dtb2005": {
+      "unidade_code": "UF",
+      "unidade_name": "NomeUF",
+      "regiaomeso_code": "Meso",
+      "regiaomeso_name": "NomeMeso",
+      "regiaomicro_code": "Micro",
+      "regiaomicro_name": "NomeMicro",
+      "municipio_code": "Munic",
+      "municipio_name": "NomeMunic",
+      "distrito_code": "Distr",
+      "distrito_name": "NomeDistr",
+      "subdistrito_code": "Subdistr",
+      "subdistrito_name": "NomeSubdistr"
+    },
+    "dtb2006": {
+      "unidade_code": "UF",
+      "unidade_name": "NomeUF",
+      "regiaomeso_code": "Meso",
+      "regiaomeso_name": "NomeMeso",
+      "regiaomicro_code": "Micro",
+      "regiaomicro_name": "NomeMicro",
+      "municipio_code": "Munic",
+      "municipio_name": "NomeMunic",
+      "distrito_code": "Distr",
+      "distrito_name": "NomeDistr",
+      "subdistrito_code": "Sdistr",
+      "subdistrito_name": "NomeSdistr"
+    },
+    "dtb2007": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião Geográfica",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião Geográfica",
+      "municipio_code": "Município",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Distrito",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "Subdistrito",
+      "subdistrito_name": "Nome_Subdistrito"
+    },
+    "dtb2008": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Município",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Distrito",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "SubDistrito",
+      "subdistrito_name": "Nome_SubDistrito"
+    },
+    "dtb2009": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "MesorregiãoGeográfica",
+      "regiaomeso_name": "MesorregiãoGeográfica_Nome",
+      "regiaomicro_code": "MicrorregiãoGeográfica",
+      "regiaomicro_name": "MicrorregiãoGeográfica_Nome",
+      "municipio_code": "Município",
+      "municipio_name": "Município_Nome",
+      "distrito_code": "Distrito",
+      "distrito_name": "Distrito_Nome",
+      "subdistrito_code": "Subdistrito",
+      "subdistrito_name": "Subdistrito_Nome"
+    },
+    "dtb2010": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião",
+      "regiaomeso_name": "Nome_Meso",
+      "regiaomicro_code": "Microrregião",
+      "regiaomicro_name": "Nome_Micro",
+      "municipio_code": "Município",
+      "municipio_name": "Nome_Munic"
+    },
+    "dtb2011": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião",
+      "regiaomeso_name": "Nome_Meso",
+      "regiaomicro_code": "Microrregião",
+      "regiaomicro_name": "Nome_Micro",
+      "municipio_code": "Munic",
+      "municipio_name": "Nome_Munic"
+    },
+    "dtb2013_municipio": {
+      "unidade_code": "Uf",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Cod Municipio Completo",
+      "municipio_name": "Nome_Município"
+    },
+    "dtb2013_distrito": {
+      "unidade_code": "Uf",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Município",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Distrito",
+      "distrito_name": "Nome_Distrito"
+    },
+    "dtb2013_subdistrito": {
+      "unidade_code": "Uf",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Município",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Distrito",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "Subdistrito",
+      "subdistrito_name": "Nome_Subdistrito"
+    },
+    "dtb2014_municipio": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Cod Municipio Completo",
+      "municipio_name": "Nome_Município"
+    },
+    "dtb2014_distrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Cod Municipio Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Cod Distrito Completo",
+      "distrito_name": "Nome_Distrito"
+    },
+    "dtb2014_subdistrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Cod Municipio Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Cod Distrito Completo",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "Cod SubDistrito Completo",
+      "subdistrito_name": "Nome_Subdistrito"
+    },
+    "dtb2015_municipio": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município"
+    },
+    "dtb2015_distrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Código de Distrito Completo",
+      "distrito_name": "Nome_Distrito"
+    },
+    "dtb2015_subdistrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Código de Distrito Completo",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "Código de Subdistrito Completo",
+      "subdistrito_name": "Nome_Subdistrito"
+    },
+    "dtb2019_municipio": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaointermediaria_code": "Região Geográfica Intermediária",
+      "regiaointermediaria_name": "Nome Região Geográfica Intermediária",
+      "regiaoimediata_code": "Região Geográfica Imediata",
+      "regiaoimediata_name": "Nome Região Geográfica Imediata",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município"
+    },
+    "dtb2019_distrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaointermediaria_code": "Região Geográfica Intermediária",
+      "regiaointermediaria_name": "Nome Região Geográfica Intermediária",
+      "regiaoimediata_code": "Região Geográfica Imediata",
+      "regiaoimediata_name": "Nome Região Geográfica Imediata",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Código de Distrito Completo",
+      "distrito_name": "Nome_Distrito"
+    },
+    "dtb2019_subdistrito": {
+      "unidade_code": "UF",
+      "unidade_name": "Nome_UF",
+      "regiaointermediaria_code": "Região Geográfica Intermediária",
+      "regiaointermediaria_name": "Nome Região Geográfica Intermediária",
+      "regiaoimediata_code": "Região Geográfica Imediata",
+      "regiaoimediata_name": "Nome Região Geográfica Imediata",
+      "regiaomeso_code": "Mesorregião Geográfica",
+      "regiaomeso_name": "Nome_Mesorregião",
+      "regiaomicro_code": "Microrregião Geográfica",
+      "regiaomicro_name": "Nome_Microrregião",
+      "municipio_code": "Código Município Completo",
+      "municipio_name": "Nome_Município",
+      "distrito_code": "Código de Distrito Completo",
+      "distrito_name": "Nome_Distrito",
+      "subdistrito_code": "Código de Subdistrito Completo",
+      "subdistrito_name": "Nome_Subdistrito"
+    }
+  },
+  "editions": [
+    {
+      "edition": 1940,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_1940/d_dtb_1940.xls",
+          "column_set": "list1940"
+        }
+      ]
+    },
+    {
+      "edition": 1950,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_1950/e_dtb_1950.xls",
+          "column_set": "list1940"
+        }
+      ]
+    },
+    {
+      "edition": 1960,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_1960/f_dtb_1960.xls",
+          "column_set": "list1940"
+        }
+      ]
+    },
+    {
+      "edition": 1970,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_1970/g_dtb_1970.xls",
+          "column_set": "list1940"
+        }
+      ]
+    },
+    {
+      "edition": 1980,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_1980/h_dtb_1980.xls",
+          "column_set": "list1940"
+        }
+      ]
+    },
+    {
+      "edition": 1994,
+      "format": "dat_1994",
+      "files": [
+        {
+          "path": "DTB_1994/brasil.zip",
+          "member": "DTB94BR.DAT",
+          "encoding": "cp850"
+        }
+      ]
+    },
+    {
+      "edition": 2000,
+      "format": "nivel_2000",
+      "files": [
+        {
+          "path": "DTB_2000/dtb_2000.zip",
+          "member": "DTB - 2000.xls",
+          "sheet": "A991229"
+        }
+      ],
+      "_comment": "leia_me.zip calls it 'Divisão Territorial 1997'; sheet name A991229 (29/12/1999); 5,507 municipalities of the 2000 census"
+    },
+    {
+      "edition": 2003,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2003/dtb17112003nome.zip",
+          "member": "DTB17112003nome.xls",
+          "column_set": "dtb2003"
+        }
+      ],
+      "_comment": "17/11/2003 version (supersedes dtb_2003.zip of 07/05/2003)"
+    },
+    {
+      "edition": 2004,
+      "format": "nivel_2004",
+      "files": [
+        {
+          "path": "DTB_2004/dtb_2004.zip",
+          "member": "DTB_2004.xls",
+          "sheet": "DTB2004"
+        }
+      ]
+    },
+    {
+      "edition": 2005,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2005/dtb_2005.zip",
+          "member": "DTB 2005.xls",
+          "column_set": "dtb2005"
+        }
+      ]
+    },
+    {
+      "edition": 2006,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2006/dtb_2006.zip",
+          "member": "DTB 2006.xls",
+          "sheet": "Completo",
+          "column_set": "dtb2006"
+        }
+      ]
+    },
+    {
+      "edition": 2007,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2007/dtb_2007.zip",
+          "member": "DTB_2007.xls",
+          "column_set": "dtb2007"
+        }
+      ]
+    },
+    {
+      "edition": 2008,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2008/dtb_2008.zip",
+          "member": "DTB_2008.xls",
+          "column_set": "dtb2008"
+        }
+      ]
+    },
+    {
+      "edition": 2009,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2009/dtb_05_05_2009.zip",
+          "member": "DTB_05_05_2009.xls",
+          "column_set": "dtb2009"
+        }
+      ]
+    },
+    {
+      "edition": 2010,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2010/dtb_2010.zip",
+          "member": "dtb_2010.xls",
+          "column_set": "dtb2010"
+        }
+      ]
+    },
+    {
+      "edition": 2011,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2011/dtb_2011.zip",
+          "member": "dtb_2011.xls",
+          "column_set": "dtb2011"
+        }
+      ]
+    },
+    {
+      "edition": 2012,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2012/dtb_2012.zip",
+          "member": "dtb_2012.xls",
+          "column_set": "dtb2011"
+        }
+      ]
+    },
+    {
+      "edition": 2013,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2013/dtb_2013_municipio.zip",
+          "member": "dtb_2013_municipio.xls",
+          "column_set": "dtb2013_municipio"
+        },
+        {
+          "path": "DTB_2013/dtb_2013_distrito.zip",
+          "member": "dtb_2013_distrito.xls",
+          "column_set": "dtb2013_distrito",
+          "sheet": "DTB_2013_distrito"
+        },
+        {
+          "path": "DTB_2013/dtb_2013_subdistrito.zip",
+          "member": "dtb_2013_subdistrito.xls",
+          "column_set": "dtb2013_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2014,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2014/dtb_2014_v2.zip",
+          "member": "DTB_2014_v2/DTB_2014_Municipio.xls",
+          "column_set": "dtb2014_municipio"
+        },
+        {
+          "path": "DTB_2014/dtb_2014_v2.zip",
+          "member": "DTB_2014_v2/DTB_2014_distrito.xls",
+          "column_set": "dtb2014_distrito"
+        },
+        {
+          "path": "DTB_2014/dtb_2014_v2.zip",
+          "member": "DTB_2014_v2/DTB_2014_subdistrito.xls",
+          "column_set": "dtb2014_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2015,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2015/dtb_2015_v2.zip",
+          "member": "dtb_2015/RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2015_municipio"
+        },
+        {
+          "path": "DTB_2015/dtb_2015_v2.zip",
+          "member": "dtb_2015/RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2015_distrito"
+        },
+        {
+          "path": "DTB_2015/dtb_2015_v2.zip",
+          "member": "dtb_2015/RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2015_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2016,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2016/DTB_2016_v2.zip",
+          "member": "DTB_2016_v2/DTB_2016/DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2015_municipio"
+        },
+        {
+          "path": "DTB_2016/DTB_2016_v2.zip",
+          "member": "DTB_2016_v2/DTB_2016/DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2015_distrito"
+        },
+        {
+          "path": "DTB_2016/DTB_2016_v2.zip",
+          "member": "DTB_2016_v2/DTB_2016/DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2015_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2017,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2017/DTB_2017.zip",
+          "member": "DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2015_municipio"
+        },
+        {
+          "path": "DTB_2017/DTB_2017.zip",
+          "member": "DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2015_distrito"
+        },
+        {
+          "path": "DTB_2017/DTB_2017.zip",
+          "member": "DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2015_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2018,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2018/DTB_2018.zip",
+          "member": "RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2015_municipio"
+        },
+        {
+          "path": "DTB_2018/DTB_2018.zip",
+          "member": "RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2015_distrito"
+        },
+        {
+          "path": "DTB_2018/DTB_2018.zip",
+          "member": "RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2015_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2019,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2019/DTB_2019_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2019_municipio"
+        },
+        {
+          "path": "DTB_2019/DTB_2019_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2019_distrito"
+        },
+        {
+          "path": "DTB_2019/DTB_2019_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2019_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2020,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2020/DTB_2020_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2019_municipio"
+        },
+        {
+          "path": "DTB_2020/DTB_2020_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2019_distrito"
+        },
+        {
+          "path": "DTB_2020/DTB_2020_v2.zip",
+          "member": "RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2019_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2021,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2021/DTB_2021.zip",
+          "member": "RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2019_municipio"
+        },
+        {
+          "path": "DTB_2021/DTB_2021.zip",
+          "member": "RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2019_distrito"
+        },
+        {
+          "path": "DTB_2021/DTB_2021.zip",
+          "member": "RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2019_subdistrito"
+        }
+      ]
+    },
+    {
+      "edition": 2022,
+      "format": "flat",
+      "files": [
+        {
+          "path": "DTB_2022/DTB_2022.zip",
+          "member": "RELATORIO_DTB_BRASIL_MUNICIPIO.xls",
+          "column_set": "dtb2019_municipio"
+        },
+        {
+          "path": "DTB_2022/DTB_2022.zip",
+          "member": "RELATORIO_DTB_BRASIL_DISTRITO.xls",
+          "column_set": "dtb2019_distrito"
+        },
+        {
+          "path": "DTB_2022/DTB_2022.zip",
+          "member": "RELATORIO_DTB_BRASIL_SUBDISTRITO.xls",
+          "column_set": "dtb2019_subdistrito"
+        }
+      ]
+    }
+  ]
+}

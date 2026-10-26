@@ -1,0 +1,29 @@
+id;name;theme;description_pt;description_en
+1;basico;basic;Informações básicas do cadastro de setores e das subdivisões geográficas (códigos, nomes, situação, tipo, área) e totais básicos de pessoas e domicílios (v0001–v0009).;Basic census tract records and geographic subdivisions (codes, names, situation, type, area) and basic totals of persons and households (v0001–v0009).
+2;alfabetizacao;literacy;Alfabetização das pessoas por sexo, cor ou raça e grupos de idade (V00644–V01005).;Literacy of persons by sex, race/ethnicity and age group (V00644–V01005).
+3;bairros;geography;Malha poligonal de bairros, com totais básicos (v0001–v0009).;Polygon grid of neighborhoods, with basic totals (v0001–v0009).
+4;corraca;race;População residente por cor ou raça, sexo e idade (V01317–V01411).;Resident population by race/ethnicity, sex and age (V01317–V01411).
+5;demografia;demography;População residente por sexo e grupos de idade (V01006–V01041).;Resident population by sex and age group (V01006–V01041).
+6;distritos;geography;Malha poligonal de distritos, com totais básicos (v0001–v0007).;Polygon grid of districts, with basic totals (v0001–v0007).
+7;domicilio01;household;Primeira das três planilhas com características dos domicílios e dos moradores (V00001–V00089).;First of three worksheets with household and resident characteristics (V00001–V00089).
+8;domicilio02;household;Segunda das três planilhas com características dos domicílios e dos moradores, incluindo cor ou raça, sexo e abastecimento (V00090–V00495).;Second of three worksheets with household and resident characteristics, including race/ethnicity, sex and services (V00090–V00495).
+9;domicilio03;household;Terceira das três planilhas com características dos domicílios e dos moradores por tipo de espécie (V00496–V00643).;Third of three worksheets with household and resident characteristics by dwelling type (V00496–V00643).
+10;domicilioindigena;indigenous;Características dos domicílios com moradores indígenas (V01500–V01689).;Characteristics of households with indigenous residents (V01500–V01689).
+11;domicilioquilombola;quilombola;Características dos domicílios com moradores quilombolas (V03000–V03195).;Characteristics of households with quilombola residents (V03000–V03195).
+12;entornodomicilio;environment;Características do entorno dos domicílios (V05000–V05034).;Characteristics of the surroundings of households (V05000–V05034).
+13;entornoface;environment;Características do entorno das faces de quadra (V05400–V05434).;Characteristics of the surroundings of block faces (V05400–V05434).
+14;entornomorador;environment;Características do entorno dos moradores (V05200–V05234).;Characteristics of the surroundings of residents (V05200–V05234).
+15;fields;auxiliary;Tabela auxiliar descritiva dos campos.;Auxiliary descriptive table of the fields.
+16;layers;auxiliary;Tabela auxiliar descritiva das camadas.;Auxiliary descriptive table of the layers.
+17;municipios;geography;Malha poligonal de municípios (inclui as lagoas dos Patos e Mirim).;Polygon grid of municipalities (includes the Patos and Mirim lagoons).
+18;obitos;mortality;Óbitos ocorridos entre janeiro de 2019 e julho de 2022 em moradores dos domicílios, por sexo e idade (V01224–V01316).;Deaths of household residents between January 2019 and July 2022, by sex and age (V01224–V01316).
+19;parentesco;kinship;Relação de parentesco ou convivência com a pessoa responsável pelo domicílio (V01042–V01223).;Kinship or living arrangement relationship with the household head (V01042–V01223).
+20;pessoaindigena;indigenous;Características das pessoas indígenas (V01690–V02528).;Characteristics of indigenous persons (V01690–V02528).
+21;pessoaquilombola;quilombola;Características das pessoas quilombolas (V03196–V03950).;Characteristics of quilombola persons (V03196–V03950).
+22;responsavelrenda;income;Rendimento nominal mensal das pessoas responsáveis por domicílios particulares permanentes ocupados (V06001–V06006).;Monthly nominal income of heads of occupied permanent private households (V06001–V06006).
+23;sedes;geography;Pontos das sedes municipais.;Points of the municipal seats.
+24;setores;geography;Malha poligonal de setores censitários, com atributos de cadastro e totais básicos (v0001–v0009).;Polygon grid of census tracts, with record attributes and basic totals (v0001–v0009).
+25;subdistritos;geography;Malha poligonal de subdistritos, com totais básicos (v0001–v0007).;Polygon grid of subdistricts, with basic totals (v0001–v0007).
+26;variables;auxiliary;Tabela auxiliar descritiva das variáveis agregadas por setor.;Auxiliary descriptive table of the sector-level aggregate variables.
+27;uniao;geography;Polígono do Brasil (união das 27 unidades da federação de 2022, DTB 2022).;Polygon of Brazil (union of the 27 federative units of 2022, DTB 2022).
+28;unidades;geography;Polígonos das unidades da federação (estados e DF) de 2022, com sigla, grande região e área (DTB 2022).;Polygons of the federative units (states and the Federal District) of 2022, with abbreviation, major region and area (DTB 2022).

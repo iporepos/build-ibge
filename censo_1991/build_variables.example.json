@@ -1,0 +1,71 @@
+{
+  "recode": "recode_1991.json",
+  "dictionary_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Documentacao/Dicionario 1991.xls",
+  "aux_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Arquivos Auxiliares",
+  "aux_files": {
+    "OCUPACAO": "OCUPACAO PRINCIPAL.TXT",
+    "ATIVIDAD": "CODIGO ATIVIDADE.txt"
+  },
+  "aux_encoding": "cp1252",
+  "variables_text": "variables_1991.json",
+  "labels": "labels_1991.json",
+  "aggregates_spec": "aggregates_1991.json",
+  "codes": "codes_1991.json",
+  "profile_values": "profile_report/profile_values.csv",
+  "tables_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "table_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.csv",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "report_folder": "variables_report",
+  "variables_name": "IBGE_CENSO-1991_VARIABLES_X_X.csv",
+  "categories_name": "IBGE_CENSO-1991_CATEGORIES_X_X.csv",
+  "boolean_labels": {
+    "1": [
+      "Sim",
+      "Yes"
+    ],
+    "0": [
+      "Não",
+      "No"
+    ]
+  },
+  "tracts_spec": "tracts_1991.json",
+  "situacao_tables": [
+    "basico"
+  ],
+  "tipo_labels": {
+    "basico": {
+      "0": [
+        "Comum ou não especial",
+        "Common or non-special"
+      ],
+      "1": [
+        "Aglomerado subnormal",
+        "Subnormal agglomeration"
+      ],
+      "2": [
+        "Quartéis e bases militares",
+        "Barracks and military bases"
+      ],
+      "3": [
+        "Alojamentos e acampamentos",
+        "Lodgings and camps"
+      ],
+      "4": [
+        "Embarcações",
+        "Vessels"
+      ],
+      "5": [
+        "Aldeia indígena",
+        "Indigenous village"
+      ],
+      "6": [
+        "Penitenciárias e presídios",
+        "Penitentiaries and prisons"
+      ],
+      "7": [
+        "Asilos, orfanatos, conventos e hospitais",
+        "Nursing homes, orphanages, convents and hospitals"
+      ]
+    }
+  }
+}

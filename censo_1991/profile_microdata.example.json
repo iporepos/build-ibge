@@ -1,0 +1,11 @@
+{
+  "data_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Dados",
+  "data_glob": "*/CD91AMOUP*.DBF",
+  "dictionary_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Documentacao/Dicionario 1991.xls",
+  "report_folder": "profile_report",
+  "value_limit": 150,
+  "no_value_counts": ["PESO"],
+  "yes_labels": ["tem", "sim", "ler e escrever"],
+  "no_labels": ["nao tem", "nao", "nao sabe"],
+  "workers": 8
+}

@@ -1,0 +1,19 @@
+{
+  "spec": "tracts_1991.json",
+  "dvd_zip": "/path/to/IBGE/CENSO-1991/V100/SRC/liv93703_dvd.zip",
+  "data_folder": "Dados",
+  "dtb_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Divisao Territorial do Brasil/DTB Municipios 1991.xls",
+  "municipios_gpkg": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_MUNICIPIOS_BRASIL_1991.gpkg",
+  "municipios_layer": "ibge_censo_1991_municipios",
+  "aggregates_table": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_AGREGADOS-MUNICIPIOS_BRASIL_1991.csv",
+  "aggregates_checks": {"V001": "V0114", "V002": "V0002"},
+  "population_variable": "V0114",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "report_folder": "tracts_report",
+  "table_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.csv",
+  "consistency_name": "IBGE_CENSO-1991_CONSISTENCY_X_X.csv",
+  "text_no_data": "NA",
+  "real_decimals": 2,
+  "situacao_type": {"1": "Urbana", "2": "Urbana", "3": "Urbana",
+                    "4": "Rural", "5": "Rural", "6": "Rural", "7": "Rural", "8": "Rural"}
+}

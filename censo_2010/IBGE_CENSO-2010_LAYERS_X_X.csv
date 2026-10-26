@@ -1,0 +1,37 @@
+id;name;theme;description_pt;description_en
+"1";basico;basic;"Informações básicas do cadastro de áreas e das subdivisões geográficas, incluindo códigos, nomes, totais, médias e variâncias por setor censitário.";"Basic information on area records and geographic subdivisions, including codes, names, totals, means, and variances per census tract."
+"2";domicilio01;household;"Primeira planilha com características dos domicílios e informações dos moradores por sexo, idade e condições do domicílio.";"First worksheet with household characteristics and resident information by sex, age, and housing conditions."
+"3";domicilio02;household;"Segunda planilha com características dos domicílios e informações dos moradores por sexo, idade e condições do domicílio.";"Second worksheet with household characteristics and resident information by sex, age, and housing conditions."
+"4";domiciliorenda;income;Informações sobre rendimentos dos domicílios particulares permanentes.;Information on the income of permanent private households.
+"5";entorno01;environment;Primeira planilha com informações sobre as variáveis do entorno das quadras/faces dos setores censitários.;First worksheet with information on variables related to the surroundings of census tract blocks/faces.
+"6";entorno02;environment;Segunda planilha com informações sobre as variáveis do entorno das quadras/faces dos setores censitários.;Second worksheet with information on variables related to the surroundings of census tract blocks/faces.
+"7";entorno03;environment;Terceira planilha com informações sobre as variáveis do entorno das quadras/faces dos setores censitários.;Third worksheet with information on variables related to the surroundings of census tract blocks/faces.
+"8";entorno04;environment;Quarta planilha com informações sobre as variáveis do entorno das quadras/faces dos setores censitários.;Fourth worksheet with information on variables related to the surroundings of census tract blocks/faces.
+"9";entorno05;environment;Quinta planilha com informações sobre as variáveis do entorno das quadras/faces dos setores censitários.;Fifth worksheet with information on variables related to the surroundings of census tract blocks/faces.
+"10";fields;auxiliary;Tabela auxiliar descritiva dos campos.;Auxiliary descriptive table of the fields.
+"11";layers;auxiliary;Tabela auxiliar descritiva das camadas.;Auxiliary descriptive table of the layers.
+"12";municipios;geography;Polígonos de municípios vigentes durante a amostragem.;Municipality polygons valid during the sampling period.
+"13";pessoa01;literacy;Primeira planilha com informações da população residente por sexo e idade.;First worksheet with information on the resident population by sex and age.
+"14";pessoa02;literacy;Segunda planilha com informações da população residente por sexo e idade.;Second worksheet with information on the resident population by sex and age.
+"15";pessoa03;race;"Primeira das três planilhas com informações sobre a população por cor ou raça, sexo e idade.";"First of three worksheets with information on the population by race/ethnicity, sex, and age."
+"16";pessoa04;race;"Segunda das três planilhas com informações sobre a população por cor ou raça, sexo e idade.";"Second of three worksheets with information on the population by race/ethnicity, sex, and age."
+"17";pessoa05;race;"Terceira das três planilhas com informações sobre a população por cor ou raça, sexo e idade.";"Third of three worksheets with information on the population by race/ethnicity, sex, and age."
+"18";pessoa06;family;"Primeira das quatro planilhas adicionais com informações sobre a população por cor ou raça, sexo e idade.";"First of four additional worksheets with information on the population by race/ethnicity, sex, and age."
+"19";pessoa07;family;"Segunda das quatro planilhas adicionais com informações sobre a população por cor ou raça, sexo e idade.";"Second of four additional worksheets with information on the population by race/ethnicity, sex, and age."
+"20";pessoa08;family;"Terceira das quatro planilhas adicionais com informações sobre a população por cor ou raça, sexo e idade.";"Third of four additional worksheets with information on the population by race/ethnicity, sex, and age."
+"21";pessoa09;family;"Quarta das quatro planilhas adicionais com informações sobre a população por cor ou raça, sexo e idade.";"Fourth of four additional worksheets with information on the population by race/ethnicity, sex, and age."
+"22";pessoa10;civil_registry;Informações sobre registro civil de nascimento da população residente.;Information on civil birth registration of the resident population.
+"23";pessoa11;age;Primeira das três planilhas adicionais com informações da população residente por sexo e idade.;First of three additional worksheets with information on the resident population by sex and age.
+"24";pessoa12;age;Segunda das três planilhas adicionais com informações da população residente por sexo e idade.;Second of three additional worksheets with information on the resident population by sex and age.
+"25";pessoa13;age;Terceira das três planilhas adicionais com informações da população residente por sexo e idade.;Third of three additional worksheets with information on the resident population by sex and age.
+"26";pessoarenda;income;Informações sobre rendimentos das pessoas residentes.;Information on the income of resident individuals.
+"27";responsavel01;household_head;"Primeira planilha com informações dos responsáveis por domicílios por sexo, idade e alfabetização.";"First worksheet with information on household heads by sex, age, and literacy."
+"28";responsavel02;household_head;"Segunda planilha com informações dos responsáveis por domicílios por sexo, idade e alfabetização.";"Second worksheet with information on household heads by sex, age, and literacy."
+"29";responsavelrenda;income;Informações sobre rendimentos dos responsáveis pelos domicílios particulares permanentes.;Information on the income of household heads of permanent private households.
+"30";setores;geography;Malha poligonal de setores censitários.;Polygon grid of census tracts.
+"31";sinopse;summary;Resultados da sinopse por setor censitário.;Aggregated summary results per census tract.
+"32";uniao;geography;Polígono do Brasil (união das 27 unidades da federação de 2010, DTB 2010).;Polygon of Brazil (union of the 27 federative units of 2010, DTB 2010).
+"33";unidades;geography;Polígonos das unidades da federação (estados e DF) de 2010, com sigla, grande região e área (DTB 2010).;Polygons of the federative units (states and the Federal District) of 2010, with abbreviation, major region and area (DTB 2010).
+"34";variables;auxiliary;Tabela auxiliar descritiva das variáveis amostradas.;Auxiliary descriptive table of sampled variables.
+"35";distritos;geography;Malha poligonal de distritos;Polygon grid of districts
+"36";subdistritos;geography;Malha poligonal de subdistritos;Polygon grid of subdistricts

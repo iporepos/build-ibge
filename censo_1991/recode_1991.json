@@ -1,0 +1,1150 @@
+{
+  "_comment": [
+    "Recode table of the IBGE Census 1991 sample microdata (CD91AMOUP<UF>.DBF) for T1.",
+    "Built from the profile (censo_1991/profile_report) and the dictionary; review before use.",
+    "Per variable: name (V + section + item of the dictionary number), layer, class, map (source value -> T1 value) and notes.",
+    "Unmapped values are kept as they are. A blank cell becomes the 'blank' value (default -9999) unless the variable says otherwise.",
+    "Classes: quantity (real values), boolean (1 yes / 0 no), categorical (IBGE codes; labels in CATEGORIES), code / identifier (keys), text (dropped: names come from the DTB)."
+  ],
+  "flags": {
+    "-9999": "nao aplicavel (NSA) / sem dado",
+    "-2": "ignorado ou nao sabe"
+  },
+  "defaults": {
+    "blank": -9999
+  },
+  "derived": {
+    "municipio_code": "codigo DTB de 7 digitos cujo prefixo de 6 digitos = UFNUM + MUNICNUM (4 digitos)",
+    "household_code": "municipio_code + sequencial de 6 digitos por municipio, atribuido uma vez a partir dos blocos (PESSOAN = 1 inicia o domicilio) com as verificacoes como parada obrigatoria; depois a ordem nao importa",
+    "person_code": "household_code + PESSOAN (2 digitos)",
+    "situacao_type": "Urbana (situacao_code 1-3) / Rural (4-8)",
+    "municipioanterior_code": "MIANTEUF (11-53) + MIANTEMU (<> 0000) conferido com o DTB; senao NA",
+    "municipio1986_code": "MIMO86UF (11-53) + MIMO86MU conferido com o DTB; MIMO86UF = 70 usa o municipio_code atual; senao NA"
+  },
+  "variables": {
+    "UFNOM": {
+      "dictionary_number": "2.1",
+      "name": "V0201",
+      "layer": "drop",
+      "class": "text",
+      "note": "Nome sem acento; o nome vem do DTB (NOME_EM_MI)."
+    },
+    "UFNUM": {
+      "dictionary_number": "2.2",
+      "name": "V0202",
+      "layer": "geo",
+      "class": "code",
+      "target": "unidade_code",
+      "note": "Via DTB: municipios.unidade_code."
+    },
+    "MESONOM": {
+      "dictionary_number": "3.1",
+      "name": "V0301",
+      "layer": "drop",
+      "class": "text",
+      "note": "Nome vem do DTB."
+    },
+    "MESONUM": {
+      "dictionary_number": "3.2",
+      "name": "V0302",
+      "layer": "geo",
+      "class": "code",
+      "target": "regiaomeso_code",
+      "note": "UF + MESONUM (4 digitos), conferido com o DTB."
+    },
+    "MICRONOM": {
+      "dictionary_number": "4.1",
+      "name": "V0401",
+      "layer": "drop",
+      "class": "text",
+      "note": "Nome vem do DTB."
+    },
+    "MICRONUM": {
+      "dictionary_number": "4.2",
+      "name": "V0402",
+      "layer": "geo",
+      "class": "code",
+      "target": "regiaomicro_code",
+      "note": "UF + MICRONUM (5 digitos), conferido com o DTB."
+    },
+    "MUNICNOM": {
+      "dictionary_number": "5.1",
+      "name": "V0501",
+      "layer": "drop",
+      "class": "text",
+      "note": "Nome vem do DTB (NOME_EM_MI)."
+    },
+    "METROP": {
+      "dictionary_number": "5.2",
+      "name": "V0502",
+      "layer": "municipios",
+      "class": "code",
+      "map": {
+        "0": null
+      },
+      "target": "regiaometropolitana_code",
+      "note": "Constante por municipio (verificado). 0 = nao metropolitana -> NA; 1-11 = RM, nomes no catalogo CATEGORIES."
+    },
+    "MUNICNUM": {
+      "dictionary_number": "5.3",
+      "name": "V0503",
+      "layer": "geo",
+      "class": "code",
+      "target": "municipio_code",
+      "note": "UF + MUNICNUM = 6 primeiros digitos do codigo DTB de 7 digitos (4.491/4.491 conferem)."
+    },
+    "SITSET": {
+      "dictionary_number": "8.5",
+      "name": "V0805",
+      "layer": "microdados-domicilios",
+      "class": "code",
+      "target": "situacao_code",
+      "note": "Situacao do setor 1-8 (mesmos codigos de 2000); situacao_type Urbana 1-3 / Rural 4-8. Constante no domicilio (verificado)."
+    },
+    "AGUA": {
+      "dictionary_number": "9.1",
+      "name": "V0901",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "ALUGUEFX": {
+      "dictionary_number": "9.2",
+      "name": "V0902",
+      "layer": "microdados-domicilios",
+      "class": "categorical",
+      "note": "Faixa de aluguel em salarios minimos."
+    },
+    "ALUGUEL": {
+      "dictionary_number": "9.3",
+      "name": "V0903",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "map": {
+        "999998": -9999,
+        "999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. 0 = nao paga (zero real)."
+    },
+    "ASPIRPO": {
+      "dictionary_number": "9.4",
+      "name": "V0904",
+      "layer": "microdados-domicilios",
+      "class": "boolean",
+      "note": "Ja 0/1 na fonte."
+    },
+    "AUTPART": {
+      "dictionary_number": "9.5",
+      "name": "V0905",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "top_coded": "3",
+      "note": "Numero de automoveis; 3 = tres ou mais."
+    },
+    "AUTTRAB": {
+      "dictionary_number": "9.6",
+      "name": "V0906",
+      "layer": "microdados-domicilios",
+      "class": "categorical",
+      "note": "0 nao tem, 1 proprio, 2 cedido."
+    },
+    "BANHEIRO": {
+      "dictionary_number": "9.7",
+      "name": "V0907",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "top_coded": "5",
+      "note": "Numero de banheiros; 5 = cinco ou mais."
+    },
+    "CD107": {
+      "dictionary_number": "9.8",
+      "name": "V0908",
+      "layer": "microdados-domicilios",
+      "class": "identifier",
+      "note": "Numero do domicilio na folha de coleta CD107 do setor (operacional)."
+    },
+    "COBERTUR": {
+      "dictionary_number": "9.9",
+      "name": "V0909",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "COMBCOZI": {
+      "dictionary_number": "9.10",
+      "name": "V0910",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "COMODOR": {
+      "dictionary_number": "9.11",
+      "name": "V0911",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "map": {
+        "0": 9
+      },
+      "top_coded": "9",
+      "note": "Na fonte 0 = nove ou mais; recodificado para 9."
+    },
+    "COMODOS": {
+      "dictionary_number": "9.12",
+      "name": "V0912",
+      "layer": "microdados-domicilios",
+      "class": "quantity"
+    },
+    "CONDOCUP": {
+      "dictionary_number": "9.13",
+      "name": "V0913",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "DEMOCOFX": {
+      "dictionary_number": "9.14",
+      "name": "V0914",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "DEMOCOMO": {
+      "dictionary_number": "9.15",
+      "name": "V0915",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "map": {
+        "99.98": -9999
+      },
+      "note": "Densidade morador/comodo; 99.98 = nao aplicavel (domicilios coletivos)."
+    },
+    "DEMODOFX": {
+      "dictionary_number": "9.16",
+      "name": "V0916",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "DEMODORM": {
+      "dictionary_number": "9.17",
+      "name": "V0917",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "map": {
+        "99.98": -9999
+      },
+      "note": "Densidade morador/dormitorio; 99.98 = nao aplicavel (132.407 pessoas, domicilios coletivos)."
+    },
+    "ESPECIE": {
+      "dictionary_number": "9.18",
+      "name": "V0918",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "FILTRO": {
+      "dictionary_number": "9.19",
+      "name": "V0919",
+      "layer": "microdados-domicilios",
+      "class": "boolean"
+    },
+    "FREEZER": {
+      "dictionary_number": "9.20",
+      "name": "V0920",
+      "layer": "microdados-domicilios",
+      "class": "boolean"
+    },
+    "GELADEIR": {
+      "dictionary_number": "9.21",
+      "name": "V0921",
+      "layer": "microdados-domicilios",
+      "class": "categorical",
+      "note": "0 nao tem, 1 uma porta, 2 mais de uma porta."
+    },
+    "ILUMINA": {
+      "dictionary_number": "9.22",
+      "name": "V0922",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "LIXO": {
+      "dictionary_number": "9.23",
+      "name": "V0923",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "LOCALIZA": {
+      "dictionary_number": "9.24",
+      "name": "V0924",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "MAQLAVAR": {
+      "dictionary_number": "9.25",
+      "name": "V0925",
+      "layer": "microdados-domicilios",
+      "class": "boolean"
+    },
+    "PAREDES": {
+      "dictionary_number": "9.26",
+      "name": "V0926",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "PESO": {
+      "dictionary_number": "9.27",
+      "name": "V0927",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "note": "Peso de expansao do domicilio (igual para todos os moradores); soma = 146,8 milhoes."
+    },
+    "RADIO": {
+      "dictionary_number": "9.28",
+      "name": "V0928",
+      "layer": "microdados-domicilios",
+      "class": "boolean"
+    },
+    "RDOMICIV": {
+      "dictionary_number": "9.29",
+      "name": "V0929",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "map": {
+        "999999998": -9999,
+        "999999999": -2,
+        "(54000": 54000
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. Uma celula '(54000' (lixo na fonte, MA) corrigida para 54000; registrada na consistencia."
+    },
+    "RDONOMIF": {
+      "dictionary_number": "9.30",
+      "name": "V0930",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "RDOREALF": {
+      "dictionary_number": "9.31",
+      "name": "V0931",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "SANESCOA": {
+      "dictionary_number": "9.32",
+      "name": "V0932",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "SANUSO": {
+      "dictionary_number": "9.33",
+      "name": "V0933",
+      "layer": "microdados-domicilios",
+      "class": "categorical"
+    },
+    "TELEFONE": {
+      "dictionary_number": "9.34",
+      "name": "V0934",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "top_coded": "2",
+      "note": "Linhas telefonicas; 2 = mais de uma."
+    },
+    "TVCORES": {
+      "dictionary_number": "9.35",
+      "name": "V0935",
+      "layer": "microdados-domicilios",
+      "class": "quantity",
+      "top_coded": "3",
+      "note": "Aparelhos de TV em cores; 3 = mais de dois."
+    },
+    "TVPRETO": {
+      "dictionary_number": "9.36",
+      "name": "V0936",
+      "layer": "microdados-domicilios",
+      "class": "boolean"
+    },
+    "ESPFAM": {
+      "dictionary_number": "10.1",
+      "name": "V1001",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "NUMFAM": {
+      "dictionary_number": "10.2",
+      "name": "V1002",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "Familia do domicilio a que a pessoa pertence."
+    },
+    "RFACHCAF": {
+      "dictionary_number": "10.3",
+      "name": "V1003",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RFACHCAV": {
+      "dictionary_number": "10.4",
+      "name": "V1004",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99999998": -9999,
+        "99999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. Renda do casal chefe."
+    },
+    "RFAMILIV": {
+      "dictionary_number": "10.5",
+      "name": "V1005",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "999999998": -9999,
+        "999999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. "
+    },
+    "RFANOMIF": {
+      "dictionary_number": "10.6",
+      "name": "V1006",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RFAPCAPF": {
+      "dictionary_number": "10.7",
+      "name": "V1007",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RFAPCAPV": {
+      "dictionary_number": "10.8",
+      "name": "V1008",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "9999999.99": -2
+      },
+      "follow_na": "RFAMILIV",
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. 9999999.99 = ignorado; vira -9999 onde RFAMILIV e nao aplicavel."
+    },
+    "RFAREALF": {
+      "dictionary_number": "10.9",
+      "name": "V1009",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "APOPENS": {
+      "dictionary_number": "11.1",
+      "name": "V1101",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "ATIVIDAD": {
+      "dictionary_number": "11.2",
+      "name": "V1102",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "labels": "CODIGO ATIVIDADE.txt (cp1252)"
+    },
+    "ATIVISET": {
+      "dictionary_number": "11.3",
+      "name": "V1103",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "CARTASS": {
+      "dictionary_number": "11.4",
+      "name": "V1104",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "CONPREV": {
+      "dictionary_number": "11.5",
+      "name": "V1105",
+      "layer": "microdados-pessoas",
+      "class": "boolean",
+      "map": {
+        "1": 1,
+        "3": 0,
+        "2": -2
+      },
+      "note": "1 sim -> 1, 3 nao -> 0, 2 nao sabe -> -2."
+    },
+    "DEFICIE": {
+      "dictionary_number": "11.6",
+      "name": "V1106",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "9 = ignorado permanece categoria."
+    },
+    "EDANOEST": {
+      "dictionary_number": "11.7",
+      "name": "V1107",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "20": -2,
+        "30": -2
+      },
+      "top_coded": "17",
+      "note": "Anos de estudo; 17 = 17 ou mais; 20 nao determinado e 30 alfabetizacao de adultos -> -2 (o curso de alfabetizacao fica em EDULGRAU = 1)."
+    },
+    "EDCURSNS": {
+      "dictionary_number": "11.8",
+      "name": "V1108",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "EDCURSO": {
+      "dictionary_number": "11.9",
+      "name": "V1109",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "EDGRAU": {
+      "dictionary_number": "11.10",
+      "name": "V1110",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "Sem tipo no dicionario; inteiro 0-5."
+    },
+    "EDSABELE": {
+      "dictionary_number": "11.11",
+      "name": "V1111",
+      "layer": "microdados-pessoas",
+      "class": "boolean",
+      "map": {
+        "1": 1,
+        "2": 0
+      },
+      "note": "1 le e escreve -> 1, 2 nao sabe -> 0."
+    },
+    "EDSERIE": {
+      "dictionary_number": "11.12",
+      "name": "V1112",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "EDULGRAU": {
+      "dictionary_number": "11.13",
+      "name": "V1113",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "EDULSERI": {
+      "dictionary_number": "11.14",
+      "name": "V1114",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "EMPESTB": {
+      "dictionary_number": "11.15",
+      "name": "V1115",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "FLDOMICH": {
+      "dictionary_number": "11.16",
+      "name": "V1116",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLDOMICM": {
+      "dictionary_number": "11.17",
+      "name": "V1117",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLMORTOH": {
+      "dictionary_number": "11.18",
+      "name": "V1118",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLMORTOM": {
+      "dictionary_number": "11.19",
+      "name": "V1119",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAMORH": {
+      "dictionary_number": "11.20",
+      "name": "V1120",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAMORM": {
+      "dictionary_number": "11.21",
+      "name": "V1121",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAMORT": {
+      "dictionary_number": "11.22",
+      "name": "V1122",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAODOH": {
+      "dictionary_number": "11.23",
+      "name": "V1123",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAODOM": {
+      "dictionary_number": "11.24",
+      "name": "V1124",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAVIVH": {
+      "dictionary_number": "11.25",
+      "name": "V1125",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAVIVM": {
+      "dictionary_number": "11.26",
+      "name": "V1126",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLNAVIVT": {
+      "dictionary_number": "11.27",
+      "name": "V1127",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLTIDOSH": {
+      "dictionary_number": "11.28",
+      "name": "V1128",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLTIDOSM": {
+      "dictionary_number": "11.29",
+      "name": "V1129",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLTIDOST": {
+      "dictionary_number": "11.30",
+      "name": "V1130",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLVIVOSH": {
+      "dictionary_number": "11.31",
+      "name": "V1131",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLVIVOSM": {
+      "dictionary_number": "11.32",
+      "name": "V1132",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "FLVIVOST": {
+      "dictionary_number": "11.33",
+      "name": "V1133",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "70": 0,
+        "80": -2,
+        "99": -2
+      },
+      "note": "Numero de filhos; 70 nao tem/nao teve -> 0, 80 nao sabe e 99 ignorado -> -2."
+    },
+    "HOROUTR": {
+      "dictionary_number": "11.34",
+      "name": "V1134",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "note": "0 = nao tem outra ocupacao (zero real)."
+    },
+    "HORTRAB": {
+      "dictionary_number": "11.35",
+      "name": "V1135",
+      "layer": "microdados-pessoas",
+      "class": "quantity"
+    },
+    "IDADEANO": {
+      "dictionary_number": "11.36",
+      "name": "V1136",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "blank": -2,
+      "note": "0 = menos de 1 ano (zero real; o dicionario indica NSA=0 por engano). Branco (41 pessoas) -> -2."
+    },
+    "IDADEMES": {
+      "dictionary_number": "11.37",
+      "name": "V1137",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "note": "Meses, so para menores de 1 ano."
+    },
+    "IDADETIP": {
+      "dictionary_number": "11.38",
+      "name": "V1138",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "LOCTRAB": {
+      "dictionary_number": "11.39",
+      "name": "V1139",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIANMOMU": {
+      "dictionary_number": "11.40",
+      "name": "V1140",
+      "layer": "microdados-pessoas",
+      "class": "quantity"
+    },
+    "MIANMOUF": {
+      "dictionary_number": "11.41",
+      "name": "V1141",
+      "layer": "microdados-pessoas",
+      "class": "quantity"
+    },
+    "MIANORES": {
+      "dictionary_number": "11.42",
+      "name": "V1142",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "0": -9999
+      },
+      "transform": "year_1900",
+      "note": "Ano (dois digitos) em que o estrangeiro fixou residencia; convertido para 19AA. 0 = brasileiro -> -9999."
+    },
+    "MIANTEMU": {
+      "dictionary_number": "11.43",
+      "name": "V1143",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "map": {
+        "9999": -9999
+      },
+      "derive": "municipioanterior_code",
+      "note": "Codigo de 4 digitos; com MIANTEUF forma o municipio_code de 7 digitos (DTB) em municipioanterior_code. 0000 = municipio nao especificado."
+    },
+    "MIANTEUF": {
+      "dictionary_number": "11.44",
+      "name": "V1144",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIANTEZN": {
+      "dictionary_number": "11.45",
+      "name": "V1145",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIMO86MU": {
+      "dictionary_number": "11.46",
+      "name": "V1146",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "map": {
+        "9999": -9999
+      },
+      "derive": "municipio1986_code",
+      "note": "Como MIANTEMU; MIMO86UF = 70 (neste municipio) usa o municipio_code atual."
+    },
+    "MIMO86UF": {
+      "dictionary_number": "11.47",
+      "name": "V1147",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIMO86ZN": {
+      "dictionary_number": "11.48",
+      "name": "V1148",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIMUMOZN": {
+      "dictionary_number": "11.49",
+      "name": "V1149",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MINACION": {
+      "dictionary_number": "11.50",
+      "name": "V1150",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MINASCMU": {
+      "dictionary_number": "11.51",
+      "name": "V1151",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "MIUFPAIS": {
+      "dictionary_number": "11.52",
+      "name": "V1152",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "extra_labels": {
+        "48": [
+          "Panamá (presumido: lacuna alfabética entre Nicarágua e Paraguai)",
+          "Panama (presumed: alphabetical gap between Nicaragua and Paraguay)"
+        ]
+      },
+      "note": "Codigo 48 sem rotulo no dicionario (87 pessoas)."
+    },
+    "MIULTMUD": {
+      "dictionary_number": "11.53",
+      "name": "V1153",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "98": -9999
+      },
+      "note": "Anos desde a ultima mudanca; 98 nunca mudou -> -9999 (a informacao fica em MINASCMU)."
+    },
+    "NORDMAE": {
+      "dictionary_number": "11.54",
+      "name": "V1154",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "1-39 = numero de ordem (PESSOAN) da mae no domicilio; 70 viva nao reside, 80 falecida, 90 nao sabe, 99 ignorado."
+    },
+    "OCUPACAO": {
+      "dictionary_number": "11.55",
+      "name": "V1155",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "labels": "OCUPACAO PRINCIPAL.TXT (cp1252)"
+    },
+    "OCUPAGRP": {
+      "dictionary_number": "11.56",
+      "name": "V1156",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "PARENDOM": {
+      "dictionary_number": "11.57",
+      "name": "V1157",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "20 = pessoa em domicilio coletivo."
+    },
+    "PARENFAM": {
+      "dictionary_number": "11.58",
+      "name": "V1158",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "PESSOAN": {
+      "dictionary_number": "11.59",
+      "name": "V1159",
+      "layer": "microdados-pessoas",
+      "class": "identifier",
+      "note": "Numero de ordem no domicilio; compoe person_code."
+    },
+    "POSOCUP": {
+      "dictionary_number": "11.60",
+      "name": "V1160",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RACACOR": {
+      "dictionary_number": "11.61",
+      "name": "V1161",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "9 = ignorada permanece categoria."
+    },
+    "RAPOSENF": {
+      "dictionary_number": "11.62",
+      "name": "V1162",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RAPOSENV": {
+      "dictionary_number": "11.63",
+      "name": "V1163",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "9999998": -9999,
+        "9999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. "
+    },
+    "RELIGIAO": {
+      "dictionary_number": "11.64",
+      "name": "V1164",
+      "layer": "microdados-pessoas",
+      "class": "categorical",
+      "note": "0 = sem religiao (categoria, nao NSA)."
+    },
+    "ROUTOCUF": {
+      "dictionary_number": "11.65",
+      "name": "V1165",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "ROUTOCUV": {
+      "dictionary_number": "11.66",
+      "name": "V1166",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "9999998": -9999,
+        "9999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. "
+    },
+    "ROUTRENF": {
+      "dictionary_number": "11.67",
+      "name": "V1167",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "ROUTRENV": {
+      "dictionary_number": "11.68",
+      "name": "V1168",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "9999998": -9999,
+        "9999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. "
+    },
+    "RPRINCIF": {
+      "dictionary_number": "11.69",
+      "name": "V1169",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RPRINCIV": {
+      "dictionary_number": "11.70",
+      "name": "V1170",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "9999998": -9999,
+        "9999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. "
+    },
+    "RTONOMIF": {
+      "dictionary_number": "11.71",
+      "name": "V1171",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RTOREALF": {
+      "dictionary_number": "11.72",
+      "name": "V1172",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "RTOTALPV": {
+      "dictionary_number": "11.73",
+      "name": "V1173",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99999998": -9999,
+        "99999999": -2
+      },
+      "note": "Valor nominal em cruzeiros (Cr$) de setembro de 1991. 0 = sem rendimento (zero real; o dicionario indica IGN=0 por engano)."
+    },
+    "SCATUAL": {
+      "dictionary_number": "11.74",
+      "name": "V1174",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "SCDURASC": {
+      "dictionary_number": "11.75",
+      "name": "V1175",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99": -2
+      }
+    },
+    "SCID1UNI": {
+      "dictionary_number": "11.76",
+      "name": "V1176",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99": -2
+      }
+    },
+    "SCIDISCA": {
+      "dictionary_number": "11.77",
+      "name": "V1177",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99": -2
+      }
+    },
+    "SCNAOUNI": {
+      "dictionary_number": "11.78",
+      "name": "V1178",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "SCNATUNI": {
+      "dictionary_number": "11.79",
+      "name": "V1179",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "SCVIVCON": {
+      "dictionary_number": "11.80",
+      "name": "V1180",
+      "layer": "microdados-pessoas",
+      "class": "boolean",
+      "map": {
+        "1": 1,
+        "2": 0
+      }
+    },
+    "SEXO": {
+      "dictionary_number": "11.81",
+      "name": "V1181",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "SITDESO": {
+      "dictionary_number": "11.82",
+      "name": "V1182",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "TRUL12M": {
+      "dictionary_number": "11.83",
+      "name": "V1183",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "UVIVIDAD": {
+      "dictionary_number": "11.84",
+      "name": "V1184",
+      "layer": "microdados-pessoas",
+      "class": "quantity",
+      "map": {
+        "99": -2
+      }
+    },
+    "UVIVIDTP": {
+      "dictionary_number": "11.85",
+      "name": "V1185",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    },
+    "UVIVSEXO": {
+      "dictionary_number": "11.86",
+      "name": "V1186",
+      "layer": "microdados-pessoas",
+      "class": "categorical"
+    }
+  }
+}

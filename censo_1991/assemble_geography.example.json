@@ -1,0 +1,80 @@
+{
+  "mesh_zip": "/path/to/IBGE/CENSO-1991/V100/SRC/05_malha_municipal_1991.zip",
+  "mesh_member": "05-malha municipal 1991.shp",
+  "mesh_code_field": "BR91POLY_I",
+  "mesh_name_field": "NOMEMUNICP",
+  "mesh_encoding": "cp1252",
+  "seats_zip": "/path/to/IBGE/CENSO-1991/V100/SRC/03_sede_municipal_1991.zip",
+  "seats_member": "03-sede municipal 1991.shp",
+  "seats_code_fixes": {
+    "2306405": "2300754",
+    "2300754": "2306405"
+  },
+  "reference_seats": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_SEDES_BRASIL_2000.gpkg",
+  "dtb_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Divisao Territorial do Brasil/DTB Municipios 1991.xls",
+  "microdata_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Dados",
+  "microdata_glob": "*/CD91AMOUP*.DBF",
+  "reference_names_csv": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS/IBGE_CENSO-2000_BASICO_BRASIL_2000.csv",
+  "recode": "recode_1991.json",
+  "labels": "labels_1991.json",
+  "dictionary_xls": "/path/to/IBGE/CENSO-1991/V100/SRC/Microdados_Censo_Demografico_1991_Amostra/Documentacao/Dicionario 1991.xls",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
+  "report_folder": "geography_report",
+  "name_pattern": "IBGE_CENSO-1991_{NAME}_BRASIL_1991.gpkg",
+  "layer_pattern": "ibge_censo_1991_{name}",
+  "consistency_name": "IBGE_CENSO-1991_CONSISTENCY_X_X.csv",
+  "output_crs": "EPSG:4674",
+  "area_crs": "ESRI:102033",
+  "code_fixes": {
+    "2306045": "2306405"
+  },
+  "special_areas": [
+    {
+      "mesh_code": "9999920",
+      "municipio_code": "4300001",
+      "name": "Lagoa Mirim",
+      "area_type": "lagoa",
+      "unidade_code": "43"
+    },
+    {
+      "mesh_code": "9999910",
+      "municipio_code": "4300002",
+      "name": "Lagoa dos Patos",
+      "area_type": "lagoa",
+      "unidade_code": "43"
+    },
+    {
+      "mesh_code": "0",
+      "mesh_name": "PI/CE",
+      "municipio_code": "NA",
+      "name": "Área em litígio PI/CE",
+      "area_type": "litigio",
+      "unidade_code": "NA"
+    },
+    {
+      "mesh_code": "0",
+      "mesh_name": null,
+      "municipio_code": "NA",
+      "name": "Ilhas não atribuídas a município",
+      "area_type": "ilha_nao_atribuida",
+      "unidade_code": "NA"
+    }
+  ],
+  "name_overrides": {
+    "regiaomeso": {
+      "2902": "Vale Sanfranciscano da Bahia",
+      "4102": "Centro-Ocidental Paranaense",
+      "4304": "Centro-Oriental Rio-Grandense",
+      "5002": "Centro-Norte de Mato Grosso do Sul"
+    },
+    "regiaomicro": {
+      "21006": "Itapecuru-Mirim",
+      "31042": "Piuí",
+      "35031": "Mogi-Mirim",
+      "35062": "Mogi das Cruzes",
+      "41004": "Goio-Erê",
+      "41018": "Wenceslau Braz",
+      "43032": "Serras do Sudeste"
+    }
+  }
+}

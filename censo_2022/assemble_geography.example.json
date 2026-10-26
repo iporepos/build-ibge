@@ -1,0 +1,47 @@
+{
+  "assemble_config": "assemble_tables.example.json",
+  "input_folder": "/path/to/IBGE/CENSO-2022/V200/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "report_folder": "geography_report",
+  "name_pattern": "IBGE_CENSO-2022_{NAME}_BRASIL_2022.gpkg",
+  "layer_pattern": "ibge_censo_2022_{name}",
+  "key_name": "setor_code",
+  "text_no_data": "NA",
+  "numeric_no_data": -9999,
+  "basico_csv": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
+  "tables": {
+    "setores": {
+      "source": "BR_setores_CD2022.gpkg",
+      "layer": "BR_setores_CD2022",
+      "key": "CD_SETOR"
+    },
+    "subdistritos": {
+      "source": "BR_subdistritos_CD2022.gpkg",
+      "layer": "BR_subdistritos_CD2022"
+    },
+    "distritos": {
+      "source": "BR_distritos_CD2022.gpkg",
+      "layer": "BR_distritos_CD2022"
+    },
+    "municipios": {
+      "source": "BR_municipios_CD2022.gpkg",
+      "layer": "br_municipios_2022",
+      "column_map": {
+        "sigla_uf": "unidade_alias"
+      }
+    },
+    "sedes": {
+      "source": "BR_municipios_CD2022.gpkg",
+      "layer": "sedes_municipais",
+      "column_map": {
+        "geocodigo": "municipio_code",
+        "nome": "municipio_name",
+        "geometriaaproximada": "location_approximate"
+      },
+      "first": [
+        "geocodigo",
+        "nome"
+      ]
+    }
+  }
+}

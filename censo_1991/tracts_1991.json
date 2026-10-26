@@ -1,0 +1,3444 @@
+{
+ "_comment": "Tract tables of the IBGE Census 1991 universe (DVD 'Agregado de setores', SRC/liv93703_dvd.zip). Read by assemble_tracts.py (source sets, columns, checks) and build_variables.py (VARIABLES catalog). sets: DVD data folders (Dados/<folder>/<prefix><UF>.xls). variables: name = V column of the T1 table, set + source_name = column (mnemonic, header row) of the DVD set, type integer or real (decimals). Generated once by a scratch script from the DVD layouts; edit this file from now on. checks: sum = parts add up to the total in every tract (run stops otherwise); equal = same values; le = a <= b (findings go to CONSISTENCY).",
+ "sets": {
+  "pessoas": {
+   "folder": "Pessoas",
+   "prefix": "PESSOA"
+  },
+  "domicilios": {
+   "folder": "Domicílios",
+   "prefix": "DOMIC"
+  },
+  "condicao": {
+   "folder": "Condição de Ocupação",
+   "prefix": "CONDIC"
+  },
+  "chefes": {
+   "folder": "Chefes",
+   "prefix": "CHEFE"
+  }
+ },
+ "tables": [
+  {
+   "table": "basico",
+   "variables": [
+    {
+     "name": "V01",
+     "set": "chefes",
+     "source_name": "RENDNOMCH",
+     "type": "real",
+     "description_pt": "Rendimento nominal mensal médio dos chefes de domicílios particulares permanentes, em cruzeiros (média por chefe: as faixas de rendimento do mesmo setor a reproduzem)",
+     "description_en": "Mean monthly nominal income of the heads of permanent private households, in cruzeiros (mean per head: the income bands of the same tract reproduce it)"
+    },
+    {
+     "name": "V02",
+     "set": "chefes",
+     "source_name": "RENDDOMCOL",
+     "type": "real",
+     "description_pt": "Rendimento nominal das unidades habitacionais em domicílios coletivos, em cruzeiros (layout: 'renda nominal unid. hab. domic. coletivo'; conceito não detalhado pelo IBGE)",
+     "description_en": "Nominal income of the housing units in collective dwellings, in cruzeiros (layout: 'renda nominal unid. hab. domic. coletivo'; concept not detailed by IBGE)"
+    },
+    {
+     "name": "V03",
+     "set": "domicilios",
+     "source_name": "NUMCOMDOMI",
+     "type": "real",
+     "description_pt": "Número médio de cômodos por domicílio particular permanente",
+     "description_en": "Mean number of rooms per permanent private household"
+    },
+    {
+     "name": "V04",
+     "set": "domicilios",
+     "source_name": "NUMDORDOMI",
+     "type": "real",
+     "description_pt": "Número médio de cômodos servindo de dormitório por domicílio particular permanente",
+     "description_en": "Mean number of rooms used as bedrooms per permanent private household"
+    },
+    {
+     "name": "V05",
+     "set": "domicilios",
+     "source_name": "NUMBANDOMI",
+     "type": "real",
+     "description_pt": "Número médio de banheiros por domicílio particular permanente",
+     "description_en": "Mean number of bathrooms per permanent private household"
+    },
+    {
+     "name": "V06",
+     "set": "pessoas",
+     "source_name": "POPTOTAL",
+     "type": "integer",
+     "description_pt": "Pessoas residentes (repete pessoa01 V0114)",
+     "description_en": "Residents (repeats pessoa01 V0114)"
+    },
+    {
+     "name": "V07",
+     "set": "domicilios",
+     "source_name": "TOTDOMPART",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes (repete domicilio V0002)",
+     "description_en": "Permanent private households (repeats domicilio V0002)"
+    },
+    {
+     "name": "V08",
+     "set": "domicilios",
+     "source_name": "TOTALDOMIC",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades habitacionais em domicílios coletivos, repete domicilio V0001)",
+     "description_en": "Households (private households and housing units in collective dwellings, repeats domicilio V0001)"
+    }
+   ]
+  },
+  {
+   "table": "domicilio",
+   "variables": [
+    {
+     "name": "V0001",
+     "set": "domicilios",
+     "source_name": "TOTALDOMIC",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades habitacionais em domicílios coletivos)",
+     "description_en": "Households (private households and housing units in collective dwellings)"
+    },
+    {
+     "name": "V0002",
+     "set": "domicilios",
+     "source_name": "TOTDOMPART",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes",
+     "description_en": "Permanent private households"
+    },
+    {
+     "name": "V0003",
+     "set": "domicilios",
+     "source_name": "TOTALCASAS",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo casa",
+     "description_en": "Permanent private households of the house type"
+    },
+    {
+     "name": "V0004",
+     "set": "domicilios",
+     "source_name": "CASACONDOM",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo casa isolada ou de condomínio",
+     "description_en": "Permanent private households of the type house, isolated or in a condominium"
+    },
+    {
+     "name": "V0005",
+     "set": "domicilios",
+     "source_name": "CASARESID",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo casa em conjunto residencial popular",
+     "description_en": "Permanent private households of the type house in a public housing estate"
+    },
+    {
+     "name": "V0006",
+     "set": "domicilios",
+     "source_name": "CASAAGLOME",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo casa em aglomerado subnormal",
+     "description_en": "Permanent private households of the type house in a subnormal agglomeration"
+    },
+    {
+     "name": "V0007",
+     "set": "domicilios",
+     "source_name": "TOTALAPART",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo apartamento",
+     "description_en": "Permanent private households of the apartment type"
+    },
+    {
+     "name": "V0008",
+     "set": "domicilios",
+     "source_name": "APARTCONDO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo apartamento isolado ou de condomínio",
+     "description_en": "Permanent private households of the type apartment, isolated or in a condominium"
+    },
+    {
+     "name": "V0009",
+     "set": "domicilios",
+     "source_name": "APARTRESID",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo apartamento em conjunto residencial popular",
+     "description_en": "Permanent private households of the type apartment in a public housing estate"
+    },
+    {
+     "name": "V0010",
+     "set": "domicilios",
+     "source_name": "APARTAGLOM",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo apartamento em aglomerado subnormal",
+     "description_en": "Permanent private households of the type apartment in a subnormal agglomeration"
+    },
+    {
+     "name": "V0011",
+     "set": "domicilios",
+     "source_name": "COMODOS",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes do tipo cômodo",
+     "description_en": "Permanent private households of the room (cômodo) type"
+    },
+    {
+     "name": "V0012",
+     "set": "domicilios",
+     "source_name": "AGUACANALI",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com abastecimento de água com canalização interna",
+     "description_en": "Permanent private households with piped water inside"
+    },
+    {
+     "name": "V0013",
+     "set": "domicilios",
+     "source_name": "AGUAREDEGE",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com canalização interna de água da rede geral",
+     "description_en": "Permanent private households with piped water inside from the general network"
+    },
+    {
+     "name": "V0014",
+     "set": "domicilios",
+     "source_name": "AGUAPOCO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com canalização interna de água de poço ou nascente",
+     "description_en": "Permanent private households with piped water inside from a well or spring"
+    },
+    {
+     "name": "V0015",
+     "set": "domicilios",
+     "source_name": "AGUAOUTRAS",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com canalização interna de água de outra forma",
+     "description_en": "Permanent private households with piped water inside from another source"
+    },
+    {
+     "name": "V0016",
+     "set": "domicilios",
+     "source_name": "AGUASCANIN",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com abastecimento de água sem canalização interna",
+     "description_en": "Permanent private households without piped water inside"
+    },
+    {
+     "name": "V0017",
+     "set": "domicilios",
+     "source_name": "AGUASREDEG",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes sem canalização interna, água da rede geral",
+     "description_en": "Permanent private households without piped water inside, water from the general network"
+    },
+    {
+     "name": "V0018",
+     "set": "domicilios",
+     "source_name": "AGUASNASCE",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes sem canalização interna, água de poço ou nascente",
+     "description_en": "Permanent private households without piped water inside, water from a well or spring"
+    },
+    {
+     "name": "V0019",
+     "set": "domicilios",
+     "source_name": "AGUAOUTFOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes sem canalização interna, água de outra forma",
+     "description_en": "Permanent private households without piped water inside, water from another source"
+    },
+    {
+     "name": "V0020",
+     "set": "domicilios",
+     "source_name": "INSTSANDOM",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária de uso só do domicílio",
+     "description_en": "Permanent private households with a sanitary facility for the household only"
+    },
+    {
+     "name": "V0021",
+     "set": "domicilios",
+     "source_name": "INSTSANGER",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: rede geral",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: general sewage network"
+    },
+    {
+     "name": "V0022",
+     "set": "domicilios",
+     "source_name": "INSTSANFOS",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: fossa séptica",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: septic tank"
+    },
+    {
+     "name": "V0023",
+     "set": "domicilios",
+     "source_name": "INSTSANFLU",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: fossa séptica ligada à rede pluvial",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: septic tank connected to the storm drain"
+    },
+    {
+     "name": "V0024",
+     "set": "domicilios",
+     "source_name": "INSTSAESCO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: fossa séptica sem escoadouro",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: septic tank without outlet"
+    },
+    {
+     "name": "V0025",
+     "set": "domicilios",
+     "source_name": "INFOSSARUD",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: fossa rudimentar",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: rudimentary pit"
+    },
+    {
+     "name": "V0026",
+     "set": "domicilios",
+     "source_name": "INDOMVALA",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: vala negra",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: open ditch"
+    },
+    {
+     "name": "V0027",
+     "set": "domicilios",
+     "source_name": "INDOMOUTRO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: outro escoadouro",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: other outlet"
+    },
+    {
+     "name": "V0028",
+     "set": "domicilios",
+     "source_name": "INDOMNSABE",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária só do domicílio, escoadouro: escoadouro não sabido",
+     "description_en": "Permanent private households with a sanitary facility for the household only, outlet: outlet unknown"
+    },
+    {
+     "name": "V0029",
+     "set": "domicilios",
+     "source_name": "INSMAISUM",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio",
+     "description_en": "Permanent private households with a sanitary facility shared with other households"
+    },
+    {
+     "name": "V0030",
+     "set": "domicilios",
+     "source_name": "INSCOMGER",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: rede geral",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: general sewage network"
+    },
+    {
+     "name": "V0031",
+     "set": "domicilios",
+     "source_name": "INSCOMFOSS",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: fossa séptica",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: septic tank"
+    },
+    {
+     "name": "V0032",
+     "set": "domicilios",
+     "source_name": "INSCOMFLUV",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: fossa séptica ligada à rede pluvial",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: septic tank connected to the storm drain"
+    },
+    {
+     "name": "V0033",
+     "set": "domicilios",
+     "source_name": "INSCOMESCO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: fossa séptica sem escoadouro",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: septic tank without outlet"
+    },
+    {
+     "name": "V0034",
+     "set": "domicilios",
+     "source_name": "INSCOMRUDI",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: fossa rudimentar",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: rudimentary pit"
+    },
+    {
+     "name": "V0035",
+     "set": "domicilios",
+     "source_name": "INSCOMVALA",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: vala negra",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: open ditch"
+    },
+    {
+     "name": "V0036",
+     "set": "domicilios",
+     "source_name": "INSCOMOUTR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: outro escoadouro",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: other outlet"
+    },
+    {
+     "name": "V0037",
+     "set": "domicilios",
+     "source_name": "INSCOMNSAB",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com instalação sanitária comum a mais de um domicílio, escoadouro: escoadouro não sabido",
+     "description_en": "Permanent private households with a shared sanitary facility, outlet: outlet unknown"
+    },
+    {
+     "name": "V0038",
+     "set": "domicilios",
+     "source_name": "INSCOMNTEM",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes sem instalação sanitária",
+     "description_en": "Permanent private households without a sanitary facility"
+    },
+    {
+     "name": "V0039",
+     "set": "domicilios",
+     "source_name": "CONDPROPRI",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes próprios",
+     "description_en": "Permanent private households owned"
+    },
+    {
+     "name": "V0040",
+     "set": "domicilios",
+     "source_name": "CONDTERREN",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes próprios, a construção e o terreno",
+     "description_en": "Permanent private households owned, building and land"
+    },
+    {
+     "name": "V0041",
+     "set": "domicilios",
+     "source_name": "CONDCONSTR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes próprios, só a construção",
+     "description_en": "Permanent private households owned, building only"
+    },
+    {
+     "name": "V0042",
+     "set": "domicilios",
+     "source_name": "CONDALUGAD",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes alugados",
+     "description_en": "Permanent private households rented"
+    },
+    {
+     "name": "V0043",
+     "set": "domicilios",
+     "source_name": "CONDCEDIDO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes cedidos",
+     "description_en": "Permanent private households lent (cedido)"
+    },
+    {
+     "name": "V0044",
+     "set": "domicilios",
+     "source_name": "CONDCEEMPR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes cedidos por empregador",
+     "description_en": "Permanent private households lent by an employer"
+    },
+    {
+     "name": "V0045",
+     "set": "domicilios",
+     "source_name": "CONDCEPART",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes cedidos por particular",
+     "description_en": "Permanent private households lent by a private person"
+    },
+    {
+     "name": "V0046",
+     "set": "domicilios",
+     "source_name": "CONDOUTRA",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes em outra condição de ocupação",
+     "description_en": "Permanent private households in another tenure"
+    },
+    {
+     "name": "V0047",
+     "set": "domicilios",
+     "source_name": "LIXOCOLETA",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo coletado",
+     "description_en": "Permanent private households with garbage collected"
+    },
+    {
+     "name": "V0048",
+     "set": "domicilios",
+     "source_name": "LIXOCOLDIR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo coletado diretamente",
+     "description_en": "Permanent private households with garbage collected directly"
+    },
+    {
+     "name": "V0049",
+     "set": "domicilios",
+     "source_name": "LIXOCOLIND",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo coletado indiretamente",
+     "description_en": "Permanent private households with garbage collected indirectly"
+    },
+    {
+     "name": "V0050",
+     "set": "domicilios",
+     "source_name": "LIXOQUEIMA",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo queimado",
+     "description_en": "Permanent private households with garbage burned"
+    },
+    {
+     "name": "V0051",
+     "set": "domicilios",
+     "source_name": "LIXOENTERR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo enterrado",
+     "description_en": "Permanent private households with garbage buried"
+    },
+    {
+     "name": "V0052",
+     "set": "domicilios",
+     "source_name": "LIXOJOGOUT",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo jogado (em terreno baldio ou em rio, lago ou mar)",
+     "description_en": "Permanent private households with garbage dumped (on vacant land or in a river, lake or sea)"
+    },
+    {
+     "name": "V0053",
+     "set": "domicilios",
+     "source_name": "LIXOJOGBAL",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo jogado em terreno baldio",
+     "description_en": "Permanent private households with garbage dumped on vacant land"
+    },
+    {
+     "name": "V0054",
+     "set": "domicilios",
+     "source_name": "LIXOJOGMAR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com lixo jogado em rio, lago ou mar",
+     "description_en": "Permanent private households with garbage dumped in a river, lake or sea"
+    },
+    {
+     "name": "V0055",
+     "set": "domicilios",
+     "source_name": "LIXOOUTDES",
+     "type": "integer",
+     "description_pt": "Domicílios particulares permanentes com outro destino do lixo",
+     "description_en": "Permanent private households with another garbage destination"
+    },
+    {
+     "name": "V0056",
+     "set": "domicilios",
+     "source_name": "DOMPARIMPR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares improvisados",
+     "description_en": "Improvised private households"
+    },
+    {
+     "name": "V0057",
+     "set": "domicilios",
+     "source_name": "NUMDOMICIL",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades habitacionais em domicílios coletivos), base da distribuição por número de moradores",
+     "description_en": "Households (private households and housing units in collective dwellings), base of the distribution by number of residents"
+    },
+    {
+     "name": "V0058",
+     "set": "domicilios",
+     "source_name": "NDOM1MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 1 morador",
+     "description_en": "Households (private and units in collective dwellings) with 1 resident"
+    },
+    {
+     "name": "V0059",
+     "set": "domicilios",
+     "source_name": "NDOM2MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 2 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 2 residents"
+    },
+    {
+     "name": "V0060",
+     "set": "domicilios",
+     "source_name": "NDOM3MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 3 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 3 residents"
+    },
+    {
+     "name": "V0061",
+     "set": "domicilios",
+     "source_name": "NDOM4MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 4 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 4 residents"
+    },
+    {
+     "name": "V0062",
+     "set": "domicilios",
+     "source_name": "NDOM5MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 5 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 5 residents"
+    },
+    {
+     "name": "V0063",
+     "set": "domicilios",
+     "source_name": "NDOM6MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 6 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 6 residents"
+    },
+    {
+     "name": "V0064",
+     "set": "domicilios",
+     "source_name": "NDOM7MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 7 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 7 residents"
+    },
+    {
+     "name": "V0065",
+     "set": "domicilios",
+     "source_name": "NDOM8MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 8 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 8 residents"
+    },
+    {
+     "name": "V0066",
+     "set": "domicilios",
+     "source_name": "NDOM9MORAD",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 9 moradores",
+     "description_en": "Households (private and units in collective dwellings) with 9 residents"
+    },
+    {
+     "name": "V0067",
+     "set": "domicilios",
+     "source_name": "NDOM10MAIS",
+     "type": "integer",
+     "description_pt": "Domicílios (particulares e unidades em domicílios coletivos) com 10 ou mais moradores",
+     "description_en": "Households (private and units in collective dwellings) with 10 or more residents"
+    },
+    {
+     "name": "V0068",
+     "set": "domicilios",
+     "source_name": "NDOMPARTIC",
+     "type": "integer",
+     "description_pt": "Domicílios particulares (permanentes e improvisados)",
+     "description_en": "Private households (permanent and improvised)"
+    },
+    {
+     "name": "V0069",
+     "set": "domicilios",
+     "source_name": "NDPART1MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 1 morador",
+     "description_en": "Private households with 1 resident"
+    },
+    {
+     "name": "V0070",
+     "set": "domicilios",
+     "source_name": "NDPART2MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 2 moradores",
+     "description_en": "Private households with 2 residents"
+    },
+    {
+     "name": "V0071",
+     "set": "domicilios",
+     "source_name": "NDPART3MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 3 moradores",
+     "description_en": "Private households with 3 residents"
+    },
+    {
+     "name": "V0072",
+     "set": "domicilios",
+     "source_name": "NDPART4MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 4 moradores",
+     "description_en": "Private households with 4 residents"
+    },
+    {
+     "name": "V0073",
+     "set": "domicilios",
+     "source_name": "NDPART5MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 5 moradores",
+     "description_en": "Private households with 5 residents"
+    },
+    {
+     "name": "V0074",
+     "set": "domicilios",
+     "source_name": "NDPART6MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 6 moradores",
+     "description_en": "Private households with 6 residents"
+    },
+    {
+     "name": "V0075",
+     "set": "domicilios",
+     "source_name": "NDPART7MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 7 moradores",
+     "description_en": "Private households with 7 residents"
+    },
+    {
+     "name": "V0076",
+     "set": "domicilios",
+     "source_name": "NDPART8MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 8 moradores",
+     "description_en": "Private households with 8 residents"
+    },
+    {
+     "name": "V0077",
+     "set": "domicilios",
+     "source_name": "NDPART9MOR",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 9 moradores",
+     "description_en": "Private households with 9 residents"
+    },
+    {
+     "name": "V0078",
+     "set": "domicilios",
+     "source_name": "NDPART10MO",
+     "type": "integer",
+     "description_pt": "Domicílios particulares com 10 ou mais moradores",
+     "description_en": "Private households with 10 or more residents"
+    },
+    {
+     "name": "V0079",
+     "set": "domicilios",
+     "source_name": "UNHABDCOLE",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos",
+     "description_en": "Housing units in collective dwellings"
+    },
+    {
+     "name": "V0080",
+     "set": "domicilios",
+     "source_name": "UNHAB1MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 1 morador",
+     "description_en": "Housing units in collective dwellings with 1 resident"
+    },
+    {
+     "name": "V0081",
+     "set": "domicilios",
+     "source_name": "UNHAB2MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 2 moradores",
+     "description_en": "Housing units in collective dwellings with 2 residents"
+    },
+    {
+     "name": "V0082",
+     "set": "domicilios",
+     "source_name": "UNHAB3MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 3 moradores",
+     "description_en": "Housing units in collective dwellings with 3 residents"
+    },
+    {
+     "name": "V0083",
+     "set": "domicilios",
+     "source_name": "UNHAB4MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 4 moradores",
+     "description_en": "Housing units in collective dwellings with 4 residents"
+    },
+    {
+     "name": "V0084",
+     "set": "domicilios",
+     "source_name": "UNHAB5MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 5 moradores",
+     "description_en": "Housing units in collective dwellings with 5 residents"
+    },
+    {
+     "name": "V0085",
+     "set": "domicilios",
+     "source_name": "UNHAB6MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 6 moradores",
+     "description_en": "Housing units in collective dwellings with 6 residents"
+    },
+    {
+     "name": "V0086",
+     "set": "domicilios",
+     "source_name": "UNHAB7MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 7 moradores",
+     "description_en": "Housing units in collective dwellings with 7 residents"
+    },
+    {
+     "name": "V0087",
+     "set": "domicilios",
+     "source_name": "UNHAB8MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 8 moradores",
+     "description_en": "Housing units in collective dwellings with 8 residents"
+    },
+    {
+     "name": "V0088",
+     "set": "domicilios",
+     "source_name": "UNHAB9MORA",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 9 moradores",
+     "description_en": "Housing units in collective dwellings with 9 residents"
+    },
+    {
+     "name": "V0089",
+     "set": "domicilios",
+     "source_name": "UNHAB10MOR",
+     "type": "integer",
+     "description_pt": "Unidades habitacionais em domicílios coletivos com 10 ou mais moradores",
+     "description_en": "Housing units in collective dwellings with 10 or more residents"
+    }
+   ]
+  },
+  {
+   "table": "morador",
+   "variables": [
+    {
+     "name": "V0090",
+     "set": "domicilios",
+     "source_name": "MORDOMPART",
+     "type": "integer",
+     "description_pt": "Moradores em domicílios particulares permanentes (o layout diz 'moradores em domicílios particulares total'; os valores são a soma de homens e mulheres em permanentes)",
+     "description_en": "Residents of permanent private households (the layout says 'residents of private households, total'; values equal men plus women in permanent households)"
+    },
+    {
+     "name": "V0091",
+     "set": "domicilios",
+     "source_name": "HOMDOMPART",
+     "type": "integer",
+     "description_pt": "Homens moradores em domicílios particulares permanentes",
+     "description_en": "Male residents of permanent private households"
+    },
+    {
+     "name": "V0092",
+     "set": "domicilios",
+     "source_name": "MULDOMPART",
+     "type": "integer",
+     "description_pt": "Mulheres moradoras em domicílios particulares permanentes",
+     "description_en": "Female residents of permanent private households"
+    },
+    {
+     "name": "V0093",
+     "set": "domicilios",
+     "source_name": "MORDOMIMPR",
+     "type": "integer",
+     "description_pt": "Moradores em domicílios particulares improvisados",
+     "description_en": "Residents of improvised private households"
+    },
+    {
+     "name": "V0094",
+     "set": "domicilios",
+     "source_name": "HOMDOMIMPR",
+     "type": "integer",
+     "description_pt": "Homens moradores em domicílios particulares improvisados",
+     "description_en": "Male residents of improvised private households"
+    },
+    {
+     "name": "V0095",
+     "set": "domicilios",
+     "source_name": "MULDOMIMPR",
+     "type": "integer",
+     "description_pt": "Mulheres moradoras em domicílios particulares improvisados",
+     "description_en": "Female residents of improvised private households"
+    }
+   ]
+  },
+  {
+   "table": "responsavel",
+   "variables": [
+    {
+     "name": "V0096",
+     "set": "chefes",
+     "source_name": "TOT_CHEFE",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes",
+     "description_en": "Heads of permanent private households"
+    },
+    {
+     "name": "V0097",
+     "set": "chefes",
+     "source_name": "SEM_INSTR",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes sem instrução ou com menos de 1 ano de estudo",
+     "description_en": "Heads of permanent private households with no schooling or less than 1 year of study"
+    },
+    {
+     "name": "V0098",
+     "set": "chefes",
+     "source_name": "UMA3",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com 1 a 3 anos de estudo",
+     "description_en": "Heads of permanent private households with 1 to 3 years of study"
+    },
+    {
+     "name": "V0099",
+     "set": "chefes",
+     "source_name": "QUA7",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com 4 a 7 anos de estudo",
+     "description_en": "Heads of permanent private households with 4 to 7 years of study"
+    },
+    {
+     "name": "V0100",
+     "set": "chefes",
+     "source_name": "OITOA10",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com 8 a 10 anos de estudo",
+     "description_en": "Heads of permanent private households with 8 to 10 years of study"
+    },
+    {
+     "name": "V0101",
+     "set": "chefes",
+     "source_name": "ONZEA14",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com 11 a 14 anos de estudo",
+     "description_en": "Heads of permanent private households with 11 to 14 years of study"
+    },
+    {
+     "name": "V0102",
+     "set": "chefes",
+     "source_name": "QUINZE",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com 15 ou mais anos de estudo",
+     "description_en": "Heads of permanent private households with 15 or more years of study"
+    },
+    {
+     "name": "V0103",
+     "set": "chefes",
+     "source_name": "RENDI_MEIO",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de até 1/2 salário mínimo",
+     "description_en": "Heads of permanent private households with monthly nominal income of up to 1/2 minimum wage"
+    },
+    {
+     "name": "V0104",
+     "set": "chefes",
+     "source_name": "M_MEIOAUM",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 1/2 a 1 salário mínimo",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 1/2 to 1 minimum wage"
+    },
+    {
+     "name": "V0105",
+     "set": "chefes",
+     "source_name": "M_UMADOIS",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 1 to 2 minimum wages"
+    },
+    {
+     "name": "V0106",
+     "set": "chefes",
+     "source_name": "MAISDE2A3",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 2 to 3 minimum wages"
+    },
+    {
+     "name": "V0107",
+     "set": "chefes",
+     "source_name": "MAISDE3A5",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 3 to 5 minimum wages"
+    },
+    {
+     "name": "V0108",
+     "set": "chefes",
+     "source_name": "MAIS5A10",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 5 to 10 minimum wages"
+    },
+    {
+     "name": "V0109",
+     "set": "chefes",
+     "source_name": "MAIS10A15",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 10 to 15 minimum wages"
+    },
+    {
+     "name": "V0110",
+     "set": "chefes",
+     "source_name": "MAIS15A20",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 15 to 20 minimum wages"
+    },
+    {
+     "name": "V0111",
+     "set": "chefes",
+     "source_name": "MAISDE20",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos",
+     "description_en": "Heads of permanent private households with monthly nominal income of more than 20 minimum wages"
+    },
+    {
+     "name": "V0112",
+     "set": "chefes",
+     "source_name": "SEMRENDIM",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes sem rendimento",
+     "description_en": "Heads of permanent private households without income"
+    },
+    {
+     "name": "V0113",
+     "set": "chefes",
+     "source_name": "SEMDECLAR",
+     "type": "integer",
+     "description_pt": "Chefes de domicílios particulares permanentes sem declaração de rendimento",
+     "description_en": "Heads of permanent private households with income not declared"
+    }
+   ]
+  },
+  {
+   "table": "pessoa01",
+   "variables": [
+    {
+     "name": "V0114",
+     "set": "pessoas",
+     "source_name": "POPTOTAL",
+     "type": "integer",
+     "description_pt": "Pessoas residentes",
+     "description_en": "Residents"
+    },
+    {
+     "name": "V0115",
+     "set": "pessoas",
+     "source_name": "TOTAL0A4",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 0 a 4 anos de idade",
+     "description_en": "Residents aged 0 to 4"
+    },
+    {
+     "name": "V0116",
+     "set": "pessoas",
+     "source_name": "TOTAL5A9",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 5 a 9 anos de idade",
+     "description_en": "Residents aged 5 to 9"
+    },
+    {
+     "name": "V0117",
+     "set": "pessoas",
+     "source_name": "TOTAL10A14",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 10 a 14 anos de idade",
+     "description_en": "Residents aged 10 to 14"
+    },
+    {
+     "name": "V0118",
+     "set": "pessoas",
+     "source_name": "TOTAL15A19",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 15 a 19 anos de idade",
+     "description_en": "Residents aged 15 to 19"
+    },
+    {
+     "name": "V0119",
+     "set": "pessoas",
+     "source_name": "TOTAL20A24",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 20 a 24 anos de idade",
+     "description_en": "Residents aged 20 to 24"
+    },
+    {
+     "name": "V0120",
+     "set": "pessoas",
+     "source_name": "TOTAL25A29",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 25 a 29 anos de idade",
+     "description_en": "Residents aged 25 to 29"
+    },
+    {
+     "name": "V0121",
+     "set": "pessoas",
+     "source_name": "TOTAL30A34",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 30 a 34 anos de idade",
+     "description_en": "Residents aged 30 to 34"
+    },
+    {
+     "name": "V0122",
+     "set": "pessoas",
+     "source_name": "TOTAL35A39",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 35 a 39 anos de idade",
+     "description_en": "Residents aged 35 to 39"
+    },
+    {
+     "name": "V0123",
+     "set": "pessoas",
+     "source_name": "TOTAL40A44",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 40 a 44 anos de idade",
+     "description_en": "Residents aged 40 to 44"
+    },
+    {
+     "name": "V0124",
+     "set": "pessoas",
+     "source_name": "TOTAL45A49",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 45 a 49 anos de idade",
+     "description_en": "Residents aged 45 to 49"
+    },
+    {
+     "name": "V0125",
+     "set": "pessoas",
+     "source_name": "TOTAL50A54",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 50 a 54 anos de idade",
+     "description_en": "Residents aged 50 to 54"
+    },
+    {
+     "name": "V0126",
+     "set": "pessoas",
+     "source_name": "TOTAL55A59",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 55 a 59 anos de idade",
+     "description_en": "Residents aged 55 to 59"
+    },
+    {
+     "name": "V0127",
+     "set": "pessoas",
+     "source_name": "TOTAL60A64",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 60 a 64 anos de idade",
+     "description_en": "Residents aged 60 to 64"
+    },
+    {
+     "name": "V0128",
+     "set": "pessoas",
+     "source_name": "TOTAL65A69",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 65 a 69 anos de idade",
+     "description_en": "Residents aged 65 to 69"
+    },
+    {
+     "name": "V0129",
+     "set": "pessoas",
+     "source_name": "TOTAL70A74",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 70 a 74 anos de idade",
+     "description_en": "Residents aged 70 to 74"
+    },
+    {
+     "name": "V0130",
+     "set": "pessoas",
+     "source_name": "TOTAL75A79",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 75 a 79 anos de idade",
+     "description_en": "Residents aged 75 to 79"
+    },
+    {
+     "name": "V0131",
+     "set": "pessoas",
+     "source_name": "TOTAL80",
+     "type": "integer",
+     "description_pt": "Pessoas residentes de 80 ou mais anos de idade",
+     "description_en": "Residents aged 80 or over"
+    },
+    {
+     "name": "V0132",
+     "set": "pessoas",
+     "source_name": "POPRESHOM",
+     "type": "integer",
+     "description_pt": "Homens residentes",
+     "description_en": "Male residents"
+    },
+    {
+     "name": "V0133",
+     "set": "pessoas",
+     "source_name": "HOMEM0A4",
+     "type": "integer",
+     "description_pt": "Homens residentes de 0 a 4 anos de idade",
+     "description_en": "Male residents aged 0 to 4"
+    },
+    {
+     "name": "V0134",
+     "set": "pessoas",
+     "source_name": "HOMEM5A9",
+     "type": "integer",
+     "description_pt": "Homens residentes de 5 a 9 anos de idade",
+     "description_en": "Male residents aged 5 to 9"
+    },
+    {
+     "name": "V0135",
+     "set": "pessoas",
+     "source_name": "HOMEM10A14",
+     "type": "integer",
+     "description_pt": "Homens residentes de 10 a 14 anos de idade",
+     "description_en": "Male residents aged 10 to 14"
+    },
+    {
+     "name": "V0136",
+     "set": "pessoas",
+     "source_name": "HOMEM15A19",
+     "type": "integer",
+     "description_pt": "Homens residentes de 15 a 19 anos de idade",
+     "description_en": "Male residents aged 15 to 19"
+    },
+    {
+     "name": "V0137",
+     "set": "pessoas",
+     "source_name": "HOMEM20A24",
+     "type": "integer",
+     "description_pt": "Homens residentes de 20 a 24 anos de idade",
+     "description_en": "Male residents aged 20 to 24"
+    },
+    {
+     "name": "V0138",
+     "set": "pessoas",
+     "source_name": "HOMEM25A29",
+     "type": "integer",
+     "description_pt": "Homens residentes de 25 a 29 anos de idade",
+     "description_en": "Male residents aged 25 to 29"
+    },
+    {
+     "name": "V0139",
+     "set": "pessoas",
+     "source_name": "HOMEM30A34",
+     "type": "integer",
+     "description_pt": "Homens residentes de 30 a 34 anos de idade",
+     "description_en": "Male residents aged 30 to 34"
+    },
+    {
+     "name": "V0140",
+     "set": "pessoas",
+     "source_name": "HOMEM35A39",
+     "type": "integer",
+     "description_pt": "Homens residentes de 35 a 39 anos de idade",
+     "description_en": "Male residents aged 35 to 39"
+    },
+    {
+     "name": "V0141",
+     "set": "pessoas",
+     "source_name": "HOMEM40A44",
+     "type": "integer",
+     "description_pt": "Homens residentes de 40 a 44 anos de idade",
+     "description_en": "Male residents aged 40 to 44"
+    },
+    {
+     "name": "V0142",
+     "set": "pessoas",
+     "source_name": "HOMEM45A49",
+     "type": "integer",
+     "description_pt": "Homens residentes de 45 a 49 anos de idade",
+     "description_en": "Male residents aged 45 to 49"
+    },
+    {
+     "name": "V0143",
+     "set": "pessoas",
+     "source_name": "HOMEM50A54",
+     "type": "integer",
+     "description_pt": "Homens residentes de 50 a 54 anos de idade",
+     "description_en": "Male residents aged 50 to 54"
+    },
+    {
+     "name": "V0144",
+     "set": "pessoas",
+     "source_name": "HOMEM55A59",
+     "type": "integer",
+     "description_pt": "Homens residentes de 55 a 59 anos de idade",
+     "description_en": "Male residents aged 55 to 59"
+    },
+    {
+     "name": "V0145",
+     "set": "pessoas",
+     "source_name": "HOMEM60A64",
+     "type": "integer",
+     "description_pt": "Homens residentes de 60 a 64 anos de idade",
+     "description_en": "Male residents aged 60 to 64"
+    },
+    {
+     "name": "V0146",
+     "set": "pessoas",
+     "source_name": "HOMEM65A69",
+     "type": "integer",
+     "description_pt": "Homens residentes de 65 a 69 anos de idade",
+     "description_en": "Male residents aged 65 to 69"
+    },
+    {
+     "name": "V0147",
+     "set": "pessoas",
+     "source_name": "HOMEM70A74",
+     "type": "integer",
+     "description_pt": "Homens residentes de 70 a 74 anos de idade",
+     "description_en": "Male residents aged 70 to 74"
+    },
+    {
+     "name": "V0148",
+     "set": "pessoas",
+     "source_name": "HOMEM75A79",
+     "type": "integer",
+     "description_pt": "Homens residentes de 75 a 79 anos de idade",
+     "description_en": "Male residents aged 75 to 79"
+    },
+    {
+     "name": "V0149",
+     "set": "pessoas",
+     "source_name": "HOMENS80",
+     "type": "integer",
+     "description_pt": "Homens residentes de 80 ou mais anos de idade",
+     "description_en": "Male residents aged 80 or over"
+    },
+    {
+     "name": "V0150",
+     "set": "pessoas",
+     "source_name": "POPRESMULH",
+     "type": "integer",
+     "description_pt": "Mulheres residentes",
+     "description_en": "Female residents"
+    },
+    {
+     "name": "V0151",
+     "set": "pessoas",
+     "source_name": "MULH0A4",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 0 a 4 anos de idade",
+     "description_en": "Female residents aged 0 to 4"
+    },
+    {
+     "name": "V0152",
+     "set": "pessoas",
+     "source_name": "MULH5A9",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 5 a 9 anos de idade",
+     "description_en": "Female residents aged 5 to 9"
+    },
+    {
+     "name": "V0153",
+     "set": "pessoas",
+     "source_name": "MULH10A14",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 10 a 14 anos de idade",
+     "description_en": "Female residents aged 10 to 14"
+    },
+    {
+     "name": "V0154",
+     "set": "pessoas",
+     "source_name": "MULH15A19",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 15 a 19 anos de idade",
+     "description_en": "Female residents aged 15 to 19"
+    },
+    {
+     "name": "V0155",
+     "set": "pessoas",
+     "source_name": "MULH20A24",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 20 a 24 anos de idade",
+     "description_en": "Female residents aged 20 to 24"
+    },
+    {
+     "name": "V0156",
+     "set": "pessoas",
+     "source_name": "MULH25A29",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 25 a 29 anos de idade",
+     "description_en": "Female residents aged 25 to 29"
+    },
+    {
+     "name": "V0157",
+     "set": "pessoas",
+     "source_name": "MULH30A34",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 30 a 34 anos de idade",
+     "description_en": "Female residents aged 30 to 34"
+    },
+    {
+     "name": "V0158",
+     "set": "pessoas",
+     "source_name": "MULH35A39",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 35 a 39 anos de idade",
+     "description_en": "Female residents aged 35 to 39"
+    },
+    {
+     "name": "V0159",
+     "set": "pessoas",
+     "source_name": "MULH40A44",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 40 a 44 anos de idade",
+     "description_en": "Female residents aged 40 to 44"
+    },
+    {
+     "name": "V0160",
+     "set": "pessoas",
+     "source_name": "MULH45A49",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 45 a 49 anos de idade",
+     "description_en": "Female residents aged 45 to 49"
+    },
+    {
+     "name": "V0161",
+     "set": "pessoas",
+     "source_name": "MULH50A54",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 50 a 54 anos de idade",
+     "description_en": "Female residents aged 50 to 54"
+    },
+    {
+     "name": "V0162",
+     "set": "pessoas",
+     "source_name": "MULH55A59",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 55 a 59 anos de idade",
+     "description_en": "Female residents aged 55 to 59"
+    },
+    {
+     "name": "V0163",
+     "set": "pessoas",
+     "source_name": "MULH60A64",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 60 a 64 anos de idade",
+     "description_en": "Female residents aged 60 to 64"
+    },
+    {
+     "name": "V0164",
+     "set": "pessoas",
+     "source_name": "MULH65A69",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 65 a 69 anos de idade",
+     "description_en": "Female residents aged 65 to 69"
+    },
+    {
+     "name": "V0165",
+     "set": "pessoas",
+     "source_name": "MULH70A74",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 70 a 74 anos de idade",
+     "description_en": "Female residents aged 70 to 74"
+    },
+    {
+     "name": "V0166",
+     "set": "pessoas",
+     "source_name": "MULH75A79",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 75 a 79 anos de idade",
+     "description_en": "Female residents aged 75 to 79"
+    },
+    {
+     "name": "V0167",
+     "set": "pessoas",
+     "source_name": "MULHER80",
+     "type": "integer",
+     "description_pt": "Mulheres residentes de 80 ou mais anos de idade",
+     "description_en": "Female residents aged 80 or over"
+    }
+   ]
+  },
+  {
+   "table": "pessoa02",
+   "variables": [
+    {
+     "name": "V0168",
+     "set": "condicao",
+     "source_name": "POPDOMTOT",
+     "type": "integer",
+     "description_pt": "Pessoas residentes (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0169",
+     "set": "condicao",
+     "source_name": "TOTCHEFE",
+     "type": "integer",
+     "description_pt": "Chefes",
+     "description_en": "Heads"
+    },
+    {
+     "name": "V0170",
+     "set": "condicao",
+     "source_name": "TOTCONJUGE",
+     "type": "integer",
+     "description_pt": "Cônjuges",
+     "description_en": "Spouses"
+    },
+    {
+     "name": "V0171",
+     "set": "condicao",
+     "source_name": "TOTFILHOS",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as)",
+     "description_en": "Children or stepchildren"
+    },
+    {
+     "name": "V0172",
+     "set": "condicao",
+     "source_name": "TOTAGREGAD",
+     "type": "integer",
+     "description_pt": "Agregados(as)",
+     "description_en": "Non-relative members (agregados)"
+    },
+    {
+     "name": "V0173",
+     "set": "condicao",
+     "source_name": "TOTPARENTE",
+     "type": "integer",
+     "description_pt": "Outros parentes",
+     "description_en": "Other relatives"
+    },
+    {
+     "name": "V0174",
+     "set": "condicao",
+     "source_name": "TOTPENSION",
+     "type": "integer",
+     "description_pt": "Pensionistas",
+     "description_en": "Boarders"
+    },
+    {
+     "name": "V0175",
+     "set": "condicao",
+     "source_name": "TEMPRDOMES",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as)",
+     "description_en": "Domestic employees"
+    },
+    {
+     "name": "V0176",
+     "set": "condicao",
+     "source_name": "TPARENDALF",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a)",
+     "description_en": "Relatives of the domestic employee"
+    },
+    {
+     "name": "V0177",
+     "set": "condicao",
+     "source_name": "THOMDOMICI",
+     "type": "integer",
+     "description_pt": "Homens residentes (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Male residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0178",
+     "set": "condicao",
+     "source_name": "HOMCHEFE",
+     "type": "integer",
+     "description_pt": "Chefes, homens",
+     "description_en": "Heads, male"
+    },
+    {
+     "name": "V0179",
+     "set": "condicao",
+     "source_name": "HOMCONJUGE",
+     "type": "integer",
+     "description_pt": "Cônjuges, homens",
+     "description_en": "Spouses, male"
+    },
+    {
+     "name": "V0180",
+     "set": "condicao",
+     "source_name": "HFILHOS",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as), homens",
+     "description_en": "Children or stepchildren, male"
+    },
+    {
+     "name": "V0181",
+     "set": "condicao",
+     "source_name": "HAGREGADOS",
+     "type": "integer",
+     "description_pt": "Agregados(as), homens",
+     "description_en": "Non-relative members (agregados), male"
+    },
+    {
+     "name": "V0182",
+     "set": "condicao",
+     "source_name": "HOUTRPAREN",
+     "type": "integer",
+     "description_pt": "Outros parentes, homens",
+     "description_en": "Other relatives, male"
+    },
+    {
+     "name": "V0183",
+     "set": "condicao",
+     "source_name": "HOMPENSION",
+     "type": "integer",
+     "description_pt": "Pensionistas, homens",
+     "description_en": "Boarders, male"
+    },
+    {
+     "name": "V0184",
+     "set": "condicao",
+     "source_name": "HOMEMPDOME",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as), homens",
+     "description_en": "Domestic employees, male"
+    },
+    {
+     "name": "V0185",
+     "set": "condicao",
+     "source_name": "HOPAREDOME",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a), homens",
+     "description_en": "Relatives of the domestic employee, male"
+    },
+    {
+     "name": "V0186",
+     "set": "condicao",
+     "source_name": "TOTMULDOMI",
+     "type": "integer",
+     "description_pt": "Mulheres residentes (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Female residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0187",
+     "set": "condicao",
+     "source_name": "MULCHEFE",
+     "type": "integer",
+     "description_pt": "Chefes, mulheres",
+     "description_en": "Heads, female"
+    },
+    {
+     "name": "V0188",
+     "set": "condicao",
+     "source_name": "MULCONJUGE",
+     "type": "integer",
+     "description_pt": "Cônjuges, mulheres",
+     "description_en": "Spouses, female"
+    },
+    {
+     "name": "V0189",
+     "set": "condicao",
+     "source_name": "MULHFILHA",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as), mulheres",
+     "description_en": "Children or stepchildren, female"
+    },
+    {
+     "name": "V0190",
+     "set": "condicao",
+     "source_name": "MULAGREGAD",
+     "type": "integer",
+     "description_pt": "Agregados(as), mulheres",
+     "description_en": "Non-relative members (agregados), female"
+    },
+    {
+     "name": "V0191",
+     "set": "condicao",
+     "source_name": "MULOUTPARE",
+     "type": "integer",
+     "description_pt": "Outros parentes, mulheres",
+     "description_en": "Other relatives, female"
+    },
+    {
+     "name": "V0192",
+     "set": "condicao",
+     "source_name": "MULPENSION",
+     "type": "integer",
+     "description_pt": "Pensionistas, mulheres",
+     "description_en": "Boarders, female"
+    },
+    {
+     "name": "V0193",
+     "set": "condicao",
+     "source_name": "MULEMODOME",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as), mulheres",
+     "description_en": "Domestic employees, female"
+    },
+    {
+     "name": "V0194",
+     "set": "condicao",
+     "source_name": "MPAREMPDOM",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a), mulheres",
+     "description_en": "Relatives of the domestic employee, female"
+    }
+   ]
+  },
+  {
+   "table": "instrucao01",
+   "variables": [
+    {
+     "name": "V0195",
+     "set": "pessoas",
+     "source_name": "POPALFABET",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas",
+     "description_en": "Literate residents"
+    },
+    {
+     "name": "V0196",
+     "set": "pessoas",
+     "source_name": "TALFAB0A4",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 0 a 4 anos de idade",
+     "description_en": "Literate residents aged 0 to 4"
+    },
+    {
+     "name": "V0197",
+     "set": "pessoas",
+     "source_name": "TALFAB5A9",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 5 a 9 anos de idade",
+     "description_en": "Literate residents aged 5 to 9"
+    },
+    {
+     "name": "V0198",
+     "set": "pessoas",
+     "source_name": "TALFA10A14",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 10 a 14 anos de idade",
+     "description_en": "Literate residents aged 10 to 14"
+    },
+    {
+     "name": "V0199",
+     "set": "pessoas",
+     "source_name": "TALFA15A19",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 15 a 19 anos de idade",
+     "description_en": "Literate residents aged 15 to 19"
+    },
+    {
+     "name": "V0200",
+     "set": "pessoas",
+     "source_name": "TALFA20A24",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 20 a 24 anos de idade",
+     "description_en": "Literate residents aged 20 to 24"
+    },
+    {
+     "name": "V0201",
+     "set": "pessoas",
+     "source_name": "TALFA25A29",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 25 a 29 anos de idade",
+     "description_en": "Literate residents aged 25 to 29"
+    },
+    {
+     "name": "V0202",
+     "set": "pessoas",
+     "source_name": "TALFA30A34",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 30 a 34 anos de idade",
+     "description_en": "Literate residents aged 30 to 34"
+    },
+    {
+     "name": "V0203",
+     "set": "pessoas",
+     "source_name": "TALFA35A39",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 35 a 39 anos de idade",
+     "description_en": "Literate residents aged 35 to 39"
+    },
+    {
+     "name": "V0204",
+     "set": "pessoas",
+     "source_name": "TALFA40A44",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 40 a 44 anos de idade",
+     "description_en": "Literate residents aged 40 to 44"
+    },
+    {
+     "name": "V0205",
+     "set": "pessoas",
+     "source_name": "TALFA45A49",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 45 a 49 anos de idade",
+     "description_en": "Literate residents aged 45 to 49"
+    },
+    {
+     "name": "V0206",
+     "set": "pessoas",
+     "source_name": "TALFA50A54",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 50 a 54 anos de idade",
+     "description_en": "Literate residents aged 50 to 54"
+    },
+    {
+     "name": "V0207",
+     "set": "pessoas",
+     "source_name": "TALFA55A59",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 55 a 59 anos de idade",
+     "description_en": "Literate residents aged 55 to 59"
+    },
+    {
+     "name": "V0208",
+     "set": "pessoas",
+     "source_name": "TALFA60A64",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 60 a 64 anos de idade",
+     "description_en": "Literate residents aged 60 to 64"
+    },
+    {
+     "name": "V0209",
+     "set": "pessoas",
+     "source_name": "TALFA65A69",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 65 a 69 anos de idade",
+     "description_en": "Literate residents aged 65 to 69"
+    },
+    {
+     "name": "V0210",
+     "set": "pessoas",
+     "source_name": "TALFA70A74",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 70 a 74 anos de idade",
+     "description_en": "Literate residents aged 70 to 74"
+    },
+    {
+     "name": "V0211",
+     "set": "pessoas",
+     "source_name": "TALFA75A79",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 75 a 79 anos de idade",
+     "description_en": "Literate residents aged 75 to 79"
+    },
+    {
+     "name": "V0212",
+     "set": "pessoas",
+     "source_name": "TALFA80",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas de 80 ou mais anos de idade",
+     "description_en": "Literate residents aged 80 or over"
+    },
+    {
+     "name": "V0213",
+     "set": "pessoas",
+     "source_name": "POPREHALFA",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados",
+     "description_en": "Literate male residents"
+    },
+    {
+     "name": "V0214",
+     "set": "pessoas",
+     "source_name": "HALFA0A4",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 0 a 4 anos de idade",
+     "description_en": "Literate male residents aged 0 to 4"
+    },
+    {
+     "name": "V0215",
+     "set": "pessoas",
+     "source_name": "HALFA5A9",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 5 a 9 anos de idade",
+     "description_en": "Literate male residents aged 5 to 9"
+    },
+    {
+     "name": "V0216",
+     "set": "pessoas",
+     "source_name": "HALFA10A14",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 10 a 14 anos de idade",
+     "description_en": "Literate male residents aged 10 to 14"
+    },
+    {
+     "name": "V0217",
+     "set": "pessoas",
+     "source_name": "HALFA15A19",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 15 a 19 anos de idade",
+     "description_en": "Literate male residents aged 15 to 19"
+    },
+    {
+     "name": "V0218",
+     "set": "pessoas",
+     "source_name": "HALFA20A24",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 20 a 24 anos de idade",
+     "description_en": "Literate male residents aged 20 to 24"
+    },
+    {
+     "name": "V0219",
+     "set": "pessoas",
+     "source_name": "HALFA25A29",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 25 a 29 anos de idade",
+     "description_en": "Literate male residents aged 25 to 29"
+    },
+    {
+     "name": "V0220",
+     "set": "pessoas",
+     "source_name": "HALFA30A34",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 30 a 34 anos de idade",
+     "description_en": "Literate male residents aged 30 to 34"
+    },
+    {
+     "name": "V0221",
+     "set": "pessoas",
+     "source_name": "HALFA35A39",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 35 a 39 anos de idade",
+     "description_en": "Literate male residents aged 35 to 39"
+    },
+    {
+     "name": "V0222",
+     "set": "pessoas",
+     "source_name": "HALFA40A44",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 40 a 44 anos de idade",
+     "description_en": "Literate male residents aged 40 to 44"
+    },
+    {
+     "name": "V0223",
+     "set": "pessoas",
+     "source_name": "HALFA45A49",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 45 a 49 anos de idade",
+     "description_en": "Literate male residents aged 45 to 49"
+    },
+    {
+     "name": "V0224",
+     "set": "pessoas",
+     "source_name": "HALFA50A54",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 50 a 54 anos de idade",
+     "description_en": "Literate male residents aged 50 to 54"
+    },
+    {
+     "name": "V0225",
+     "set": "pessoas",
+     "source_name": "HALFA55A59",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 55 a 59 anos de idade",
+     "description_en": "Literate male residents aged 55 to 59"
+    },
+    {
+     "name": "V0226",
+     "set": "pessoas",
+     "source_name": "HALFA60A64",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 60 a 64 anos de idade",
+     "description_en": "Literate male residents aged 60 to 64"
+    },
+    {
+     "name": "V0227",
+     "set": "pessoas",
+     "source_name": "HALFA65A69",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 65 a 69 anos de idade",
+     "description_en": "Literate male residents aged 65 to 69"
+    },
+    {
+     "name": "V0228",
+     "set": "pessoas",
+     "source_name": "HALFA70A74",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 70 a 74 anos de idade",
+     "description_en": "Literate male residents aged 70 to 74"
+    },
+    {
+     "name": "V0229",
+     "set": "pessoas",
+     "source_name": "HALFA75A79",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 75 a 79 anos de idade",
+     "description_en": "Literate male residents aged 75 to 79"
+    },
+    {
+     "name": "V0230",
+     "set": "pessoas",
+     "source_name": "HOMALFA80",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados de 80 ou mais anos de idade",
+     "description_en": "Literate male residents aged 80 or over"
+    },
+    {
+     "name": "V0231",
+     "set": "pessoas",
+     "source_name": "POPRESMALF",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas",
+     "description_en": "Literate female residents"
+    },
+    {
+     "name": "V0232",
+     "set": "pessoas",
+     "source_name": "MALFA0A4",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 0 a 4 anos de idade",
+     "description_en": "Literate female residents aged 0 to 4"
+    },
+    {
+     "name": "V0233",
+     "set": "pessoas",
+     "source_name": "MALFA5A9",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 5 a 9 anos de idade",
+     "description_en": "Literate female residents aged 5 to 9"
+    },
+    {
+     "name": "V0234",
+     "set": "pessoas",
+     "source_name": "MALFA10A14",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 10 a 14 anos de idade",
+     "description_en": "Literate female residents aged 10 to 14"
+    },
+    {
+     "name": "V0235",
+     "set": "pessoas",
+     "source_name": "MALFA15A19",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 15 a 19 anos de idade",
+     "description_en": "Literate female residents aged 15 to 19"
+    },
+    {
+     "name": "V0236",
+     "set": "pessoas",
+     "source_name": "MALFA20A24",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 20 a 24 anos de idade",
+     "description_en": "Literate female residents aged 20 to 24"
+    },
+    {
+     "name": "V0237",
+     "set": "pessoas",
+     "source_name": "MALFA25A29",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 25 a 29 anos de idade",
+     "description_en": "Literate female residents aged 25 to 29"
+    },
+    {
+     "name": "V0238",
+     "set": "pessoas",
+     "source_name": "MALFA30A34",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 30 a 34 anos de idade",
+     "description_en": "Literate female residents aged 30 to 34"
+    },
+    {
+     "name": "V0239",
+     "set": "pessoas",
+     "source_name": "MALFA35A39",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 35 a 39 anos de idade",
+     "description_en": "Literate female residents aged 35 to 39"
+    },
+    {
+     "name": "V0240",
+     "set": "pessoas",
+     "source_name": "MALFA40A44",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 40 a 44 anos de idade",
+     "description_en": "Literate female residents aged 40 to 44"
+    },
+    {
+     "name": "V0241",
+     "set": "pessoas",
+     "source_name": "MALFA45A49",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 45 a 49 anos de idade",
+     "description_en": "Literate female residents aged 45 to 49"
+    },
+    {
+     "name": "V0242",
+     "set": "pessoas",
+     "source_name": "MALFA50A54",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 50 a 54 anos de idade",
+     "description_en": "Literate female residents aged 50 to 54"
+    },
+    {
+     "name": "V0243",
+     "set": "pessoas",
+     "source_name": "MALFA55A59",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 55 a 59 anos de idade",
+     "description_en": "Literate female residents aged 55 to 59"
+    },
+    {
+     "name": "V0244",
+     "set": "pessoas",
+     "source_name": "MALFA60A64",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 60 a 64 anos de idade",
+     "description_en": "Literate female residents aged 60 to 64"
+    },
+    {
+     "name": "V0245",
+     "set": "pessoas",
+     "source_name": "MALFA65A69",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 65 a 69 anos de idade",
+     "description_en": "Literate female residents aged 65 to 69"
+    },
+    {
+     "name": "V0246",
+     "set": "pessoas",
+     "source_name": "MALFA70A74",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 70 a 74 anos de idade",
+     "description_en": "Literate female residents aged 70 to 74"
+    },
+    {
+     "name": "V0247",
+     "set": "pessoas",
+     "source_name": "MALFA75A79",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 75 a 79 anos de idade",
+     "description_en": "Literate female residents aged 75 to 79"
+    },
+    {
+     "name": "V0248",
+     "set": "pessoas",
+     "source_name": "MALFAB80",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas de 80 ou mais anos de idade",
+     "description_en": "Literate female residents aged 80 or over"
+    }
+   ]
+  },
+  {
+   "table": "instrucao02",
+   "variables": [
+    {
+     "name": "V0249",
+     "set": "condicao",
+     "source_name": "POPDOMALF",
+     "type": "integer",
+     "description_pt": "Pessoas residentes alfabetizadas (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Literate residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0250",
+     "set": "condicao",
+     "source_name": "TCHEFEALFA",
+     "type": "integer",
+     "description_pt": "Chefes, alfabetizados(as)",
+     "description_en": "Heads, literate"
+    },
+    {
+     "name": "V0251",
+     "set": "condicao",
+     "source_name": "TCONJALFAB",
+     "type": "integer",
+     "description_pt": "Cônjuges, alfabetizados(as)",
+     "description_en": "Spouses, literate"
+    },
+    {
+     "name": "V0252",
+     "set": "condicao",
+     "source_name": "TFILHOSALF",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as), alfabetizados(as)",
+     "description_en": "Children or stepchildren, literate"
+    },
+    {
+     "name": "V0253",
+     "set": "condicao",
+     "source_name": "TAGREGALFA",
+     "type": "integer",
+     "description_pt": "Agregados(as), alfabetizados(as)",
+     "description_en": "Non-relative members (agregados), literate"
+    },
+    {
+     "name": "V0254",
+     "set": "condicao",
+     "source_name": "TPARENTALF",
+     "type": "integer",
+     "description_pt": "Outros parentes, alfabetizados(as)",
+     "description_en": "Other relatives, literate"
+    },
+    {
+     "name": "V0255",
+     "set": "condicao",
+     "source_name": "TPENSIOALF",
+     "type": "integer",
+     "description_pt": "Pensionistas, alfabetizados(as)",
+     "description_en": "Boarders, literate"
+    },
+    {
+     "name": "V0256",
+     "set": "condicao",
+     "source_name": "TEMPALFABE",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as), alfabetizados(as)",
+     "description_en": "Domestic employees, literate"
+    },
+    {
+     "name": "V0257",
+     "set": "condicao",
+     "source_name": "TPARALFAB",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a), alfabetizados(as)",
+     "description_en": "Relatives of the domestic employee, literate"
+    },
+    {
+     "name": "V0258",
+     "set": "condicao",
+     "source_name": "THOMDALFAB",
+     "type": "integer",
+     "description_pt": "Homens residentes alfabetizados (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Literate male residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0259",
+     "set": "condicao",
+     "source_name": "HOMCHALFAB",
+     "type": "integer",
+     "description_pt": "Chefes, homens, alfabetizados(as)",
+     "description_en": "Heads, male, literate"
+    },
+    {
+     "name": "V0260",
+     "set": "condicao",
+     "source_name": "HCONJALFAB",
+     "type": "integer",
+     "description_pt": "Cônjuges, homens, alfabetizados(as)",
+     "description_en": "Spouses, male, literate"
+    },
+    {
+     "name": "V0261",
+     "set": "condicao",
+     "source_name": "HFILHOALFA",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as), homens, alfabetizados(as)",
+     "description_en": "Children or stepchildren, male, literate"
+    },
+    {
+     "name": "V0262",
+     "set": "condicao",
+     "source_name": "HAGREGALFA",
+     "type": "integer",
+     "description_pt": "Agregados(as), homens, alfabetizados(as)",
+     "description_en": "Non-relative members (agregados), male, literate"
+    },
+    {
+     "name": "V0263",
+     "set": "condicao",
+     "source_name": "HOUTPARALF",
+     "type": "integer",
+     "description_pt": "Outros parentes, homens, alfabetizados(as)",
+     "description_en": "Other relatives, male, literate"
+    },
+    {
+     "name": "V0264",
+     "set": "condicao",
+     "source_name": "HOMPENALFA",
+     "type": "integer",
+     "description_pt": "Pensionistas, homens, alfabetizados(as)",
+     "description_en": "Boarders, male, literate"
+    },
+    {
+     "name": "V0265",
+     "set": "condicao",
+     "source_name": "HOMDOMALFA",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as), homens, alfabetizados(as)",
+     "description_en": "Domestic employees, male, literate"
+    },
+    {
+     "name": "V0266",
+     "set": "condicao",
+     "source_name": "HOPARDOMAL",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a), homens, alfabetizados(as)",
+     "description_en": "Relatives of the domestic employee, male, literate"
+    },
+    {
+     "name": "V0267",
+     "set": "condicao",
+     "source_name": "TOTMULDOMA",
+     "type": "integer",
+     "description_pt": "Mulheres residentes alfabetizadas (total do arquivo de condição de ocupação, igual ao do arquivo de pessoas; as relações com o chefe somam menos, pois não há classe para indivíduos em domicílios coletivos)",
+     "description_en": "Literate female residents (total of the relationship file, equal to the persons file; the relationships to the head add up to less, since there is no class for individuals in collective dwellings)"
+    },
+    {
+     "name": "V0268",
+     "set": "condicao",
+     "source_name": "MULCHEALFA",
+     "type": "integer",
+     "description_pt": "Chefes, mulheres, alfabetizados(as)",
+     "description_en": "Heads, female, literate"
+    },
+    {
+     "name": "V0269",
+     "set": "condicao",
+     "source_name": "MULCONJALF",
+     "type": "integer",
+     "description_pt": "Cônjuges, mulheres, alfabetizados(as)",
+     "description_en": "Spouses, female, literate"
+    },
+    {
+     "name": "V0270",
+     "set": "condicao",
+     "source_name": "MULFILHALF",
+     "type": "integer",
+     "description_pt": "Filhos(as) ou enteados(as), mulheres, alfabetizados(as)",
+     "description_en": "Children or stepchildren, female, literate"
+    },
+    {
+     "name": "V0271",
+     "set": "condicao",
+     "source_name": "MULAGREALF",
+     "type": "integer",
+     "description_pt": "Agregados(as), mulheres, alfabetizados(as)",
+     "description_en": "Non-relative members (agregados), female, literate"
+    },
+    {
+     "name": "V0272",
+     "set": "condicao",
+     "source_name": "MULPAREALF",
+     "type": "integer",
+     "description_pt": "Outros parentes, mulheres, alfabetizados(as)",
+     "description_en": "Other relatives, female, literate"
+    },
+    {
+     "name": "V0273",
+     "set": "condicao",
+     "source_name": "MULPENSALF",
+     "type": "integer",
+     "description_pt": "Pensionistas, mulheres, alfabetizados(as)",
+     "description_en": "Boarders, female, literate"
+    },
+    {
+     "name": "V0274",
+     "set": "condicao",
+     "source_name": "MEMPDOMALF",
+     "type": "integer",
+     "description_pt": "Empregados(as) domésticos(as), mulheres, alfabetizados(as)",
+     "description_en": "Domestic employees, female, literate"
+    },
+    {
+     "name": "V0275",
+     "set": "condicao",
+     "source_name": "MPAREMPALF",
+     "type": "integer",
+     "description_pt": "Parentes do(a) empregado(a) doméstico(a), mulheres, alfabetizados(as)",
+     "description_en": "Relatives of the domestic employee, female, literate"
+    }
+   ]
+  }
+ ],
+ "checks": {
+  "sum": [
+   {
+    "total": "V0001",
+    "parts": [
+     "V0002",
+     "V0056",
+     "V0079"
+    ]
+   },
+   {
+    "total": "V0002",
+    "parts": [
+     "V0003",
+     "V0007",
+     "V0011"
+    ]
+   },
+   {
+    "total": "V0003",
+    "parts": [
+     "V0004",
+     "V0005",
+     "V0006"
+    ]
+   },
+   {
+    "total": "V0007",
+    "parts": [
+     "V0008",
+     "V0009",
+     "V0010"
+    ]
+   },
+   {
+    "total": "V0002",
+    "parts": [
+     "V0012",
+     "V0016"
+    ]
+   },
+   {
+    "total": "V0012",
+    "parts": [
+     "V0013",
+     "V0014",
+     "V0015"
+    ]
+   },
+   {
+    "total": "V0016",
+    "parts": [
+     "V0017",
+     "V0018",
+     "V0019"
+    ]
+   },
+   {
+    "total": "V0002",
+    "parts": [
+     "V0020",
+     "V0029",
+     "V0038"
+    ]
+   },
+   {
+    "total": "V0020",
+    "parts": [
+     "V0021",
+     "V0022",
+     "V0025",
+     "V0026",
+     "V0027",
+     "V0028"
+    ]
+   },
+   {
+    "total": "V0022",
+    "parts": [
+     "V0023",
+     "V0024"
+    ]
+   },
+   {
+    "total": "V0029",
+    "parts": [
+     "V0030",
+     "V0031",
+     "V0034",
+     "V0035",
+     "V0036",
+     "V0037"
+    ]
+   },
+   {
+    "total": "V0031",
+    "parts": [
+     "V0032",
+     "V0033"
+    ]
+   },
+   {
+    "total": "V0002",
+    "parts": [
+     "V0039",
+     "V0042",
+     "V0043",
+     "V0046"
+    ]
+   },
+   {
+    "total": "V0039",
+    "parts": [
+     "V0040",
+     "V0041"
+    ]
+   },
+   {
+    "total": "V0043",
+    "parts": [
+     "V0044",
+     "V0045"
+    ]
+   },
+   {
+    "total": "V0002",
+    "parts": [
+     "V0047",
+     "V0050",
+     "V0051",
+     "V0052",
+     "V0055"
+    ]
+   },
+   {
+    "total": "V0047",
+    "parts": [
+     "V0048",
+     "V0049"
+    ]
+   },
+   {
+    "total": "V0052",
+    "parts": [
+     "V0053",
+     "V0054"
+    ]
+   },
+   {
+    "total": "V0057",
+    "parts": [
+     "V0058",
+     "V0059",
+     "V0060",
+     "V0061",
+     "V0062",
+     "V0063",
+     "V0064",
+     "V0065",
+     "V0066",
+     "V0067"
+    ]
+   },
+   {
+    "total": "V0068",
+    "parts": [
+     "V0069",
+     "V0070",
+     "V0071",
+     "V0072",
+     "V0073",
+     "V0074",
+     "V0075",
+     "V0076",
+     "V0077",
+     "V0078"
+    ]
+   },
+   {
+    "total": "V0068",
+    "parts": [
+     "V0002",
+     "V0056"
+    ]
+   },
+   {
+    "total": "V0079",
+    "parts": [
+     "V0080",
+     "V0081",
+     "V0082",
+     "V0083",
+     "V0084",
+     "V0085",
+     "V0086",
+     "V0087",
+     "V0088",
+     "V0089"
+    ]
+   },
+   {
+    "total": "V0090",
+    "parts": [
+     "V0091",
+     "V0092"
+    ]
+   },
+   {
+    "total": "V0093",
+    "parts": [
+     "V0094",
+     "V0095"
+    ]
+   },
+   {
+    "total": "V0096",
+    "parts": [
+     "V0097",
+     "V0098",
+     "V0099",
+     "V0100",
+     "V0101",
+     "V0102"
+    ]
+   },
+   {
+    "total": "V0096",
+    "parts": [
+     "V0103",
+     "V0104",
+     "V0105",
+     "V0106",
+     "V0107",
+     "V0108",
+     "V0109",
+     "V0110",
+     "V0111",
+     "V0112",
+     "V0113"
+    ]
+   },
+   {
+    "total": "V0114",
+    "parts": [
+     "V0132",
+     "V0150"
+    ]
+   },
+   {
+    "total": "V0195",
+    "parts": [
+     "V0213",
+     "V0231"
+    ]
+   },
+   {
+    "total": "V0114",
+    "parts": [
+     "V0115",
+     "V0116",
+     "V0117",
+     "V0118",
+     "V0119",
+     "V0120",
+     "V0121",
+     "V0122",
+     "V0123",
+     "V0124",
+     "V0125",
+     "V0126",
+     "V0127",
+     "V0128",
+     "V0129",
+     "V0130",
+     "V0131"
+    ]
+   },
+   {
+    "total": "V0195",
+    "parts": [
+     "V0196",
+     "V0197",
+     "V0198",
+     "V0199",
+     "V0200",
+     "V0201",
+     "V0202",
+     "V0203",
+     "V0204",
+     "V0205",
+     "V0206",
+     "V0207",
+     "V0208",
+     "V0209",
+     "V0210",
+     "V0211",
+     "V0212"
+    ]
+   },
+   {
+    "total": "V0132",
+    "parts": [
+     "V0133",
+     "V0134",
+     "V0135",
+     "V0136",
+     "V0137",
+     "V0138",
+     "V0139",
+     "V0140",
+     "V0141",
+     "V0142",
+     "V0143",
+     "V0144",
+     "V0145",
+     "V0146",
+     "V0147",
+     "V0148",
+     "V0149"
+    ]
+   },
+   {
+    "total": "V0213",
+    "parts": [
+     "V0214",
+     "V0215",
+     "V0216",
+     "V0217",
+     "V0218",
+     "V0219",
+     "V0220",
+     "V0221",
+     "V0222",
+     "V0223",
+     "V0224",
+     "V0225",
+     "V0226",
+     "V0227",
+     "V0228",
+     "V0229",
+     "V0230"
+    ]
+   },
+   {
+    "total": "V0150",
+    "parts": [
+     "V0151",
+     "V0152",
+     "V0153",
+     "V0154",
+     "V0155",
+     "V0156",
+     "V0157",
+     "V0158",
+     "V0159",
+     "V0160",
+     "V0161",
+     "V0162",
+     "V0163",
+     "V0164",
+     "V0165",
+     "V0166",
+     "V0167"
+    ]
+   },
+   {
+    "total": "V0231",
+    "parts": [
+     "V0232",
+     "V0233",
+     "V0234",
+     "V0235",
+     "V0236",
+     "V0237",
+     "V0238",
+     "V0239",
+     "V0240",
+     "V0241",
+     "V0242",
+     "V0243",
+     "V0244",
+     "V0245",
+     "V0246",
+     "V0247",
+     "V0248"
+    ]
+   },
+   {
+    "total": "V0115",
+    "parts": [
+     "V0133",
+     "V0151"
+    ]
+   },
+   {
+    "total": "V0196",
+    "parts": [
+     "V0214",
+     "V0232"
+    ]
+   },
+   {
+    "total": "V0116",
+    "parts": [
+     "V0134",
+     "V0152"
+    ]
+   },
+   {
+    "total": "V0197",
+    "parts": [
+     "V0215",
+     "V0233"
+    ]
+   },
+   {
+    "total": "V0117",
+    "parts": [
+     "V0135",
+     "V0153"
+    ]
+   },
+   {
+    "total": "V0198",
+    "parts": [
+     "V0216",
+     "V0234"
+    ]
+   },
+   {
+    "total": "V0118",
+    "parts": [
+     "V0136",
+     "V0154"
+    ]
+   },
+   {
+    "total": "V0199",
+    "parts": [
+     "V0217",
+     "V0235"
+    ]
+   },
+   {
+    "total": "V0119",
+    "parts": [
+     "V0137",
+     "V0155"
+    ]
+   },
+   {
+    "total": "V0200",
+    "parts": [
+     "V0218",
+     "V0236"
+    ]
+   },
+   {
+    "total": "V0120",
+    "parts": [
+     "V0138",
+     "V0156"
+    ]
+   },
+   {
+    "total": "V0201",
+    "parts": [
+     "V0219",
+     "V0237"
+    ]
+   },
+   {
+    "total": "V0121",
+    "parts": [
+     "V0139",
+     "V0157"
+    ]
+   },
+   {
+    "total": "V0202",
+    "parts": [
+     "V0220",
+     "V0238"
+    ]
+   },
+   {
+    "total": "V0122",
+    "parts": [
+     "V0140",
+     "V0158"
+    ]
+   },
+   {
+    "total": "V0203",
+    "parts": [
+     "V0221",
+     "V0239"
+    ]
+   },
+   {
+    "total": "V0123",
+    "parts": [
+     "V0141",
+     "V0159"
+    ]
+   },
+   {
+    "total": "V0204",
+    "parts": [
+     "V0222",
+     "V0240"
+    ]
+   },
+   {
+    "total": "V0124",
+    "parts": [
+     "V0142",
+     "V0160"
+    ]
+   },
+   {
+    "total": "V0205",
+    "parts": [
+     "V0223",
+     "V0241"
+    ]
+   },
+   {
+    "total": "V0125",
+    "parts": [
+     "V0143",
+     "V0161"
+    ]
+   },
+   {
+    "total": "V0206",
+    "parts": [
+     "V0224",
+     "V0242"
+    ]
+   },
+   {
+    "total": "V0126",
+    "parts": [
+     "V0144",
+     "V0162"
+    ]
+   },
+   {
+    "total": "V0207",
+    "parts": [
+     "V0225",
+     "V0243"
+    ]
+   },
+   {
+    "total": "V0127",
+    "parts": [
+     "V0145",
+     "V0163"
+    ]
+   },
+   {
+    "total": "V0208",
+    "parts": [
+     "V0226",
+     "V0244"
+    ]
+   },
+   {
+    "total": "V0128",
+    "parts": [
+     "V0146",
+     "V0164"
+    ]
+   },
+   {
+    "total": "V0209",
+    "parts": [
+     "V0227",
+     "V0245"
+    ]
+   },
+   {
+    "total": "V0129",
+    "parts": [
+     "V0147",
+     "V0165"
+    ]
+   },
+   {
+    "total": "V0210",
+    "parts": [
+     "V0228",
+     "V0246"
+    ]
+   },
+   {
+    "total": "V0130",
+    "parts": [
+     "V0148",
+     "V0166"
+    ]
+   },
+   {
+    "total": "V0211",
+    "parts": [
+     "V0229",
+     "V0247"
+    ]
+   },
+   {
+    "total": "V0131",
+    "parts": [
+     "V0149",
+     "V0167"
+    ]
+   },
+   {
+    "total": "V0212",
+    "parts": [
+     "V0230",
+     "V0248"
+    ]
+   },
+   {
+    "total": "V0168",
+    "parts": [
+     "V0177",
+     "V0186"
+    ]
+   },
+   {
+    "total": "V0249",
+    "parts": [
+     "V0258",
+     "V0267"
+    ]
+   },
+   {
+    "total": "V0169",
+    "parts": [
+     "V0178",
+     "V0187"
+    ]
+   },
+   {
+    "total": "V0250",
+    "parts": [
+     "V0259",
+     "V0268"
+    ]
+   },
+   {
+    "total": "V0170",
+    "parts": [
+     "V0179",
+     "V0188"
+    ]
+   },
+   {
+    "total": "V0251",
+    "parts": [
+     "V0260",
+     "V0269"
+    ]
+   },
+   {
+    "total": "V0171",
+    "parts": [
+     "V0180",
+     "V0189"
+    ]
+   },
+   {
+    "total": "V0252",
+    "parts": [
+     "V0261",
+     "V0270"
+    ]
+   },
+   {
+    "total": "V0172",
+    "parts": [
+     "V0181",
+     "V0190"
+    ]
+   },
+   {
+    "total": "V0253",
+    "parts": [
+     "V0262",
+     "V0271"
+    ]
+   },
+   {
+    "total": "V0173",
+    "parts": [
+     "V0182",
+     "V0191"
+    ]
+   },
+   {
+    "total": "V0254",
+    "parts": [
+     "V0263",
+     "V0272"
+    ]
+   },
+   {
+    "total": "V0174",
+    "parts": [
+     "V0183",
+     "V0192"
+    ]
+   },
+   {
+    "total": "V0255",
+    "parts": [
+     "V0264",
+     "V0273"
+    ]
+   },
+   {
+    "total": "V0175",
+    "parts": [
+     "V0184",
+     "V0193"
+    ]
+   },
+   {
+    "total": "V0256",
+    "parts": [
+     "V0265",
+     "V0274"
+    ]
+   },
+   {
+    "total": "V0176",
+    "parts": [
+     "V0185",
+     "V0194"
+    ]
+   },
+   {
+    "total": "V0257",
+    "parts": [
+     "V0266",
+     "V0275"
+    ]
+   }
+  ],
+  "equal": [
+   [
+    "V0001",
+    "V0057"
+   ],
+   [
+    "V0114",
+    "V0168"
+   ],
+   [
+    "V0195",
+    "V0249"
+   ],
+   [
+    "V0132",
+    "V0177"
+   ],
+   [
+    "V0150",
+    "V0186"
+   ],
+   [
+    "V0002",
+    "V0096"
+   ],
+   [
+    "V06",
+    "V0114"
+   ],
+   [
+    "V07",
+    "V0002"
+   ],
+   [
+    "V08",
+    "V0001"
+   ]
+  ],
+  "le": [
+   [
+    "V0195",
+    "V0114"
+   ],
+   [
+    "V0196",
+    "V0115"
+   ],
+   [
+    "V0197",
+    "V0116"
+   ],
+   [
+    "V0198",
+    "V0117"
+   ],
+   [
+    "V0199",
+    "V0118"
+   ],
+   [
+    "V0200",
+    "V0119"
+   ],
+   [
+    "V0201",
+    "V0120"
+   ],
+   [
+    "V0202",
+    "V0121"
+   ],
+   [
+    "V0203",
+    "V0122"
+   ],
+   [
+    "V0204",
+    "V0123"
+   ],
+   [
+    "V0205",
+    "V0124"
+   ],
+   [
+    "V0206",
+    "V0125"
+   ],
+   [
+    "V0207",
+    "V0126"
+   ],
+   [
+    "V0208",
+    "V0127"
+   ],
+   [
+    "V0209",
+    "V0128"
+   ],
+   [
+    "V0210",
+    "V0129"
+   ],
+   [
+    "V0211",
+    "V0130"
+   ],
+   [
+    "V0212",
+    "V0131"
+   ],
+   [
+    "V0213",
+    "V0132"
+   ],
+   [
+    "V0214",
+    "V0133"
+   ],
+   [
+    "V0215",
+    "V0134"
+   ],
+   [
+    "V0216",
+    "V0135"
+   ],
+   [
+    "V0217",
+    "V0136"
+   ],
+   [
+    "V0218",
+    "V0137"
+   ],
+   [
+    "V0219",
+    "V0138"
+   ],
+   [
+    "V0220",
+    "V0139"
+   ],
+   [
+    "V0221",
+    "V0140"
+   ],
+   [
+    "V0222",
+    "V0141"
+   ],
+   [
+    "V0223",
+    "V0142"
+   ],
+   [
+    "V0224",
+    "V0143"
+   ],
+   [
+    "V0225",
+    "V0144"
+   ],
+   [
+    "V0226",
+    "V0145"
+   ],
+   [
+    "V0227",
+    "V0146"
+   ],
+   [
+    "V0228",
+    "V0147"
+   ],
+   [
+    "V0229",
+    "V0148"
+   ],
+   [
+    "V0230",
+    "V0149"
+   ],
+   [
+    "V0231",
+    "V0150"
+   ],
+   [
+    "V0232",
+    "V0151"
+   ],
+   [
+    "V0233",
+    "V0152"
+   ],
+   [
+    "V0234",
+    "V0153"
+   ],
+   [
+    "V0235",
+    "V0154"
+   ],
+   [
+    "V0236",
+    "V0155"
+   ],
+   [
+    "V0237",
+    "V0156"
+   ],
+   [
+    "V0238",
+    "V0157"
+   ],
+   [
+    "V0239",
+    "V0158"
+   ],
+   [
+    "V0240",
+    "V0159"
+   ],
+   [
+    "V0241",
+    "V0160"
+   ],
+   [
+    "V0242",
+    "V0161"
+   ],
+   [
+    "V0243",
+    "V0162"
+   ],
+   [
+    "V0244",
+    "V0163"
+   ],
+   [
+    "V0245",
+    "V0164"
+   ],
+   [
+    "V0246",
+    "V0165"
+   ],
+   [
+    "V0247",
+    "V0166"
+   ],
+   [
+    "V0248",
+    "V0167"
+   ],
+   [
+    "V0249",
+    "V0168"
+   ],
+   [
+    "V0250",
+    "V0169"
+   ],
+   [
+    "V0251",
+    "V0170"
+   ],
+   [
+    "V0252",
+    "V0171"
+   ],
+   [
+    "V0253",
+    "V0172"
+   ],
+   [
+    "V0254",
+    "V0173"
+   ],
+   [
+    "V0255",
+    "V0174"
+   ],
+   [
+    "V0256",
+    "V0175"
+   ],
+   [
+    "V0257",
+    "V0176"
+   ],
+   [
+    "V0258",
+    "V0177"
+   ],
+   [
+    "V0259",
+    "V0178"
+   ],
+   [
+    "V0260",
+    "V0179"
+   ],
+   [
+    "V0261",
+    "V0180"
+   ],
+   [
+    "V0262",
+    "V0181"
+   ],
+   [
+    "V0263",
+    "V0182"
+   ],
+   [
+    "V0264",
+    "V0183"
+   ],
+   [
+    "V0265",
+    "V0184"
+   ],
+   [
+    "V0266",
+    "V0185"
+   ],
+   [
+    "V0267",
+    "V0186"
+   ],
+   [
+    "V0268",
+    "V0187"
+   ],
+   [
+    "V0269",
+    "V0188"
+   ],
+   [
+    "V0270",
+    "V0189"
+   ],
+   [
+    "V0271",
+    "V0190"
+   ],
+   [
+    "V0272",
+    "V0191"
+   ],
+   [
+    "V0273",
+    "V0192"
+   ],
+   [
+    "V0274",
+    "V0193"
+   ],
+   [
+    "V0275",
+    "V0194"
+   ]
+  ]
+ }
+}
