@@ -1,0 +1,24 @@
+{
+  "input_folder": "/path/to/IBGE/PNSB-2008/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/PNSB-2008/V100/SRC/ZENODO",
+  "report_folder": "package_report",
+  "prefix": "IBGE_PNSB-2008",
+  "_bundles": "all the SIDRA tables in one zip, the plotting geography in another; catalogs as they are",
+  "bundles": {
+    "IBGE_PNSB-2008_TABELAS_BRASIL_{YEARS}.zip": [
+      "IBGE_PNSB-2008_T[0-9]*_BRASIL_2008.csv"
+    ],
+    "IBGE_PNSB-2008_GEO_BRASIL_{YEARS}.zip": [
+      "IBGE_PNSB-2008_GEO-*_BRASIL_2008.gpkg"
+    ]
+  },
+  "compress": [
+    "*.csv",
+    "*.gpkg"
+  ],
+  "copy_as_is": [
+    "*_X_X.*"
+  ],
+  "level": 9,
+  "verify": true
+}

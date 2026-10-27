@@ -198,3 +198,6 @@ confirmed — each says why and how to undo it.
       (`codes_from`, checked same municipalities); equal to the ATLASSAN region codes.
     - No world countries in the DTB: no geometry for the ATLASSAN PAISES tables (only the Brazil outline).
     - Theme `geography` in LAYERS; new FIELDS merged_codes, mesh_year, capital_type, geometry, names.
+- (2026-10-27, user) Geography layer names follow the DTB: `ibge_dtb_<name>_<edition>` (e.g. `ibge_dtb_municipios_2008`)
+  inside the T1 gpkgs, as T2 tables and as LAYERS names; the file names stay under the dataset
+  (`IBGE_<DATASET>_GEO-<NAME>_BRASIL_<year>.gpkg`), since the layers are simplified derivatives, not DTB files.

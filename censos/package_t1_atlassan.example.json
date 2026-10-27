@@ -1,0 +1,36 @@
+{
+  "input_folder": "/path/to/IBGE/ATLASSAN/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V100/SRC/ZENODO",
+  "report_folder": "package_report",
+  "prefix": "IBGE_ATLASSAN",
+  "_bundles": "one zip per chapter of the Atlas (all levels and single maps of the chapter), one for the plotting geography; catalogs as they are",
+  "bundles": {
+    "IBGE_ATLASSAN_CAP01_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_CAP01-*_BRASIL_[0-9][0-9][0-9][0-9].csv"
+    ],
+    "IBGE_ATLASSAN_CAP02_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_CAP02-*_BRASIL_[0-9][0-9][0-9][0-9].csv"
+    ],
+    "IBGE_ATLASSAN_CAP03_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_CAP03-*_BRASIL_[0-9][0-9][0-9][0-9].csv"
+    ],
+    "IBGE_ATLASSAN_CAP04_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_CAP04-*_BRASIL_[0-9][0-9][0-9][0-9].csv"
+    ],
+    "IBGE_ATLASSAN_CAP05_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_CAP05-*_BRASIL_[0-9][0-9][0-9][0-9].csv"
+    ],
+    "IBGE_ATLASSAN_GEO_BRASIL_{YEARS}.zip": [
+      "IBGE_ATLASSAN_GEO-*_BRASIL_[0-9][0-9][0-9][0-9].gpkg"
+    ]
+  },
+  "compress": [
+    "*.csv",
+    "*.gpkg"
+  ],
+  "copy_as_is": [
+    "*_X_X.*"
+  ],
+  "level": 9,
+  "verify": true
+}

@@ -1,0 +1,27 @@
+<p><strong>Harmonized dataset from the Atlas of Basic Sanitation 2021 by IBGE</strong></p>
+<p>This dataset provides the values behind the maps of the Atlas de Saneamento 2021 (Atlas of Basic Sanitation), published by the Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE) on its GeoServer: 424 map layers turned into tables, mostly one row per municipality, with 463 value columns. The Atlas combines the National Survey of Basic Sanitation (PNSB) with other sources, such as health indicators (DATASUS), the 2010 census, REGIC 2018 and international comparisons (WHO).</p>
+<p>The files follow the five chapters of the Atlas, split by territorial level: municipalities, states, intermediate geographic regions and countries. Municipal tables join to the meshes of the Brazilian Territorial Division (DTB) by <code>municipio_code</code>. Simplified plotting layers from the DTB are included.</p>
+<h3><strong>What is in this deposit</strong></h3>
+<ul>
+<li><strong>chapter 1</strong> <code>IBGE_ATLASSAN_CAP01_BRASIL_2017.zip</code> &mdash; spatial distribution and coverage of the water and sewage networks (municipalities, states).</li>
+<li><strong>chapter 2</strong> <code>IBGE_ATLASSAN_CAP02_BRASIL_2017.zip</code> &mdash; quality and efficiency of the networks (municipalities, states, intermediate regions).</li>
+<li><strong>chapter 3</strong> <code>IBGE_ATLASSAN_CAP03_BRASIL_2017.zip</code> &mdash; basic sanitation and the environment (municipalities, plus 10 maps kept as published: treatment plants, river basin committees and others).</li>
+<li><strong>chapter 4</strong> <code>IBGE_ATLASSAN_CAP04_BRASIL_2017.zip</code> &mdash; basic sanitation and public health (municipalities, intermediate regions, countries, REGIC health travel).</li>
+<li><strong>chapter 5</strong> <code>IBGE_ATLASSAN_CAP05_BRASIL_2008-2017.zip</code> &mdash; management of the sanitation services (municipalities 2017 and 2008, states).</li>
+<li><strong>plotting geography</strong> <code>IBGE_ATLASSAN_GEO_BRASIL_2008-2017.zip</code> &mdash; GeoPackages of municipalities and seats (2017, 2008), states, intermediate regions and the outline of Brazil (2017).</li>
+<li><strong>database</strong> <code>T2_IBGE_ATLASSAN_BD_BRASIL_2017.gpkg.zip</code> &mdash; one GeoPackage built from the files above, described below.</li>
+<li><strong>metadata catalogs</strong>: <code>LAYERS</code> (every file, Portuguese and English), <code>FIELDS</code>, <code>VARIABLES</code> (every value column: map title, period, type, scale, source layers), <code>CATEGORIES</code> (the legend of every map), <code>CONSISTENCY</code> (uncompressed, readable on the repository).</li>
+<li><strong>checksums</strong>: <code>IBGE_ATLASSAN_MANIFEST_X_X.csv</code> and <code>IBGE_ATLASSAN_SHA256SUMS_X_X.txt</code>.</li>
+</ul>
+<p>The CSV files are named <code>IBGE_ATLASSAN_CAP&lt;chapter&gt;-&lt;level or map code&gt;_BRASIL_&lt;year&gt;.csv</code>, use <code>;</code> as separator and UTF-8 encoding.</p>
+<h3><strong>Database</strong></h3>
+<p>The GeoPackage <code>IBGE_ATLASSAN_BD_BRASIL_2017.gpkg</code> has one table per CSV file (e.g. <code>cap02_municipios_2017</code>, same columns and values, typed, unique index on the key code), the plotting layers with geometry, and the catalogs, with a <code>layers</code> table describing all of them.</p>
+<h3><strong>Conventions</strong></h3>
+<p>- One column per map, <code>as&lt;map code&gt;</code> as IBGE named the layers; the title and period of each map are in <code>VARIABLES</code>.<br>- Values as published: numbers when every value is a number, else the IBGE category or class (labels in <code>CATEGORIES</code>). Shares are not rescaled (0&ndash;1 or 0&ndash;100, given in <code>VARIABLES</code>). <code>-9999</code> (numbers) and <code>NA</code> (text) mean no value.<br>- Year 2017 is the reference year of the Atlas data; the chapter-5 maps of the PNSB 2008 are on the 2008 municipalities (5,564).<br>- Pieces of one map published as several layers were joined after checking that they agree; repeated maps and rows were dropped. Every change is in <code>CONSISTENCY</code>.<br>- Country tables use the ISO3 code; no world geometry is included.</p>
+<h3><strong>Plotting geography</strong></h3>
+<p>The layers (<code>ibge_dtb_municipios_2017</code>, <code>ibge_dtb_municipios_2008</code>, &hellip;) come from the DTB 2022 mesh for 2017 (same codes) and from the DTB 2010 mesh for 2008 (Naz&aacute;ria dissolved back into Teresina). They are simplified for maps (about 110 m, shared borders kept) and are not the official mesh.</p>
+<h3><strong>Data sources</strong></h3>
+<p>Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE). (2021). Atlas de Saneamento: abastecimento de &aacute;gua e esgotamento sanit&aacute;rio. GeoServer layers <code>CGEO:AtlasSan2021_*</code>. <a href="https://geoservicos.ibge.gov.br/geoserver/">https://geoservicos.ibge.gov.br/geoserver/</a><br>Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE). Divis&atilde;o Territorial Brasileira and Malhas territoriais. <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html">https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html</a></p>
+<h3><strong>Version log</strong></h3>
+<p><strong>v1.0.0</strong></p>
+<p>First version: the 424 map layers of the five chapters, the plotting geography and the database.</p>

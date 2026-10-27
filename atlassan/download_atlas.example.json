@@ -1,5 +1,5 @@
 {
-  "output_folder": "/path/to/IBGE/ATLASSAN/V1/SRC/GEOSERVER",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V100/SRC/GEOSERVER",
   "report_folder": "download_report",
   "prefix": "AtlasSan2021_",
   "workspace": "CGEO",

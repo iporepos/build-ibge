@@ -1,6 +1,6 @@
 {
-  "input_folder": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS",
-  "output_folder": "/path/to/IBGE/PNSB-2008/V1/T2/ASSETS",
+  "input_folder": "/path/to/IBGE/PNSB-2008/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/PNSB-2008/V100/T2/ASSETS",
   "output_name": "IBGE_PNSB-2008_BD_BRASIL_2008.gpkg",
   "report_folder": "database_report",
   "data_pattern": "IBGE_PNSB-2008_T(?P<code>\\d+)_BRASIL_2008\\.csv",

@@ -87,3 +87,10 @@ inside ATLASSAN (2026-10-26, `atlassan/DECISIONS.md` §2–7, 13–14); those it
   (same source, cheap).
 - O5. PNSB 1989: not in SIDRA (publication tables only); not built.
 - O6. Comparability across years (a T2 or a crosswalk of the variables 2000/2008/2017): not started.
+- (2026-10-27, user) Geography layer names follow the DTB: `ibge_dtb_<name>_<edition>` (e.g. `ibge_dtb_municipios_2008`)
+  inside the T1 gpkgs, as T2 tables and as LAYERS names; the file names stay under the dataset
+  (`IBGE_<DATASET>_GEO-<NAME>_BRASIL_<year>.gpkg`), since the layers are simplified derivatives, not DTB files.
+- O7. (2026-10-27, check) Connected units (economias, water `v722`, sewage `v754`/`v755`) are not a reliable series
+  at municipal or state level: missing provider reports appear as 0 (SIDRA `-`), e.g. water units 0 with a water
+  network in 332 SP municipalities in 2008 and 509 MG / 170 SC / 76 TO in 2017; RS sewage drops in 2008;
+  residential > total for 1,055 municipalities in 2017. Kept as published; a T2 series should flag or mask them.

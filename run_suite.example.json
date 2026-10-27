@@ -76,15 +76,20 @@
       },
       {
         "copy": "pnsb/IBGE_PNSB-2017_LAYERS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2017/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2017/V100/T1/ASSETS"
       },
       {
         "copy": "pnsb/IBGE_PNSB-2017_FIELDS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2017/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2017/V100/T1/ASSETS"
       },
       {
         "run": "censos/build_database_tables.py",
         "config": "build_database_pnsb_2017"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_pnsb_2017",
+        "overwrite": false
       }
     ],
     "pnsb_2008": [
@@ -103,15 +108,20 @@
       },
       {
         "copy": "pnsb/IBGE_PNSB-2008_LAYERS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2008/V100/T1/ASSETS"
       },
       {
         "copy": "pnsb/IBGE_PNSB-2008_FIELDS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2008/V100/T1/ASSETS"
       },
       {
         "run": "censos/build_database_tables.py",
         "config": "build_database_pnsb_2008"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_pnsb_2008",
+        "overwrite": false
       }
     ],
     "pnsb_2000": [
@@ -130,15 +140,20 @@
       },
       {
         "copy": "pnsb/IBGE_PNSB-2000_LAYERS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2000/V100/T1/ASSETS"
       },
       {
         "copy": "pnsb/IBGE_PNSB-2000_FIELDS_X_X.csv",
-        "to": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/PNSB-2000/V100/T1/ASSETS"
       },
       {
         "run": "censos/build_database_tables.py",
         "config": "build_database_pnsb_2000"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_pnsb_2000",
+        "overwrite": false
       }
     ],
     "atlassan": [
@@ -155,15 +170,20 @@
       },
       {
         "copy": "atlassan/IBGE_ATLASSAN_LAYERS_X_X.csv",
-        "to": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/ATLASSAN/V100/T1/ASSETS"
       },
       {
         "copy": "atlassan/IBGE_ATLASSAN_FIELDS_X_X.csv",
-        "to": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS"
+        "to": "/path/to/IBGE/ATLASSAN/V100/T1/ASSETS"
       },
       {
         "run": "censos/build_database_tables.py",
         "config": "build_database_atlassan"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_atlassan",
+        "overwrite": false
       }
     ],
     "censo_2022": [

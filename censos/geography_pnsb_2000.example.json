@@ -2,7 +2,7 @@
   "dtb_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
   "dtb_quadro": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
   "dtb_lineage": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
-  "output_folder": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/PNSB-2000/V100/T1/ASSETS",
   "report_folder": "geography_report",
   "editions": [
     {

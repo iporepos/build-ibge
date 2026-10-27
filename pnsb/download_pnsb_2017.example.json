@@ -1,5 +1,5 @@
 {
-  "output_folder": "/path/to/IBGE/PNSB-2017/V1/SRC/SIDRA",
+  "output_folder": "/path/to/IBGE/PNSB-2017/V100/SRC/SIDRA",
   "report_folder": "download_report",
   "survey": "SB",
   "years": [2017],

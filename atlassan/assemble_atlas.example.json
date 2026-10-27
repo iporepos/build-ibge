@@ -1,6 +1,6 @@
 {
-  "geoserver_folder": "/path/to/IBGE/ATLASSAN/V1/SRC/GEOSERVER",
-  "output_folder": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS",
+  "geoserver_folder": "/path/to/IBGE/ATLASSAN/V100/SRC/GEOSERVER",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V100/T1/ASSETS",
   "report_folder": "assemble_report",
   "dtb_quadro": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
   "year": 2017,

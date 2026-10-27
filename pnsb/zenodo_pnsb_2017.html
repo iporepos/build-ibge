@@ -1,0 +1,23 @@
+<p><strong>Harmonized dataset from the Brazilian National Survey of Basic Sanitation (PNSB) 2017 by IBGE</strong></p>
+<p>This dataset provides the municipal tables of the Pesquisa Nacional de Saneamento B&aacute;sico (PNSB) 2017, published by the Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE) in its SIDRA system: 63 tables on water supply and sewage, one row per municipality (5,570, DTB edition 2017), with 3,364 value columns.</p>
+<p>Every table has the same key, <code>municipio_code</code> (7 digits, text), so it joins to the municipal meshes of the Brazilian Territorial Division (DTB) and to the other IBGE datasets of the same year. Simplified plotting layers from the DTB are included.</p>
+<h3><strong>What is in this deposit</strong></h3>
+<ul>
+<li><strong>tables</strong> <code>IBGE_PNSB-2017_TABELAS_BRASIL_2017.zip</code> &mdash; 63 CSV files, one per SIDRA table (<code>IBGE_PNSB-2017_T&lt;table&gt;_BRASIL_2017.csv</code>): water supply (39) and sewage (24).</li>
+<li><strong>plotting geography</strong> <code>IBGE_PNSB-2017_GEO_BRASIL_2017.zip</code> &mdash; GeoPackages of municipalities, seats, states, intermediate regions and the outline of Brazil.</li>
+<li><strong>database</strong> <code>T2_IBGE_PNSB-2017_BD_BRASIL_2017.gpkg.zip</code> &mdash; one GeoPackage built from the files above, described below.</li>
+<li><strong>metadata catalogs</strong>: <code>LAYERS</code> (every file, Portuguese and English), <code>FIELDS</code>, <code>VARIABLES</code> (every value column: SIDRA variable, unit, classifications and categories), <code>TABLES</code> (every SIDRA table: name, subject, period, rows), <code>CONSISTENCY</code> (uncompressed, readable on the repository).</li>
+<li><strong>checksums</strong>: <code>IBGE_PNSB-2017_MANIFEST_X_X.csv</code> and <code>IBGE_PNSB-2017_SHA256SUMS_X_X.txt</code>.</li>
+</ul>
+<p>The CSV files use <code>;</code> as separator and UTF-8 encoding.</p>
+<h3><strong>Database</strong></h3>
+<p>The GeoPackage <code>IBGE_PNSB-2017_BD_BRASIL_2017.gpkg</code> has one table per SIDRA table (<code>t&lt;table&gt;</code>, same columns and values as the CSV, typed: codes and names text, values integer or real, unique index on <code>municipio_code</code>), the plotting layers with geometry, and the catalogs, with a <code>layers</code> table describing all of them.</p>
+<h3><strong>Conventions</strong></h3>
+<p>- Columns are named <code>v&lt;variable&gt;_&lt;category&gt;</code> with the SIDRA ids (e.g. <code>v10676_48278</code>); their meaning is in <code>VARIABLES</code>.<br>- SIDRA symbols: <code>-</code> &rarr; 0, <code>X</code> (value hidden) &rarr; <code>-1</code>, <code>..</code> and <code>...</code> &rarr; <code>-9999</code> (no data). Text fields use <code>NA</code>.<br>- Rows are the 5,570 municipalities of the DTB edition 2017. Five tables cover only part of them (e.g. the municipalities with a water network); the others get <code>-9999</code>, listed in <code>CONSISTENCY</code>.<br>- Nine tables span several survey years in SIDRA; this deposit keeps their 2017 values (the period is in <code>TABLES</code>).</p>
+<h3><strong>Plotting geography</strong></h3>
+<p>The layers (<code>ibge_dtb_municipios_2017</code>, <code>ibge_dtb_sedes_2017</code>, <code>ibge_dtb_unidades_2017</code>, <code>ibge_dtb_regioesintermediarias_2017</code>, <code>ibge_dtb_pais_2017</code>) come from the DTB 2022 mesh, which has the same 5,570 codes. They are simplified for maps (about 110 m, shared borders kept) and are not the official mesh. Intermediate region codes are those of DTB 2019, the first edition that lists them.</p>
+<h3><strong>Data sources</strong></h3>
+<p>Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE). Pesquisa Nacional de Saneamento B&aacute;sico 2017. SIDRA. <a href="https://sidra.ibge.gov.br/pesquisa/pnsb">https://sidra.ibge.gov.br/pesquisa/pnsb</a><br>Instituto Brasileiro de Geografia e Estat&iacute;stica (IBGE). Divis&atilde;o Territorial Brasileira and Malhas territoriais. <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html">https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html</a></p>
+<h3><strong>Version log</strong></h3>
+<p><strong>v1.0.0</strong></p>
+<p>First version: the 63 municipal tables of the PNSB 2017, the plotting geography and the database.</p>

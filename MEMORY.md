@@ -11,7 +11,7 @@ written in the bench, so their paths and config names may still show the bench l
   POP were built before promotion.
 - Census data: `<IBGE root>/CENSO-<year>/<version>/{SRC,T0,T1/ASSETS,T2/ASSETS}`;
   versions: 1991 V100, 2000 V100, 2010 V300, 2022 V300 (found under V300 instead of V200 on 2026-10-26).
-- PNSB-<year> and ATLASSAN live in the repo's `data/{PNSB-<year>,ATLASSAN}/V1` (gitignored; the `.local.json` configs point
+- PNSB-<year> and ATLASSAN: built in the repo's `data/{PNSB-<year>,ATLASSAN}/V1`, to be moved by the user to `<IBGE root>/<DATASET>/V100` (move_datasets.py; configs already point there) (gitignored; the `.local.json` configs point
   there as `../data/...`); DTB was promoted by the user to `<IBGE root>/DTB/V100` (2026-10-27; all configs point there). POP was promoted by the user to
   `<IBGE root>/POP/V100` (2026-10-26; the POP configs point there).
 - Rule: the user writes the warehouse; Claude tests on scratch outputs (`.claude/settings.json` denies edits there).
@@ -217,4 +217,20 @@ written in the bench, so their paths and config names may still show the bench l
   configs geography_pnsb_<year> / geography_atlassan): GEO-MUNICIPIOS/SEDES/UNIDADES/PAIS (+ REGIOESINTERMEDIARIAS 2017)
   per edition, from the nearest later DTB mesh (2008 ← 2010 with Nazária dissolved into Teresina; 2017 ← 2022),
   coverage-simplified 0.001°. T2 builder copies them (geo_*). Suite steps added; 20 steps ok. Checked visually.
+- 2026-10-27: geography layers renamed `ibge_dtb_<name>_<edition>` (T1 layer, T2 table, LAYERS); files keep `IBGE_<DATASET>_GEO-<NAME>_BRASIL_<year>.gpkg`.
+- 2026-10-27 (promotion prep): `move_datasets.py` (+ configs; copy, SHA-256 verify, delete source; dry run by default)
+  for data/{ATLASSAN,PNSB-2017,PNSB-2008,PNSB-2000}/V1 -> <IBGE root>/<DATASET>/V100. All PNSB/ATLASSAN configs
+  (local + example, 34) repointed to V100 BEFORE the move. New package_t1_pnsb_<year> / package_t1_atlassan
+  (SRC/ZENODO; PNSB: TABELAS zip + GEO zip; ATLASSAN: one zip per chapter + GEO), tested on scratch; suite step
+  added (overwrite false). Note: `grep` here is ugrep and skips gitignored files (*.local.json): use find/awk.
+  User to run: move (dry run, then --execute), then `python run_suite.py --config run_suite.local.json pnsb_2017
+  pnsb_2008 pnsb_2000 atlassan --from pnsb_2017:6` style or the package steps, and delete data/_TRASH_20261027.
 
+- 2026-10-27 (Zenodo): user ran the move (log move_report/move_20261027_104834.log: 4 moves, all files verified,
+  data/ now empty) and the packaging (SRC/ZENODO of the 4 datasets). Zenodo pages written:
+  `pnsb/zenodo_pnsb_<2017|2008|2000>.html`, `atlassan/zenodo_atlassan.html` (POP/DTB style, short); they list the
+  T2 database as `T2_IBGE_<DS>_BD_BRASIL_<year>.gpkg.zip`, which the user zips and ships by hand (as POP/DTB).
+- 2026-10-27 (exploration): PNSB time series = SIDRA multi-period tables (T1364 treatment type and T1773 volume in
+  all 3 years; economias v722/v754/v755 in all 3; ~550 cols 2000-2008, 94 cols 2008-2017). Units check: not
+  comparable as published (O7 in pnsb/DECISIONS.md). ATLASSAN 030801 treatment points come from ANA Atlas Águas
+  (~44% placed at the municipal seat); user will use ANA as source for intakes/treatment points.

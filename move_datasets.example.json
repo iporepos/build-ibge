@@ -1,0 +1,28 @@
+{
+  "moves": [
+    {
+      "from": "data/ATLASSAN/V1",
+      "to": "/path/to/IBGE/ATLASSAN/V100"
+    },
+    {
+      "from": "data/PNSB-2017/V1",
+      "to": "/path/to/IBGE/PNSB-2017/V100"
+    },
+    {
+      "from": "data/PNSB-2008/V1",
+      "to": "/path/to/IBGE/PNSB-2008/V100"
+    },
+    {
+      "from": "data/PNSB-2000/V1",
+      "to": "/path/to/IBGE/PNSB-2000/V100"
+    }
+  ],
+  "report_folder": "move_report",
+  "ensure_folders": [
+    "SRC",
+    "T0/ASSETS",
+    "T1/ASSETS",
+    "T2/ASSETS"
+  ],
+  "remove_empty_parent": true
+}

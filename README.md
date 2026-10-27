@@ -14,7 +14,7 @@ The data are not in this repository. They live in a warehouse folder, one datase
     T2/ASSETS/   one GeoPackage database built from T1
 ```
 
-`V100`, `V200`... are versions of a dataset; DTB, PNSB-<year> and ATLASSAN use `V1`, POP `V100`.
+`V100`, `V200`... are versions of a dataset; DTB, POP, PNSB-<year> and ATLASSAN use `V100`.
 
 ## Layout
 
@@ -109,9 +109,9 @@ DTB (`dtb/`): `assemble_tables.py` → `assemble_geography.py` → `build_lineag
 
 POP (`pop/`, needs DTB T1 and a copy of the census 2022 T1 basico in POP SRC): `assemble_population.py` → copy LAYERS → `check_visuals.py` → `censos/package_t1.py` (pop) → `build_database_pop.py`.
 
-PNSB (`pnsb/`, needs DTB T1, configs `<script>_<year>`): `download_pnsb.py` (SIDRA) → `assemble_pnsb.py` → `censos/geography_from_dtb_editions.py` (plotting layers from DTB, config `geography_pnsb_<year>`) → copy LAYERS/FIELDS of the year → `censos/build_database_tables.py` (T2, config `build_database_pnsb_<year>`).
+PNSB (`pnsb/`, needs DTB T1, configs `<script>_<year>`): `download_pnsb.py` (SIDRA) → `assemble_pnsb.py` → `censos/geography_from_dtb_editions.py` (plotting layers from DTB, config `geography_pnsb_<year>`) → copy LAYERS/FIELDS of the year → `censos/build_database_tables.py` (T2, config `build_database_pnsb_<year>`) → `censos/package_t1.py` (Zenodo, config `package_t1_pnsb_<year>`).
 
-ATLASSAN (`atlassan/`, needs DTB T1): `download_atlas.py` (GeoServer) → `assemble_atlas.py` → `censos/geography_from_dtb_editions.py` (config `geography_atlassan`) → copy LAYERS/FIELDS → `censos/build_database_tables.py` (T2, config `build_database_atlassan`).
+ATLASSAN (`atlassan/`, needs DTB T1): `download_atlas.py` (GeoServer) → `assemble_atlas.py` → `censos/geography_from_dtb_editions.py` (config `geography_atlassan`) → copy LAYERS/FIELDS → `censos/build_database_tables.py` (T2, config `build_database_atlassan`) → `censos/package_t1.py` (config `package_t1_atlassan`).
 
 Checks (`censos/`, after the T1s): `check_population.py`, `check_coverage.py`, `check_pyramids.py`, `check_income.py`.
 
@@ -123,3 +123,5 @@ python run_suite.py --config run_suite.local.json --list
 python run_suite.py --config run_suite.local.json dtb pop --overwrite --dry-run
 python run_suite.py --config run_suite.local.json censo_2010 --overwrite --from censo_2010:3
 ```
+
+Moving a dataset built in the repo's `data/` into the warehouse: `python move_datasets.py --config move_datasets.local.json` (dry run), then with `--execute` (copy, verify every file by SHA-256, then delete the source).

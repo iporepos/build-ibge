@@ -1,6 +1,6 @@
 {
-  "input_folder": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS",
-  "output_folder": "/path/to/IBGE/ATLASSAN/V1/T2/ASSETS",
+  "input_folder": "/path/to/IBGE/ATLASSAN/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V100/T2/ASSETS",
   "output_name": "IBGE_ATLASSAN_BD_BRASIL_2017.gpkg",
   "report_folder": "database_report",
   "data_pattern": "IBGE_ATLASSAN_CAP(?P<chapter>\\d\\d)-(?P<name>.+)_BRASIL_(?P<year>\\d{4})\\.csv",
