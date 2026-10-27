@@ -8,9 +8,14 @@ Snapshots (config "snapshots"):
                  06 litígio (disputed areas, 1940-1991). Folder DTB_1993 holds the 1933 files.
   2000           1:500,000 municipal mesh per UF (no .prj; coordinates labelled EPSG:4674 without
                  transformation, as in the census 2000 T1); seats from the SEDE/LATITUDESE/LONGITUDES columns
-  2010           1:250,000 municipal mesh per UF (SIRGAS 2000)
+  2010           1:250,000 municipal mesh per UF (SIRGAS 2000); seats from the 2022 seats (below) without
+                 the 5 municipalities installed in 2013 (dropped by code, "drop_unknown" of the seats source)
   2022           BR_Municipios_2022 and BR_UF_2022, plus the 2022 regional layers (pais, regioes,
-                 mesorregioes, microrregioes, regioesintermediarias, regioesimediatas)
+                 mesorregioes, microrregioes, regioesintermediarias, regioesimediatas); seats from the census
+                 2022 T1 sedes layer (IBGE BR_municipios_CD2022 sedes_municipais)
+
+Sources are a shapefile in a zip ("zip"), a glob of zips ("zips_glob") or a GeoPackage ("gpkg", optional
+"layer"), with paths relative to src_folder.
 
 Per snapshot (all in output_crs, area_km2 computed in area_crs, includes water bodies):
   municipios  municipio_code, municipio_name, unidade_code, area_type, area_km2 — one (multi)polygon per
@@ -68,13 +73,19 @@ def shp_in_zip(zip_path: Path) -> str:
 
 
 def read_source(src: Path, spec: dict) -> gpd.GeoDataFrame:
-    """A source layer (one zip, or a glob of per-UF zips) with columns code / name (if configured) / geometry."""
-    zips = sorted(src.glob(spec["zips_glob"])) if "zips_glob" in spec else [src / spec["zip"]]
-    if not zips:
-        raise SystemExit(f"No source for {spec}")
+    """A source layer (one zip, a glob of per-UF zips, or a GeoPackage) with columns code / name (if configured) / geometry."""
+    if "gpkg" in spec:
+        paths = [str(src / spec["gpkg"])]
+        if not Path(paths[0]).exists():
+            raise SystemExit(f"No source for {spec}")
+    else:
+        zips = sorted(src.glob(spec["zips_glob"])) if "zips_glob" in spec else [src / spec["zip"]]
+        if not zips:
+            raise SystemExit(f"No source for {spec}")
+        paths = [shp_in_zip(z) for z in zips]
     parts = []
-    for z in zips:
-        g = pyogrio.read_dataframe(shp_in_zip(z), encoding=spec.get("encoding"))
+    for p in paths:
+        g = pyogrio.read_dataframe(p, layer=spec.get("layer"), encoding=spec.get("encoding"))
         if g.crs is None:
             g = g.set_crs(spec["crs"])
         parts.append(g)
@@ -277,6 +288,13 @@ def build_sedes(year: int, sp: dict, cfg: dict, muni: gpd.GeoDataFrame, ref_seat
                          action=f"code set to {fixes[c]}", note="Código da sede trocado na fonte"))
     s["code"] = fixed
     mreal = muni[muni["area_type"] == "municipio"].set_index("municipio_code")
+    # seats taken from a later year: codes not in this year's mesh are dropped by code, not located
+    if sp.get("seats", {}).get("drop_unknown"):
+        later = ~s["code"].isin(mreal.index)
+        for c, name in zip(s.loc[later, "code"], s.loc[later, "name"]):
+            cons.append(dict(layer="sedes", code=c, issue="seat_code_not_in_mesh_dropped", value=f"{year}: {name}",
+                             action="dropped", note=sp["seats"]["drop_unknown"]))
+        s = s[~later]
     # seats with an unknown code (e.g. 0): assign to the polygon that contains them when it has no seat
     unknown = ~s["code"].isin(mreal.index)
     if unknown.any():

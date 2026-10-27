@@ -1,0 +1,15 @@
+{
+  "sidra_folder": "/path/to/IBGE/PNSB-2000/V1/SRC/SIDRA",
+  "output_folder": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS",
+  "report_folder": "assemble_report",
+  "dtb_quadro": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "year": 2000,
+  "edition": 2000,
+  "layers_catalog": "IBGE_PNSB-2000_LAYERS_X_X.csv",
+  "survey": "SB",
+  "level": "N6",
+  "manifest_name": "SIDRA_SB_MANIFEST.csv",
+  "name_pattern": "IBGE_PNSB-{YEAR}_T{TABLE}_BRASIL_{YEAR}.csv",
+  "catalog_pattern": "IBGE_PNSB-{YEAR}_{NAME}_X_X.csv",
+  "symbols": {"-": 0, "X": -1, "..": -9999, "...": -9999}
+}

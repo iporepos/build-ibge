@@ -1,9 +1,9 @@
 {
-  "src_folder": "/path/to/IBGE/CENSO-2010/V200/SRC",
-  "output_folder": "/path/to/IBGE/CENSO-2010/V200/T0/ASSETS",
+  "src_folder": "/path/to/IBGE/CENSO-2010/V300/SRC",
+  "output_folder": "/path/to/IBGE/CENSO-2010/V300/T0/ASSETS",
   "report_folder": "assemble_report",
-  "variables_catalog": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS/IBGE_CENSO-2010_VARIABLES_X_X.csv",
-  "reference_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "variables_catalog": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS/IBGE_CENSO-2010_VARIABLES_X_X.csv",
+  "reference_folder": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS",
   "output_name": "IBGE_CENSO-2010_{TABLE}_BRASIL_2010.csv",
   "key_source": "Cod_setor",
   "key_name": "setor_code",

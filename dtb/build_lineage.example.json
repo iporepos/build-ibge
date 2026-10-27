@@ -1,7 +1,7 @@
 {
-  "input_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "input_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
   "mesh_pattern": "IBGE_DTB_MUNICIPIOS_BRASIL_{YEAR}.gpkg",
-  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
   "report_folder": "lineage_report",
   "output_name": "IBGE_DTB_LINHAGEM_BRASIL_{YEAR}.csv",
   "area_crs": "ESRI:102033",
@@ -22,8 +22,8 @@
     "2010": "malha-2010-250k",
     "2022": "malha-2022"
   },
-  "genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
-  "quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "genealogy_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "quadro_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
   "noise_share": 0.001,
   "parent_share": 0.05,
   "recode_share": 0.9,

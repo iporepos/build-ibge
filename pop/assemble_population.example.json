@@ -1,10 +1,10 @@
 {
-  "src_folder": "/path/to/IBGE/POP/V1/SRC",
-  "output_folder": "/path/to/IBGE/POP/V1/T1/ASSETS",
+  "src_folder": "/path/to/IBGE/POP/V100/SRC",
+  "output_folder": "/path/to/IBGE/POP/V100/T1/ASSETS",
   "report_folder": "population_report",
   "name_pattern": "IBGE_POP_{NAME}_BRASIL_{YEAR}.csv",
   "consistency_name": "IBGE_POP_CONSISTENCY_X_X.csv",
-  "census_csv": "/path/to/IBGE/DTB/V1/SRC/dtb_evolucao_pop_1872-2010.csv",
+  "census_csv": "/path/to/IBGE/DTB/V100/SRC/dtb_evolucao_pop_1872-2010.csv",
   "census_years": [
     1872,
     1900,
@@ -25,7 +25,7 @@
     "2010": 190755799,
     "2022": 203080756
   },
-  "_census_tracts": "census years after the genealogy table: copy of the census T1 tract table (from /media .../CENSO-2022/V200/T1/ASSETS); urban / rural by situacao_type",
+  "_census_tracts": "census years after the genealogy table: copy of the census T1 tract table (from /media .../CENSO-2022/V300/T1/ASSETS); urban / rural by situacao_type",
   "census_tracts": [
     {
       "year": 2022,
@@ -36,8 +36,8 @@
       "rural": "Rural"
     }
   ],
-  "dtb_quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
-  "dtb_genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "dtb_quadro_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "dtb_genealogy_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
   "unidades": {
     "RONDONIA": "11",
     "ACRE": "12",

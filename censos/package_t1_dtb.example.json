@@ -1,0 +1,27 @@
+{
+  "input_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/DTB/V100/SRC/ZENODO",
+  "report_folder": "package_report",
+  "prefix": "IBGE_DTB",
+  "_bundles": "one zip per snapshot layer (one gpkg per year inside); the 2022 regional layers and the tables are gzipped one by one",
+  "bundles": {
+    "IBGE_DTB_MUNICIPIOS_BRASIL_{YEARS}.zip": [
+      "IBGE_DTB_MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].gpkg"
+    ],
+    "IBGE_DTB_SEDES_BRASIL_{YEARS}.zip": [
+      "IBGE_DTB_SEDES_BRASIL_[0-9][0-9][0-9][0-9].gpkg"
+    ],
+    "IBGE_DTB_UNIDADES_BRASIL_{YEARS}.zip": [
+      "IBGE_DTB_UNIDADES_BRASIL_[0-9][0-9][0-9][0-9].gpkg"
+    ]
+  },
+  "compress": [
+    "*.csv",
+    "*.gpkg"
+  ],
+  "copy_as_is": [
+    "*_X_X.*"
+  ],
+  "level": 6,
+  "verify": true
+}

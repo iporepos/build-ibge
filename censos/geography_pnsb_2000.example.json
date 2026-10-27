@@ -1,0 +1,26 @@
+{
+  "dtb_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
+  "dtb_quadro": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "dtb_lineage": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+  "output_folder": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS",
+  "report_folder": "geography_report",
+  "editions": [
+    {
+      "edition": 2000,
+      "mesh": 2000,
+      "layers": [
+        "municipios",
+        "sedes",
+        "unidades",
+        "pais"
+      ]
+    }
+  ],
+  "name_pattern": "IBGE_PNSB-2000_GEO-{NAME}_BRASIL_2000.gpkg",
+  "layer_pattern": "ibge_dtb_{name}_{year}",
+  "simplify_tolerance": 0.001,
+  "drop_area_types": [
+    "lagoa"
+  ],
+  "fill_holes": 0.0001
+}

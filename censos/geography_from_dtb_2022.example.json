@@ -1,9 +1,9 @@
 {
   "year": 2022,
-  "dtb_unidades": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_UNIDADES_BRASIL_2022.gpkg",
-  "alias_source": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_MUNICIPIOS_BRASIL_2022.gpkg",
+  "dtb_unidades": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_UNIDADES_BRASIL_2022.gpkg",
+  "alias_source": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_MUNICIPIOS_BRASIL_2022.gpkg",
   "alias_code_column": "municipio_code",
-  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS",
   "report_folder": "geography_report",
   "regioes": {"1": "Norte", "2": "Nordeste", "3": "Sudeste", "4": "Sul", "5": "Centro-Oeste"},
   "layers": ["unidades", "uniao"],

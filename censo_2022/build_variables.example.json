@@ -1,7 +1,7 @@
 {
   "assemble_config": "assemble_tables.example.json",
-  "dictionary_folder": "/path/to/IBGE/CENSO-2022/V200/T0/ASSETS",
-  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "dictionary_folder": "/path/to/IBGE/CENSO-2022/V300/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS",
   "report_folder": "variables_report",
   "glossary": "glossary_pt_en.json",
   "name_pattern": "IBGE_CENSO-2022_VARIABLES_X_X.csv",

@@ -1,0 +1,167 @@
+{
+  "input_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/DTB/V100/T2/ASSETS",
+  "output_name": "IBGE_DTB_BD_BRASIL_1872-2022.gpkg",
+  "report_folder": "database_report",
+  "catalogs": {
+    "layers": "IBGE_DTB_LAYERS_X_X.csv",
+    "fields": "IBGE_DTB_FIELDS_X_X.csv",
+    "consistency": "IBGE_DTB_CONSISTENCY_X_X.csv"
+  },
+  "_tables": "T2 tables: a pattern matching several files (one per year) makes one layer per year, <name>_<year>; t1 = the LAYERS row of T1",
+  "tables": [
+    {
+      "name": "municipios",
+      "t1": "municipios",
+      "files": "IBGE_DTB_MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].gpkg",
+      "key": [
+        "municipio_code"
+      ]
+    },
+    {
+      "name": "sedes",
+      "t1": "sedes",
+      "files": "IBGE_DTB_SEDES_BRASIL_[0-9][0-9][0-9][0-9].gpkg",
+      "key": [
+        "municipio_code"
+      ]
+    },
+    {
+      "name": "unidades",
+      "t1": "unidades",
+      "files": "IBGE_DTB_UNIDADES_BRASIL_[0-9][0-9][0-9][0-9].gpkg",
+      "key": [
+        "unidade_code"
+      ]
+    },
+    {
+      "name": "pais",
+      "t1": "pais",
+      "files": "IBGE_DTB_PAIS_BRASIL_2022.gpkg"
+    },
+    {
+      "name": "regioes",
+      "t1": "regioes",
+      "files": "IBGE_DTB_REGIOES_BRASIL_2022.gpkg",
+      "key": [
+        "regiao_code"
+      ]
+    },
+    {
+      "name": "mesorregioes",
+      "t1": "mesorregioes",
+      "files": "IBGE_DTB_MESORREGIOES_BRASIL_2022.gpkg",
+      "key": [
+        "regiaomeso_code"
+      ]
+    },
+    {
+      "name": "microrregioes",
+      "t1": "microrregioes",
+      "files": "IBGE_DTB_MICRORREGIOES_BRASIL_2022.gpkg",
+      "key": [
+        "regiaomicro_code"
+      ]
+    },
+    {
+      "name": "regioesintermediarias",
+      "t1": "regioesintermediarias",
+      "files": "IBGE_DTB_REGIOESINTERMEDIARIAS_BRASIL_2022.gpkg",
+      "key": [
+        "regiaointermediaria_code"
+      ]
+    },
+    {
+      "name": "regioesimediatas",
+      "t1": "regioesimediatas",
+      "files": "IBGE_DTB_REGIOESIMEDIATAS_BRASIL_2022.gpkg",
+      "key": [
+        "regiaoimediata_code"
+      ]
+    },
+    {
+      "name": "quadro_municipios",
+      "t1": "quadro-municipios",
+      "files": "IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+      "key": [
+        "edition",
+        "municipio_code"
+      ],
+      "indexes": [
+        [
+          "municipio_code",
+          "edition"
+        ]
+      ]
+    },
+    {
+      "name": "quadro_distritos",
+      "t1": "quadro-distritos",
+      "files": "IBGE_DTB_QUADRO-DISTRITOS_BRASIL_1994-2022.csv",
+      "key": [
+        "edition",
+        "distrito_code"
+      ],
+      "indexes": [
+        [
+          "municipio_code",
+          "edition"
+        ]
+      ]
+    },
+    {
+      "name": "quadro_subdistritos",
+      "t1": "quadro-subdistritos",
+      "files": "IBGE_DTB_QUADRO-SUBDISTRITOS_BRASIL_1994-2022.csv",
+      "key": [
+        "edition",
+        "subdistrito_code"
+      ],
+      "indexes": [
+        [
+          "distrito_code",
+          "edition"
+        ]
+      ]
+    },
+    {
+      "name": "genealogia",
+      "t1": "genealogia",
+      "files": "IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+      "key": [
+        "source_row",
+        "year"
+      ],
+      "indexes": [
+        [
+          "trajectory_code",
+          "year"
+        ],
+        [
+          "municipio_code",
+          "year"
+        ]
+      ]
+    },
+    {
+      "name": "linhagem",
+      "t1": "linhagem",
+      "files": "IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+      "key": [
+        "year_from",
+        "code_from",
+        "code_to"
+      ],
+      "indexes": [
+        [
+          "year_from",
+          "code_from"
+        ],
+        [
+          "year_to",
+          "code_to"
+        ]
+      ]
+    }
+  ]
+}

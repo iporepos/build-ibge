@@ -1,5 +1,5 @@
 {
-  "lineage_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+  "lineage_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
   "output_folder": "lineage_report/plots",
   "report_folder": "lineage_report",
   "max_nodes": 600,

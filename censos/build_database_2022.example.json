@@ -1,7 +1,7 @@
 {
   "label": "IBGE Census 2022",
-  "input_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
-  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T2/ASSETS",
+  "input_folder": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V300/T2/ASSETS",
   "report_folder": "database_report",
   "output_name": "IBGE_CENSO-2022_BD_BRASIL_2022.gpkg",
   "table_pattern": "IBGE_CENSO-2022_{NAME}_BRASIL_2022.csv",
@@ -13,8 +13,8 @@
   "cross_check": ["setores", "basico"],
   "real_variables": {},
   "catalogs": {
-    "layers": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_LAYERS_X_X.csv",
-    "fields": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_FIELDS_X_X.csv",
-    "variables": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_VARIABLES_X_X.csv"
+    "layers": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_LAYERS_X_X.csv",
+    "fields": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_FIELDS_X_X.csv",
+    "variables": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_VARIABLES_X_X.csv"
   }
 }

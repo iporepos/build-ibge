@@ -1,0 +1,92 @@
+{
+  "geoserver_folder": "/path/to/IBGE/ATLASSAN/V1/SRC/GEOSERVER",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS",
+  "report_folder": "assemble_report",
+  "dtb_quadro": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "year": 2017,
+  "prefix": "AtlasSan2021_",
+  "levels": [
+    {
+      "name": "MUNICIPIOS",
+      "source_keys": [
+        "geocodigo",
+        "codmunic",
+        "cd_geocmu"
+      ],
+      "key": "municipio_code",
+      "digits": 7,
+      "edition": 2017
+    },
+    {
+      "name": "MUNICIPIOS",
+      "year": 2008,
+      "source_keys": [
+        "geocodig_m"
+      ],
+      "key": "municipio_code",
+      "digits": 7,
+      "edition": 2008
+    },
+    {
+      "name": "UNIDADES",
+      "source_keys": [
+        "geocodigo",
+        "codigo",
+        "cod_uf",
+        "geoc_uf",
+        "geocodigo_uf"
+      ],
+      "key": "unidade_code",
+      "digits": 2
+    },
+    {
+      "name": "REGIOESINTERMEDIARIAS",
+      "source_keys": [
+        "rgint_cod",
+        "geocodigo"
+      ],
+      "key": "regiaointermediaria_code",
+      "digits": 4
+    },
+    {
+      "name": "PAISES",
+      "source_keys": [
+        "iso_a3"
+      ],
+      "key": "pais_code",
+      "digits": null,
+      "names": {
+        "name_pt": "pais_name"
+      },
+      "dedupe_rows": true,
+      "disambiguate": "name_pt"
+    }
+  ],
+  "combine": {
+    "as010201": [
+      "as010401"
+    ],
+    "as010301": [
+      "as010403"
+    ]
+  },
+  "duplicates": {
+    "as010302": "as010202",
+    "as010402": "as010202"
+  },
+  "drop_codes": [
+    "4300001",
+    "4300002"
+  ],
+  "title_fixes": {},
+  "manifest_name": "GEOSERVER_MANIFEST.csv",
+  "name_pattern": "IBGE_ATLASSAN_{NAME}_BRASIL_{YEAR}.csv",
+  "variables_name": "IBGE_ATLASSAN_VARIABLES_X_X.csv",
+  "categories_name": "IBGE_ATLASSAN_CATEGORIES_X_X.csv",
+  "consistency_name": "IBGE_ATLASSAN_CONSISTENCY_X_X.csv",
+  "skip_layers": {
+    "030201": "Densidade demográfica 2010 por setor censitário: repete o Censo 2010 (CENSO-2010)",
+    "03_setor_centroide": "Mesmos valores de 030201 com os códigos do setor: repete o Censo 2010 (CENSO-2010)",
+    "03_cbhs_estaduais": "Cópia idêntica da camada 033501"
+  }
+}

@@ -1,8 +1,8 @@
 {
-  "censos_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_CENSOS-MUNICIPIOS_BRASIL_1872-2022.csv",
-  "estimativas_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_ESTIMATIVAS-MUNICIPIOS_BRASIL_1992-2026.csv",
-  "unidades_csv": "/path/to/IBGE/POP/V1/T1/ASSETS/IBGE_POP_ESTIMATIVAS-UNIDADES_BRASIL_1992-2026.csv",
-  "mesh_2022": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_MUNICIPIOS_BRASIL_2022.gpkg",
+  "censos_csv": "/path/to/IBGE/POP/V100/T1/ASSETS/IBGE_POP_CENSOS-MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].csv",
+  "estimativas_csv": "/path/to/IBGE/POP/V100/T1/ASSETS/IBGE_POP_ESTIMATIVAS-MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].csv",
+  "unidades_csv": "/path/to/IBGE/POP/V100/T1/ASSETS/IBGE_POP_ESTIMATIVAS-UNIDADES_BRASIL_[0-9][0-9][0-9][0-9].csv",
+  "mesh_2022": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_MUNICIPIOS_BRASIL_2022.gpkg",
   "output_folder": "visual_checks",
   "unidade_siglas": {
     "11": "RO",

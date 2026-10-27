@@ -1,0 +1,12 @@
+{
+  "output_folder": "/path/to/IBGE/ATLASSAN/V1/SRC/GEOSERVER",
+  "report_folder": "download_report",
+  "prefix": "AtlasSan2021_",
+  "workspace": "CGEO",
+  "wfs_url": "https://geoservicos.ibge.gov.br/geoserverCGEO/CGEO/wfs",
+  "wms_url": "https://geoservicos.ibge.gov.br/geoserverCGEO/CGEO/ows",
+  "workers": 3,
+  "timeout": 300,
+  "retries": 6,
+  "manifest_name": "GEOSERVER_MANIFEST.csv"
+}

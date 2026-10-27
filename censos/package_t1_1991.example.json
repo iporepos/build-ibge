@@ -1,6 +1,6 @@
 {
   "input_folder": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS",
-  "output_folder": "/path/to/IBGE/CENSO-1991/V100/SRC",
+  "output_folder": "/path/to/IBGE/CENSO-1991/V100/SRC/ZENODO",
   "report_folder": "package_report",
   "prefix": "IBGE_CENSO-1991",
   "compress": ["*.csv", "*.gpkg"],

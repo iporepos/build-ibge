@@ -1,0 +1,24 @@
+{
+  "input_folder": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/ATLASSAN/V1/T2/ASSETS",
+  "output_name": "IBGE_ATLASSAN_BD_BRASIL_2017.gpkg",
+  "report_folder": "database_report",
+  "data_pattern": "IBGE_ATLASSAN_CAP(?P<chapter>\\d\\d)-(?P<name>.+)_BRASIL_(?P<year>\\d{4})\\.csv",
+  "layer_template": "cap{chapter}_{name}_{year}",
+  "layers_lookup": "cap{chapter}-{name}",
+  "layers_default": "cap{chapter}-<código>",
+  "layers_catalog": "IBGE_ATLASSAN_LAYERS_X_X.csv",
+  "fields_catalog": "IBGE_ATLASSAN_FIELDS_X_X.csv",
+  "keys": [
+    "municipio_code",
+    "unidade_code",
+    "regiaointermediaria_code",
+    "pais_code"
+  ],
+  "field_patterns": {
+    "as\\w+": "as<código>"
+  },
+  "geo_pattern": "IBGE_ATLASSAN_GEO-(?P<name>[A-Z]+)_BRASIL_(?P<year>\\d{4})\\.gpkg",
+  "geo_template": "ibge_dtb_{name}_{year}",
+  "geo_lookup": "ibge_dtb_{name}_{year}"
+}

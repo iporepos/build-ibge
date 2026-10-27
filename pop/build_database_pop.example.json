@@ -1,0 +1,100 @@
+{
+  "input_folder": "/path/to/IBGE/POP/V100/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/POP/V100/T2/ASSETS",
+  "output_name": "IBGE_POP_BD_BRASIL_1872-2026.gpkg",
+  "report_folder": "database_report",
+  "inputs": {
+    "censos": "IBGE_POP_CENSOS-MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].csv",
+    "estimativas": "IBGE_POP_ESTIMATIVAS-MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].csv",
+    "unidades": "IBGE_POP_ESTIMATIVAS-UNIDADES_BRASIL_[0-9][0-9][0-9][0-9].csv",
+    "notas": "IBGE_POP_ESTIMATIVAS-NOTAS_BRASIL_[0-9][0-9][0-9][0-9].csv"
+  },
+  "catalogs": {
+    "fields": "IBGE_POP_FIELDS_X_X.csv",
+    "consistency": "IBGE_POP_CONSISTENCY_X_X.csv"
+  },
+  "interpolation": {
+    "years": [
+      1996,
+      2007,
+      2023
+    ],
+    "method": "geometric",
+    "_comment": "estimate years without an IBGE estimate: 1996 and 2007 (population counts not in SRC), 2023"
+  },
+  "genealogy_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "lineage_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_LINHAGEM_BRASIL_1872-2022.csv",
+  "layers": [
+    {
+      "name": "municipios",
+      "theme": "population",
+      "description_pt": "População por município e ano numa tabela longa: censos 1872 a 2022 e estimativas 1992 a 2026 como publicados (source censo / estimativa) e os anos sem estimativa interpolados (source interpolado*, coluna interpolation). series = 1 marca a linha da série anual (censo quando o ano tem censo, senão estimativa, senão interpolação). Códigos do ano (iguais aos da malha DTB do mesmo ano). Chave year + municipio_code + source.",
+      "description_en": "Population by municipality and year in one long table: censuses 1872-2022 and estimates 1992-2026 as published (source censo / estimativa) and the years without estimate interpolated (source interpolado*, column interpolation). series = 1 marks the row of the annual series (census when the year has one, else estimate, else interpolation). Codes of that year (same as the DTB mesh). Key year + municipio_code + source."
+    },
+    {
+      "name": "unidades",
+      "theme": "population",
+      "description_pt": "Totais publicados de Brasil, grandes regiões e UFs nas planilhas das estimativas (quando existem), sem interpolação. Podem diferir da soma dos municípios (populações judiciais, litígios).",
+      "description_en": "Published totals of Brazil, regions and UFs in the estimate files (when present), not interpolated. May differ from the municipal sums."
+    },
+    {
+      "name": "notas",
+      "theme": "population",
+      "description_pt": "Notas de rodapé de cada arquivo de estimativas (populações judiciais, retificações, mudanças de nome).",
+      "description_en": "Footnotes of every estimate file."
+    },
+    {
+      "name": "consistency",
+      "theme": "metadata",
+      "description_pt": "Achados e correções da harmonização (T1).",
+      "description_en": "Findings and fixes of the harmonization (T1)."
+    },
+    {
+      "name": "layers",
+      "theme": "metadata",
+      "description_pt": "Catálogo das camadas.",
+      "description_en": "Layer catalog."
+    },
+    {
+      "name": "fields",
+      "theme": "metadata",
+      "description_pt": "Catálogo dos campos.",
+      "description_en": "Field catalog."
+    }
+  ],
+  "fields_add": [
+    {
+      "field": "source",
+      "description_pt": "Origem do valor: censo, estimativa (como publicados), interpolado (mesmo código nos dois anos de apoio), interpolado_territorio (município que perdeu território entre os anos de apoio: o ano seguinte somado aos municípios criados dele), interpolado_rateio (grupo com município criado de vários pais: interpolado em conjunto e repartido pela população do ano anterior)",
+      "description_en": "Origin of the value: censo, estimativa (as published), interpolado, interpolado_territorio, interpolado_rateio (see the layers catalog and build_database_pop.py)",
+      "dtype_actual": "text",
+      "dtype_stored": "text",
+      "scale": "",
+      "no_data": "NA",
+      "hidden_data": "",
+      "uncertain_data": ""
+    },
+    {
+      "field": "series",
+      "description_pt": "1 = linha da série anual do município (uma por ano e código), 0 = outra linha do mesmo ano (ex.: estimativa de 2000 ao lado do censo)",
+      "description_en": "1 = row of the annual series (one per year and code), 0 = another row of the same year (e.g. the 2000 estimate next to the census)",
+      "dtype_actual": "integer",
+      "dtype_stored": "integer",
+      "scale": "1",
+      "no_data": "-9999",
+      "hidden_data": "",
+      "uncertain_data": ""
+    },
+    {
+      "field": "interpolation",
+      "description_pt": "Documentação da interpolação: método, anos de apoio e códigos somados (NA para valores publicados)",
+      "description_en": "How the value was interpolated: method, anchor years and codes added (NA for published values)",
+      "dtype_actual": "text",
+      "dtype_stored": "text",
+      "scale": "",
+      "no_data": "NA",
+      "hidden_data": "",
+      "uncertain_data": ""
+    }
+  ]
+}

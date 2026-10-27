@@ -1,10 +1,10 @@
 {
-  "src_folder": "/path/to/IBGE/DTB/V1/SRC",
-  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "src_folder": "/path/to/IBGE/DTB/V100/SRC",
+  "output_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
   "report_folder": "tables_report",
   "name_pattern": "IBGE_DTB_{NAME}_BRASIL_{YEAR}.csv",
   "consistency_name": "IBGE_DTB_CONSISTENCY_X_X.csv",
-  "genealogy_csv": "/path/to/IBGE/DTB/V1/SRC/dtb_evolucao_pop_1872-2010.csv",
+  "genealogy_csv": "/path/to/IBGE/DTB/V100/SRC/dtb_evolucao_pop_1872-2010.csv",
   "genealogy_years": [
     1872,
     1900,

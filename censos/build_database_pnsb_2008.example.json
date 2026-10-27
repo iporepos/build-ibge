@@ -1,0 +1,19 @@
+{
+  "input_folder": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS",
+  "output_folder": "/path/to/IBGE/PNSB-2008/V1/T2/ASSETS",
+  "output_name": "IBGE_PNSB-2008_BD_BRASIL_2008.gpkg",
+  "report_folder": "database_report",
+  "data_pattern": "IBGE_PNSB-2008_T(?P<code>\\d+)_BRASIL_2008\\.csv",
+  "layer_template": "t{code}",
+  "layers_catalog": "IBGE_PNSB-2008_LAYERS_X_X.csv",
+  "fields_catalog": "IBGE_PNSB-2008_FIELDS_X_X.csv",
+  "keys": [
+    "municipio_code"
+  ],
+  "field_patterns": {
+    "v\\d+(_\\d+)*": "v<variável>_<categoria>..."
+  },
+  "geo_pattern": "IBGE_PNSB-2008_GEO-(?P<name>[A-Z]+)_BRASIL_2008\\.gpkg",
+  "geo_template": "ibge_dtb_{name}_2008",
+  "geo_lookup": "ibge_dtb_{name}_2008"
+}

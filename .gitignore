@@ -3,6 +3,7 @@
 prompts/
 scripts/
 *local.*
+data/
 
 # Reports and check outputs (logs, CSV reports, PNG figures)
 *_report/

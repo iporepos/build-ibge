@@ -1,6 +1,6 @@
 {
-  "src_folder": "/path/to/IBGE/DTB/V1/SRC",
-  "output_folder": "/path/to/IBGE/DTB/V1/T1/ASSETS",
+  "src_folder": "/path/to/IBGE/DTB/V100/SRC",
+  "output_folder": "/path/to/IBGE/DTB/V100/T1/ASSETS",
   "report_folder": "geography_report",
   "name_pattern": "IBGE_DTB_{NAME}_BRASIL_{YEAR}.gpkg",
   "layer_pattern": "ibge_dtb_{name}_{year}",
@@ -8,8 +8,8 @@
   "output_crs": "EPSG:4674",
   "area_crs": "ESRI:102033",
   "capital_max_distance_m": 5000,
-  "quadro_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
-  "genealogy_csv": "/path/to/IBGE/DTB/V1/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
+  "quadro_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_QUADRO-MUNICIPIOS_BRASIL_1940-2022.csv",
+  "genealogy_csv": "/path/to/IBGE/DTB/V100/T1/ASSETS/IBGE_DTB_GENEALOGIA_BRASIL_1872-2010.csv",
   "special_codes": {
     "4300001": {
       "name": "Lagoa Mirim",
@@ -634,6 +634,13 @@
         "name": "NM_MUNICIP",
         "encoding": "cp1252"
       },
+      "seats": {
+        "gpkg": "DTB_2022/IBGE_CENSO-2022_SEDES_BRASIL_2022.gpkg",
+        "code": "municipio_code",
+        "name": "municipio_name",
+        "drop_unknown": "Município instalado depois de 2010 (sede tirada das sedes de 2022)"
+      },
+      "_seats_comment": "the 2022 seats; the 5 municipalities installed in 2013 are dropped. No municipality was extinct or recoded between 2010 and 2022",
       "unidades": "dissolve",
       "names": [
         "genealogy",
@@ -648,6 +655,12 @@
         "name": "NM_MUN",
         "encoding": "utf-8"
       },
+      "seats": {
+        "gpkg": "DTB_2022/IBGE_CENSO-2022_SEDES_BRASIL_2022.gpkg",
+        "code": "municipio_code",
+        "name": "municipio_name"
+      },
+      "_seats_comment": "copy of the census 2022 T1 sedes layer (IBGE BR_municipios_CD2022.gpkg, layer sedes_municipais)",
       "unidades": {
         "zip": "DTB_2022/BR_UF_2022.zip",
         "code": "CD_UF",

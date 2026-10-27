@@ -1,7 +1,9 @@
 """
 Assemble the IBGE population series (POP) for T1.
 
-Outputs (output_folder, CSV ';' UTF-8; text NA, numbers -9999 = not available):
+Outputs (output_folder, CSV ';' UTF-8; text NA, numbers -9999 = not available), one file per layer and year
+(name_pattern, e.g. IBGE_POP_ESTIMATIVAS-MUNICIPIOS_BRASIL_2025.csv; the year column is kept so the files
+concatenate). A year without rows in a layer (e.g. no published totals) gets no file of that layer:
   censos-municipios      census population by municipality 1872-2022. 1872-2010 from the table of "Evolução da
                          divisão territorial do Brasil 1872-2010" (dtb_evolucao_pop_1872-2010.csv): year,
                          municipio_code of that year (the DTB T1 snapshot codes), population, urban / rural
@@ -15,22 +17,26 @@ Outputs (output_folder, CSV ';' UTF-8; text NA, numbers -9999 = not available):
                          2022 (censuses), 2023.
   estimativas-unidades   the published totals of Brasil, regions and UFs (sheets "BR e UFs"), when present
   estimativas-notas      footnotes of every estimate file (year, mark, text)
-  CONSISTENCY            findings (rows of layers estimativas-* / censos-* are replaced)
+  CONSISTENCY            findings (rows of layers estimativas-* / censos-* are replaced; with --years only the
+                         rows of those years, by the year that starts their value)
+
+--years Y [Y ...] builds only those census / estimate years and writes only their files; the files of the
+other years are not touched (a new estimate: add it to "estimates" and run with --years <year>).
 
 Parsing rules: '-' is zero (IBGE convention), '...' / '…' / empty is not available (-9999). Estimates: footnote
 marks are cut from the value / name cells ('59.881(*)' -> 59881, note_mark '(*)'); dots between thousand groups
 are dropped. Municipality codes without check digit (1992-2006 files) get the 7-digit code of the DTB with the
 same 6 leading digits (dtb_codes: T1 quadro-municipios + genealogia), else the IBGE rule. Census 2010 values of
 the source are numbers written with thousand dots and read as decimals (24.392 = 24,392; 13.97 = 13,970): each
-value is read as x1000 when it has a dot; a value without dot is taken literally or x1000, choosing the
-combination where total = urban + rural (then total checked against census_totals).
+value is read as x1000 when it has a dot; a value without dot is taken literally or x1000 (x1000 tried first
+below 3 digits), choosing the combination where total = urban + rural (then total checked against census_totals).
 
 Checks: every estimate code must exist in the DTB editions around the year (last not after it, first after it);
 names compared with the DTB (folded); municipal sums vs published UF / Brasil totals; census national
 totals vs census_totals.
 
 Usage:
-    python assemble_population.py --config assemble_population.local.json [--overwrite]
+    python assemble_population.py --config assemble_population.local.json [--overwrite] [--years 2026 ...]
 """
 
 import argparse
@@ -118,11 +124,17 @@ def write_csv(df: pd.DataFrame, path: Path, overwrite: bool, logger):
     logger.info("Wrote %s (%d rows)", path, len(df))
 
 
-def merge_consistency(path: Path, rows: list) -> int:
+def merge_consistency(path: Path, rows: list, years=None) -> int:
+    """Replace the rows of LAYERS (only those whose value starts with one of years, if given)."""
+    def replaced(r) -> bool:
+        if r["layer"] not in LAYERS:
+            return False
+        m = re.match(r"\d{4}\b", r["value"])
+        return years is None or (m is not None and int(m.group()) in years)
     kept = []
     if path.exists():
         with open(path, encoding="utf-8", newline="") as f:
-            kept = [r for r in csv.DictReader(f, delimiter=";") if r["layer"] not in LAYERS]
+            kept = [r for r in csv.DictReader(f, delimiter=";") if not replaced(r)]
     tmp = path.with_name(path.name + ".part")
     with open(tmp, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CONSISTENCY_FIELDS, delimiter=";", lineterminator="\n")
@@ -157,13 +169,13 @@ def census_2010(tot: str, urb: str, rur: str):
             return [int(v.replace(".", ""))]
         if "." in v:
             return [round(float(v) * 1000)]
-        return [int(v), int(v) * 1000] if len(v) >= 3 else [int(v) * 1000]
+        return [int(v), int(v) * 1000] if len(v) >= 3 else [int(v) * 1000, int(v)]
     for t in cands(tot):
         for u in cands(urb):
             for r in cands(rur):
                 if t == u + r:
                     return t, u, r, "identity"
-    t, u, r = (cands(x)[0] if len(cands(x)) == 1 or len(x.strip()) >= 3 else cands(x)[-1] for x in (tot, urb, rur))
+    t, u, r = (cands(x)[0] for x in (tot, urb, rur))
     return t, u, r, "fallback"
 
 
@@ -190,7 +202,7 @@ def build_censos(cfg: dict, cons: list, logger) -> pd.DataFrame:
                 if method != "identity":
                     fallback += 1
                     cons.append(dict(layer="censos-municipios", code=code, issue="census2010_value_ambiguous",
-                                     value=f"{r[cols['total']]} / {r[cols['urban']]} / {r[cols['rural']]}", action=f"read as {t} / {u} / {rr}",
+                                     value=f"{y}: {r[cols['total']]} / {r[cols['urban']]} / {r[cols['rural']]}", action=f"read as {t} / {u} / {rr}",
                                      note="Valor de 2010 com separador de milhar lido como decimal; total ≠ urbana + rural em todas as leituras"))
             else:
                 rec["population"] = census_value(r[cols["total"]])
@@ -380,14 +392,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.strip().splitlines()[0])
     parser.add_argument("--config", required=True, help="Path to JSON config file")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing outputs")
+    parser.add_argument("--years", nargs="*", type=int, help="Only these census / estimate years (other files untouched)")
     args = parser.parse_args()
     cfg = load_config(args.config)
     logger = setup_logging(Path(cfg["report_folder"]))
     out = Path(cfg["output_folder"])
     out.mkdir(parents=True, exist_ok=True)
     cons = []
+    if args.years:
+        known = set(cfg["census_years"]) | {s["year"] for s in cfg.get("census_tracts", []) + cfg["estimates"]}
+        unknown = sorted(set(args.years) - known)
+        if unknown:
+            sys.exit(f"--years not in the config (census_years / census_tracts / estimates): {unknown}")
+        cfg["census_years"] = [y for y in cfg["census_years"] if y in args.years]
+        cfg["census_tracts"] = [s for s in cfg.get("census_tracts", []) if s["year"] in args.years]
+        cfg["estimates"] = [s for s in cfg["estimates"] if s["year"] in args.years]
+        logger.info("Only years %s", sorted(args.years))
 
-    censos = build_censos(cfg, cons, logger)
+    censos = build_censos(cfg, cons, logger) if cfg["census_years"] or cfg.get("census_tracts") else pd.DataFrame(columns=["year"])
 
     prefix = dtb_prefix_map(cfg)
     est, notes, units = [], [], []
@@ -396,9 +418,9 @@ def main():
         est.append(d)
         notes.append(n)
         units.append(u)
-    est = pd.concat(est, ignore_index=True)
-    notes = pd.concat(notes, ignore_index=True)
-    units = pd.concat([u for u in units if len(u)], ignore_index=True)
+    est = pd.concat(est, ignore_index=True) if est else pd.DataFrame(columns=["year", "code_source"])
+    notes = pd.concat([n for n in notes if len(n)] or [pd.DataFrame(columns=["year"])], ignore_index=True)
+    units = pd.concat([u for u in units if len(u)] or [pd.DataFrame(columns=["year", "level", "code", "population"])], ignore_index=True)
 
     # checks against the DTB and published totals
     q = pd.read_csv(cfg["dtb_quadro_csv"], sep=";", dtype=str, keep_default_na=False, usecols=["edition", "municipio_code", "municipio_name"])
@@ -440,13 +462,12 @@ def main():
         summary.append(dict(year=y, municipios=len(d), dtb_edition=ed, not_in_dtb=len(notin), name_differs=len(named),
                             sum_municipios=tot, brasil_published=int(pub.iloc[0]) if len(pub) else NODATA,
                             uf_totals=len(uu), uf_totals_differ=uf_bad, marks=int((d["note_mark"] != NA).sum())))
-    s = pd.DataFrame(summary)
-    s.to_csv(Path(cfg["report_folder"]) / "estimates_summary.csv", sep=";", index=False)
-    logger.info("Estimates summary:\n%s", s.to_string(index=False))
+    if summary:
+        s = pd.DataFrame(summary)
+        s.to_csv(Path(cfg["report_folder"]) / "estimates_summary.csv", sep=";", index=False)
+        logger.info("Estimates summary:\n%s", s.to_string(index=False))
 
     pat = cfg["name_pattern"]
-    cy = sorted(censos["year"].unique())
-    ey = sorted(est["year"].unique())
     # census years against the DTB quadro of the same edition (genealogy years are checked in the DTB lineage)
     for y in sorted({s["year"] for s in cfg.get("census_tracts", [])} & set(q["edition"])):
         ref = set(q.loc[q["edition"] == y, "municipio_code"])
@@ -455,13 +476,17 @@ def main():
             cons.append(dict(layer="censos-municipios", code=c, issue="code_not_in_dtb_edition" if c in got else "dtb_code_without_census",
                              value=str(y), action="kept", note="Código do censo e do DTB da mesma edição não coincidem"))
         logger.info("  census %d vs DTB %d: %d / %d codes, %d differ", y, y, len(got), len(ref), len(got ^ ref))
-    write_csv(censos, out / pat.format(NAME="CENSOS-MUNICIPIOS", YEAR=f"{cy[0]}-{cy[-1]}"), args.overwrite, logger)
-    write_csv(est.drop(columns=["code_source"]), out / pat.format(NAME="ESTIMATIVAS-MUNICIPIOS", YEAR=f"{ey[0]}-{ey[-1]}"), args.overwrite, logger)
-    uy = sorted(units["year"].unique())
-    write_csv(units, out / pat.format(NAME="ESTIMATIVAS-UNIDADES", YEAR=f"{uy[0]}-{uy[-1]}"), args.overwrite, logger)
-    write_csv(notes, out / pat.format(NAME="ESTIMATIVAS-NOTAS", YEAR=f"{ey[0]}-{ey[-1]}"), args.overwrite, logger)
-    kept = merge_consistency(out / cfg["consistency_name"], cons)
-    logger.info("CONSISTENCY: %d rows (%d of other layers kept)", len(cons), kept)
+    layers = {"CENSOS-MUNICIPIOS": censos, "ESTIMATIVAS-MUNICIPIOS": est.drop(columns=["code_source"]),
+              "ESTIMATIVAS-UNIDADES": units, "ESTIMATIVAS-NOTAS": notes}
+    paths = {(name, int(y)): out / pat.format(NAME=name, YEAR=int(y)) for name, df in layers.items() for y in df["year"].unique()}
+    exist = [p.name for p in paths.values() if p.exists()]
+    if exist and not args.overwrite:
+        sys.exit(f"Outputs exist (use --overwrite): {exist}")
+    for (name, y), path in sorted(paths.items()):
+        df = layers[name]
+        write_csv(df[df["year"] == y], path, True, logger)
+    kept = merge_consistency(out / cfg["consistency_name"], cons, set(args.years) if args.years else None)
+    logger.info("CONSISTENCY: %d rows (%d of other layers / years kept)", len(cons), kept)
 
 
 if __name__ == "__main__":

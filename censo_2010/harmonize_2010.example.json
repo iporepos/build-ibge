@@ -1,8 +1,8 @@
 {
-  "input_folder": "/path/to/IBGE/CENSO-2010/V200/T0/ASSETS",
-  "output_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "input_folder": "/path/to/IBGE/CENSO-2010/V300/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS",
   "report_folder": "harmonize_report",
-  "other_files_folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+  "other_files_folder": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS",
   "file_pattern": "IBGE_CENSO-2010_*_BRASIL_2010.csv",
   "exclude": [
     "_X_X"

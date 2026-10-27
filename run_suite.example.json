@@ -1,0 +1,332 @@
+{
+  "report_folder": "suite_report",
+  "config_suffix": "example",
+  "_order": "dtb first (the census geography_from_dtb steps read DTB T1); pop after dtb; pnsb_<year> and atlassan after dtb (they read the DTB municipal list); censo_2000 before censo_1991 (1991 geography reads 2000 T1); checks last. The dtb / pop copy steps take files of the census 2022 T1.",
+  "pipelines": {
+    "dtb": [
+      {
+        "copy": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_SEDES_BRASIL_2022.gpkg",
+        "to": "/path/to/IBGE/DTB/V100/SRC/DTB_2022"
+      },
+      {
+        "run": "dtb/assemble_tables.py"
+      },
+      {
+        "run": "dtb/assemble_geography.py"
+      },
+      {
+        "run": "dtb/build_lineage.py"
+      },
+      {
+        "run": "dtb/plot_lineage.py"
+      },
+      {
+        "copy": "dtb/IBGE_DTB_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/DTB/V100/T1/ASSETS"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_dtb",
+        "overwrite": false
+      },
+      {
+        "run": "dtb/build_database_dtb.py"
+      },
+      {
+        "run": "dtb/check_visuals.py"
+      }
+    ],
+    "pop": [
+      {
+        "copy": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
+        "to": "/path/to/IBGE/POP/V100/SRC"
+      },
+      {
+        "run": "pop/assemble_population.py"
+      },
+      {
+        "copy": "pop/IBGE_POP_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/POP/V100/T1/ASSETS"
+      },
+      {
+        "run": "pop/check_visuals.py"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_pop",
+        "overwrite": false
+      },
+      {
+        "run": "pop/build_database_pop.py"
+      }
+    ],
+    "pnsb_2017": [
+      {
+        "run": "pnsb/download_pnsb.py",
+        "config": "download_pnsb_2017",
+        "optional": true
+      },
+      {
+        "run": "pnsb/assemble_pnsb.py",
+        "config": "assemble_pnsb_2017"
+      },
+      {
+        "run": "censos/geography_from_dtb_editions.py",
+        "config": "geography_pnsb_2017"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2017_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2017/V1/T1/ASSETS"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2017_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2017/V1/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database_tables.py",
+        "config": "build_database_pnsb_2017"
+      }
+    ],
+    "pnsb_2008": [
+      {
+        "run": "pnsb/download_pnsb.py",
+        "config": "download_pnsb_2008",
+        "optional": true
+      },
+      {
+        "run": "pnsb/assemble_pnsb.py",
+        "config": "assemble_pnsb_2008"
+      },
+      {
+        "run": "censos/geography_from_dtb_editions.py",
+        "config": "geography_pnsb_2008"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2008_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2008_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2008/V1/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database_tables.py",
+        "config": "build_database_pnsb_2008"
+      }
+    ],
+    "pnsb_2000": [
+      {
+        "run": "pnsb/download_pnsb.py",
+        "config": "download_pnsb_2000",
+        "optional": true
+      },
+      {
+        "run": "pnsb/assemble_pnsb.py",
+        "config": "assemble_pnsb_2000"
+      },
+      {
+        "run": "censos/geography_from_dtb_editions.py",
+        "config": "geography_pnsb_2000"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2000_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS"
+      },
+      {
+        "copy": "pnsb/IBGE_PNSB-2000_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/PNSB-2000/V1/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database_tables.py",
+        "config": "build_database_pnsb_2000"
+      }
+    ],
+    "atlassan": [
+      {
+        "run": "atlassan/download_atlas.py",
+        "optional": true
+      },
+      {
+        "run": "atlassan/assemble_atlas.py"
+      },
+      {
+        "run": "censos/geography_from_dtb_editions.py",
+        "config": "geography_atlassan"
+      },
+      {
+        "copy": "atlassan/IBGE_ATLASSAN_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS"
+      },
+      {
+        "copy": "atlassan/IBGE_ATLASSAN_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/ATLASSAN/V1/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database_tables.py",
+        "config": "build_database_atlassan"
+      }
+    ],
+    "censo_2022": [
+      {
+        "run": "censo_2022/assemble_tables.py"
+      },
+      {
+        "run": "censo_2022/assemble_geography.py"
+      },
+      {
+        "run": "censo_2022/purge_geometry_attributes.py"
+      },
+      {
+        "run": "censo_2022/build_variables.py"
+      },
+      {
+        "run": "censos/geography_from_dtb.py",
+        "config": "geography_from_dtb_2022"
+      },
+      {
+        "copy": "censo_2022/IBGE_CENSO-2022_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS"
+      },
+      {
+        "copy": "censo_2022/IBGE_CENSO-2022_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database.py",
+        "config": "build_database_2022"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_2022",
+        "overwrite": false
+      }
+    ],
+    "censo_2010": [
+      {
+        "run": "censo_2010/download_2010.py",
+        "optional": true
+      },
+      {
+        "run": "censo_2010/assemble_2010.py"
+      },
+      {
+        "run": "censo_2010/harmonize_2010.py"
+      },
+      {
+        "run": "censos/geography_from_dtb.py",
+        "config": "geography_from_dtb_2010"
+      },
+      {
+        "copy": "censo_2010/IBGE_CENSO-2010_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS"
+      },
+      {
+        "copy": "censo_2010/IBGE_CENSO-2010_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database.py",
+        "config": "build_database_2010"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_2010",
+        "overwrite": false
+      }
+    ],
+    "censo_2010_malhas": [
+      {
+        "run": "censo_2010/download_malhas.py",
+        "optional": true
+      },
+      {
+        "run": "censo_2010/merge_malhas.py",
+        "optional": true
+      }
+    ],
+    "censo_2000": [
+      {
+        "run": "censo_2000/assemble_tables.py"
+      },
+      {
+        "run": "censo_2000/assemble_geography.py"
+      },
+      {
+        "run": "censo_2000/build_variables.py"
+      },
+      {
+        "copy": "censo_2000/IBGE_CENSO-2000_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS"
+      },
+      {
+        "copy": "censo_2000/IBGE_CENSO-2000_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-2000/V100/T1/ASSETS"
+      },
+      {
+        "run": "censos/build_database.py",
+        "config": "build_database_2000"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_2000",
+        "overwrite": false
+      }
+    ],
+    "censo_1991": [
+      {
+        "run": "censo_1991/profile_microdata.py"
+      },
+      {
+        "run": "censo_1991/assemble_microdata.py"
+      },
+      {
+        "run": "censo_1991/assemble_geography.py"
+      },
+      {
+        "run": "censo_1991/assemble_aggregates.py"
+      },
+      {
+        "run": "censo_1991/assemble_tracts.py"
+      },
+      {
+        "run": "censo_1991/infer_tracts.py"
+      },
+      {
+        "run": "censo_1991/assemble_comparability.py"
+      },
+      {
+        "run": "censo_1991/build_variables.py"
+      },
+      {
+        "copy": "censo_1991/IBGE_CENSO-1991_LAYERS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS"
+      },
+      {
+        "copy": "censo_1991/IBGE_CENSO-1991_FIELDS_X_X.csv",
+        "to": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS"
+      },
+      {
+        "run": "censo_1991/build_database_1991.py"
+      },
+      {
+        "run": "censos/package_t1.py",
+        "config": "package_t1_1991",
+        "overwrite": false
+      }
+    ],
+    "censos_checks": [
+      {
+        "run": "censos/check_population.py"
+      },
+      {
+        "run": "censos/check_coverage.py"
+      },
+      {
+        "run": "censos/check_pyramids.py"
+      },
+      {
+        "run": "censos/check_income.py"
+      }
+    ]
+  }
+}

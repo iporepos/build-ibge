@@ -2,19 +2,19 @@
 
 Builders for an IBGE data warehouse: the scripts that download, assemble, harmonize, catalog, check and
 package the IBGE censuses (1991, 2000, 2010, 2022), the DTB (Divisão Territorial Brasileira) and the
-population series (POP).
+population series (POP), the national sanitation survey (PNSB, one dataset per year) and the Atlas de Saneamento (ATLASSAN).
 
 The data are not in this repository. They live in a warehouse folder, one dataset per folder, in tiers:
 
 ```
-<IBGE root>/CENSO-2010/V200/
+<IBGE root>/CENSO-2010/V300/
     SRC/    raw downloads from IBGE (and the packaged files of a Zenodo deposit)
     T0/     raw assembled tables (only where the source needs it, e.g. 2010)
     T1/ASSETS/   harmonized tables (CSV), layers (GeoPackage) and catalogs: the published product
     T2/ASSETS/   one GeoPackage database built from T1
 ```
 
-`V100`, `V200`... are versions of a dataset; DTB and POP use `V1`.
+`V100`, `V200`... are versions of a dataset; DTB, PNSB-<year> and ATLASSAN use `V1`, POP `V100`.
 
 ## Layout
 
@@ -22,20 +22,22 @@ One folder per dataset, flat. Each script sits next to its configs.
 
 | Folder | What it builds |
 |---|---|
-| `censos/` | Shared census tools: the T2 builder (`build_database.py`), the Zenodo packager (`package_t1.py`), state and country layers from the DTB (`geography_from_dtb.py`) and the sanity checks (`check_*.py`). Configs for every census year. |
+| `censos/` | Shared census tools: the T2 builder (`build_database.py`), the T2 builder of attribute-table datasets (`build_database_tables.py`: PNSB, ATLASSAN), their plotting geography from the DTB (`geography_from_dtb_editions.py`), the Zenodo packager (`package_t1.py`), state and country layers from the DTB (`geography_from_dtb.py`) and the sanity checks (`check_*.py`). Configs for every census year. |
 | `censo_1991/` | Census 1991: sample microdata, tract universe tables (DVD), municipal aggregates, geography, comparability with 2022, tract inference for the microdata, catalogs and a dedicated T2 builder. |
 | `censo_2000/` | Census 2000: tract tables, geography (rural + urban tracts, range polygons), VARIABLES catalog. |
 | `censo_2010/` | Census 2010: download of the IBGE release, assembly (T0), harmonization (T1); 2010 district meshes. |
 | `censo_2022/` | Census 2022: tract tables, geography, VARIABLES catalog, geometry clean-up. |
 | `dtb/` | DTB: municipal tables 1940–2022, meshes/seats/states per snapshot 1872–2022, municipal lineage graph. |
 | `pop/` | Population series: census municipal populations 1872–2022, estimates 1992–2026. |
+| `pnsb/` | PNSB (Pesquisa Nacional de Saneamento Básico): SIDRA tables by municipality, one dataset per year (`PNSB-2000`, `PNSB-2008`, `PNSB-2017`), one config and one pair of catalogs per year. |
+| `atlassan/` | Atlas de Saneamento 2021: the map values of the IBGE GeoServer, by municipality, state, intermediate region and country, joined to the DTB by code. |
 
 Notes kept with the code:
 - `MEMORY.md`: what was done, decisions, gotchas, open items (read this first).
-- `<folder>/DECISIONS.md`: judgements taken on the sources (dtb, pop).
-- `<folder>/NOTES.md`: working plans and status from the bench (censos, censo_1991, dtb).
+- `<folder>/DECISIONS.md`: judgements taken on the sources (dtb, pop, pnsb, atlassan).
+- `<folder>/NOTES.md`: working plans and status from the bench (censos, censo_1991, dtb), the ATLASSAN source assessment.
 - `<folder>/IBGE_*_LAYERS_X_X.csv`, `IBGE_*_FIELDS_X_X.csv`: the hand-kept catalogs (the source copies; the user copies them into T1).
-- `<folder>/zenodo_<year>.html`: the description of the Zenodo deposit.
+- `<folder>/zenodo_<year>.html` (`pop/zenodo_pop.html`, `dtb/zenodo_dtb.html`): the description of the Zenodo deposit.
 
 ## Configs
 
@@ -103,8 +105,21 @@ Census 1991 (`censo_1991/`):
 8. `build_variables.py`, 9. copy LAYERS/FIELDS, 10. `build_database_1991.py` (dedicated builder),
 11. `censos/package_t1.py` (1991).
 
-DTB (`dtb/`): `assemble_tables.py` → `assemble_geography.py` → `build_lineage.py` → `plot_lineage.py` → `check_visuals.py`.
+DTB (`dtb/`): `assemble_tables.py` → `assemble_geography.py` → `build_lineage.py` → `plot_lineage.py` → copy LAYERS → `censos/package_t1.py` (dtb) → `build_database_dtb.py` (T2) → `check_visuals.py`.
 
-POP (`pop/`, needs DTB T1 and a copy of the census 2022 T1 basico in POP SRC): `assemble_population.py` → `check_visuals.py`.
+POP (`pop/`, needs DTB T1 and a copy of the census 2022 T1 basico in POP SRC): `assemble_population.py` → copy LAYERS → `check_visuals.py` → `censos/package_t1.py` (pop) → `build_database_pop.py`.
+
+PNSB (`pnsb/`, needs DTB T1, configs `<script>_<year>`): `download_pnsb.py` (SIDRA) → `assemble_pnsb.py` → `censos/geography_from_dtb_editions.py` (plotting layers from DTB, config `geography_pnsb_<year>`) → copy LAYERS/FIELDS of the year → `censos/build_database_tables.py` (T2, config `build_database_pnsb_<year>`).
+
+ATLASSAN (`atlassan/`, needs DTB T1): `download_atlas.py` (GeoServer) → `assemble_atlas.py` → `censos/geography_from_dtb_editions.py` (config `geography_atlassan`) → copy LAYERS/FIELDS → `censos/build_database_tables.py` (T2, config `build_database_atlassan`).
 
 Checks (`censos/`, after the T1s): `check_population.py`, `check_coverage.py`, `check_pyramids.py`, `check_income.py`.
+
+`run_suite.py` (repo root, venv activated) runs these pipelines in order, each script from its own folder, with the
+copies of the catalogs and census inputs (`run_suite.local.json` lists the steps):
+
+```
+python run_suite.py --config run_suite.local.json --list
+python run_suite.py --config run_suite.local.json dtb pop --overwrite --dry-run
+python run_suite.py --config run_suite.local.json censo_2010 --overwrite --from censo_2010:3
+```

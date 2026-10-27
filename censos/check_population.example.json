@@ -3,10 +3,16 @@
   "censuses": [
     {
       "year": 1991,
-      "table": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_PESSOA01_BRASIL_1991.csv",
-      "variable": "V0114",
-      "label": "pessoa01.V0114 (POPTOTAL, resident population of the tract)",
-      "alternatives": [],
+      "table": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_BASICO_BRASIL_1991.csv",
+      "variable": "V06",
+      "label": "basico.V06 (POPTOTAL, resident population of the tract)",
+      "alternatives": [
+        {
+          "table": "/path/to/IBGE/CENSO-1991/V100/T1/ASSETS/IBGE_CENSO-1991_PESSOA01_BRASIL_1991.csv",
+          "variable": "V0114",
+          "label": "pessoa01.V0114 (POPTOTAL, same values as basico.V06)"
+        }
+      ],
       "reference_total": 146825475
     },
     {
@@ -19,12 +25,12 @@
     },
     {
       "year": 2010,
-      "table": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS/IBGE_CENSO-2010_SINOPSE_BRASIL_2010.csv",
+      "table": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS/IBGE_CENSO-2010_SINOPSE_BRASIL_2010.csv",
       "variable": "V014",
       "label": "sinopse.V014 (resident persons)",
       "alternatives": [
         {
-          "table": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS/IBGE_CENSO-2010_PESSOA03_BRASIL_2010.csv",
+          "table": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS/IBGE_CENSO-2010_PESSOA03_BRASIL_2010.csv",
           "variable": "V001",
           "label": "pessoa03.V001 (resident persons, by colour or race table)"
         }
@@ -33,7 +39,7 @@
     },
     {
       "year": 2022,
-      "table": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
+      "table": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_BASICO_BRASIL_2022.csv",
       "variable": "V0001",
       "label": "basico.V0001 (total number of persons)",
       "alternatives": [],

@@ -12,11 +12,15 @@ Visual checks of the POP T1 (PNG figures in output_folder).
                            between two estimate years (config map_growth)
   growth_outliers.csv      municipality-intervals with |annual growth| above outlier_growth
 
+censos_csv, estimativas_csv and unidades_csv are glob patterns of the per-year T1 files
+(e.g. .../IBGE_POP_CENSOS-MUNICIPIOS_BRASIL_[0-9][0-9][0-9][0-9].csv); all matching files are read.
+
 Usage:
     python check_visuals.py --config check_visuals.local.json
 """
 
 import argparse
+import glob
 import json
 import sys
 from pathlib import Path
@@ -54,10 +58,17 @@ def millions(ax, decimals=0):
     ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v / 1e6:.{decimals}f}".replace(".", ",")))
 
 
+def read_all(pattern: str, dtype: dict) -> pd.DataFrame:
+    paths = sorted(glob.glob(pattern))
+    if not paths:
+        sys.exit(f"No file matches {pattern}")
+    return pd.concat([pd.read_csv(p, sep=";", dtype=dtype) for p in paths], ignore_index=True)
+
+
 def load(cfg):
-    c = pd.read_csv(cfg["censos_csv"], sep=";", dtype={"municipio_code": str})
-    e = pd.read_csv(cfg["estimativas_csv"], sep=";", dtype={"municipio_code": str, "unidade_code": str})
-    u = pd.read_csv(cfg["unidades_csv"], sep=";", dtype={"code": str})
+    c = read_all(cfg["censos_csv"], {"municipio_code": str})
+    e = read_all(cfg["estimativas_csv"], {"municipio_code": str, "unidade_code": str})
+    u = read_all(cfg["unidades_csv"], {"code": str})
     c = c[c["population"] != NODATA]
     e = e[e["population"] != NODATA]
     c["uf"] = c["municipio_code"].str[:2]

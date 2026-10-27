@@ -4,31 +4,37 @@ Last updated: 2026-10-26. Per-census details live in `censo_1991/plan.md` and in
 Rule: the user runs anything that writes to the warehouse. Claude tests in the scratchpad only.
 
 ## 0. Where we stopped / next steps (in order)
-1. **1991 v1.1.0 on the warehouse** (§1.1): five commands, then the Zenodo v1.1.0 upload. Nothing has run yet.
+1. **1991 v1.1.0 on the warehouse** (§1.1): run by the user 2026-10-26 15:37-15:43, outputs byte-identical to the
+   scratch test. Left: the Zenodo v1.1.0 upload (4 changed files + MANIFEST + SHA256SUMS).
 2. ~~**2010 Pernambuco repair**~~ (§1.2): **solved** (confirmed by the user 2026-10-26), including the new Zenodo 2010
    version and the deletion of the `*_backup_20261026` folders. Nothing left to do.
 2b. **2022 `unidades` + `uniao`** (2026-10-26): `geography_from_dtb.py --config geography_from_dtb_2022.local.json
    --overwrite` (replaces the hand-made `unidades`, same geometry, fixed attributes; adds `uniao`), copy
    `catalog_fixes/IBGE_CENSO-2022_{LAYERS,FIELDS}_X_X.csv` into T1/ASSETS, rebuild T2 with `--overwrite`, then
    package and a new Zenodo 2022 version (layer list in `zenodo_2022.html`).
-3. After 1 and 2: rerun all four checks (§2.1) and compare with the results logged in §2.3. Expected changes:
+3. Done 2026-10-26 (§2.3): rerun all four checks (§2.1) and compare with the results logged in §2.3. Expected changes:
    2010 coverage no longer flagged, 2010 pyramids/income with PE, 1991 population check switched to basico.V06.
 4. Later, optional: more checks (§2.4); the 1991 open items in `censo_1991/plan.md` (descricoes-setores,
    extended municipal table, comparability tables of the other states).
 
 ## 1. Pending actions on the warehouse (user)
 
-### 1.1 1991 — v1.1.0 (`basico` totals), all tested in the scratchpad
-From `censo_1991/`, with `../.venv/bin/python`:
-1. `assemble_tracts.py --config assemble_tracts.local.json --overwrite` — `basico` gains V06 (POPTOTAL), V07 (TOTDOMPART),
-   V08 (TOTALDOMIC); the other 7 tract tables are byte-identical.
-2. `build_variables.py --config build_variables.local.json` — VARIABLES 422 rows.
-3. `cp IBGE_CENSO-1991_LAYERS_X_X.csv <IBGE root>/CENSO-1991/V100/T1/ASSETS/` (basico text).
-4. `build_database_1991.py --config build_database_1991.local.json --overwrite` — T2 rebuild.
-5. `../censos/package_t1.py --config package_t1_1991.local.json` — incremental; upload the files the log lists as changed
-   (basico, variables, layers, consistency) as Zenodo v1.1.0, with the description `censo_1991/zenodo_1991.html`
+### 1.1 1991 — v1.1.0 (`basico` totals), all retested in the scratchpad 2026-10-26
+From `censo_1991/`, with `../.venv/bin/python` (repo venv, created 2026-10-26 from requirements.txt):
+1. `assemble_tracts.py --config assemble_tracts.local.json --overwrite` (~1 min): `basico` gains V06 (POPTOTAL, sum
+   146,825,475), V07 (TOTDOMPART), V08 (TOTALDOMIC), old columns identical; the other 7 tract tables are byte-identical;
+   CONSISTENCY same rows, reordered.
+2. `build_variables.py --config build_variables.local.json`: VARIABLES 422 rows (+3 basico rows only), CATEGORIES
+   byte-identical. Reads `profile_report/profile_values.csv` (copied into the repo from Bench on 2026-10-26).
+3. `cp IBGE_CENSO-1991_LAYERS_X_X.csv <IBGE root>/CENSO-1991/V100/T1/ASSETS/` (basico text; LF like the T1 copy).
+4. `build_database_1991.py --config build_database_1991.local.json --overwrite` (~7 min, 1.07 GB): vs the current T2
+   only basico (+3 columns) and variables (+3 rows) change; quick_check ok; the 109 `comparabilidade_2022`
+   setor_code_1991 not in basico warning is the same as in the 2026-10-23 build.
+5. From `censos/`: `package_t1.py --config package_t1_1991.local.json` (incremental against `SRC/ZENODO`; the config
+   pointed at `SRC` until 2026-10-26): changed 4 (basico .gz, CONSISTENCY, LAYERS, VARIABLES), unchanged 17. Upload
+   those 4 plus MANIFEST and SHA256SUMS as Zenodo v1.1.0, with the description `censo_1991/zenodo_1991.html`
    (already has the v1.1.0 entry).
-After step 1: point `censos/checks/check_population.json` (and `check_coverage.json` population) 1991 at
+After step 1: point `censos/check_population.{local,example}.json` (and `check_coverage` population) 1991 at
 `basico.V06`.
 
 ### 1.2 2010 — Pernambuco missing — SOLVED (confirmed by the user 2026-10-26; kept for the record)
@@ -40,7 +46,7 @@ raw input from before harmonization (the old ASSETS, built 2026-02-26). On 2026-
 (old ASSETS -> `_legacy`, HARMONIZED -> ASSETS). The proof: `harmonize_2010.py` run on `_legacy` (output to the
 scratchpad) gives all 27 CSVs **byte-identical** to `T1/ASSETS`. The gpkgs and catalogs are identical in both folders, and
 both lack PE. So `_legacy` holds no data that ASSETS doesn't, and it can be deleted:
-`rm -r <IBGE root>/CENSO-2010/V200/T1/_legacy` (4.5 GB).
+`rm -r <IBGE root>/CENSO-2010/V300/T1/_legacy` (4.5 GB).
 
 **New IBGE release (2026-06-15).** IBGE republished every UF (`*_20260615.zip`); the change log says that the
 `Cod_setor` column of the CSVs was corrupted and has been fixed. That is the damage that harmonize repairs by
@@ -60,7 +66,7 @@ staging folder: the rebuild writes the new T1/ASSETS directly. The gpkgs and cat
 - B. Patch PE only (+ basico TO, pessoa04 RR, pessoa07 CE) into the current T1. Faster, but it keeps the rounding and
   the repaired keys, and it mixes two releases.
 
-**Downloads** (into `CENSO-2010/V200/SRC/`, one folder per product):
+**Downloads** (into `CENSO-2010/V300/SRC/`, one folder per product):
 - A: `https://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_do_Universo/Agregados_por_Setores_Censitarios/`
   28 zips `<UF>_20260615.zip` (AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE TO,
   `SP_Capital`, `SP_Exceto_Capital`), about 1.6 GB, plus `Documentacao_Agregado_dos_Setores_2010_20231030.zip` and
@@ -89,7 +95,7 @@ staging folder: the rebuild writes the new T1/ASSETS directly. The gpkgs and cat
 
 ### 2.1 Scripts
 Every script takes `--config` (JSON next to it); outputs go to a report folder next to it. They only read the warehouse.
-Run from `censos/checks/` with `../../.venv/bin/python <script> --config <script>.json`.
+Run from `censos/` with `../.venv/bin/python <script> --config <script>.local.json`.
 
 | Script | What | Report | Runtime |
 |---|---|---|---|
@@ -105,7 +111,7 @@ census years in sequential blues).
 ### 2.2 Variables used
 | Census | Population | Age by sex | Income of heads (mean / weight / minimum wage) |
 |---|---|---|---|
-| 1991 | pessoa01.V0114 (POPTOTAL; basico.V06 after v1.1.0) | pessoa01, 5-year groups to 80+ | basico.V01 x (responsavel V0103-V0111 + V0112) / (V0103-V0111) / responsavel.V0096 / Cr$ 36,161.60 |
+| 1991 | basico.V06 (POPTOTAL; pessoa01.V0114 as alternative) | pessoa01, 5-year groups to 80+ | basico.V01 x (responsavel V0103-V0111 + V0112) / (V0103-V0111) / responsavel.V0096 / Cr$ 36,161.60 |
 | 2000 | morador.V0237 | pessoa02 (men) / pessoa03 (women), single years to 100+ | basico.V06 / basico.V01 / R$ 151 |
 | 2010 | sinopse.V014 | sinopse, single years to 79, 5-year groups to 100+ | basico.V007 / basico.V001 / R$ 510 |
 | 2022 | basico.V0001 | demografia 0-14 + alfabetizacao 15+ (all persons, not only literates), 5-year to 69, 70-79, 80+ | responsavelrenda.V06004 / V06001 / R$ 1,212 |
@@ -117,6 +123,9 @@ Notes on income:
 - The four minimum wages were verified on the band data.
 
 ### 2.3 Results (2026-10-23; 2010 rerun 2026-10-26 after the rebuild)
+- **All four rerun 2026-10-26** (after 1991 v1.1.0; 2010/2022 now under V300): no change from the results below.
+  1991 population from basico.V06 = 146,825,475, pessoa01.V0114 identical in every state; coverage 0 of 89 files
+  flagged; pyramids and income as below (2010 with PE: median 2.02, p90/p10 4.96).
 - **2010 after the rebuild (2026-10-26):** coverage 0 of 89 files flagged (PE in every table; TO/RR/CE gaps gone;
   entorno05 RO 6 tracts = source gap, set as expected_partial). Population 190,755,799 = IBGE; the alternative
   pessoa03.V001 now matches too (0 states differ). Pyramids unchanged (sinopse). Income with PE: national median

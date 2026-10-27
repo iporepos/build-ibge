@@ -14,8 +14,8 @@
       "pattern": "IBGE_CENSO-1991_*_BRASIL_1991.*",
       "reference": "basico",
       "population": {
-        "table": "pessoa01",
-        "variable": "V0114"
+        "table": "basico",
+        "variable": "V06"
       },
       "expected_partial": {}
     },
@@ -32,7 +32,7 @@
     },
     {
       "year": 2010,
-      "folder": "/path/to/IBGE/CENSO-2010/V200/T1/ASSETS",
+      "folder": "/path/to/IBGE/CENSO-2010/V300/T1/ASSETS",
       "pattern": "IBGE_CENSO-2010_*_BRASIL_2010.*",
       "reference": "setores",
       "population": {
@@ -43,7 +43,7 @@
     },
     {
       "year": 2022,
-      "folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+      "folder": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS",
       "pattern": "IBGE_CENSO-2022_*_BRASIL_2022.*",
       "reference": "setores",
       "population": {

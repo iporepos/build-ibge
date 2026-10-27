@@ -1,7 +1,7 @@
 {
-  "layers_csv": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS/IBGE_CENSO-2022_LAYERS_X_X.csv",
-  "input_folder": "/path/to/IBGE/CENSO-2022/V200/T0/ASSETS",
-  "output_folder": "/path/to/IBGE/CENSO-2022/V200/T1/ASSETS",
+  "layers_csv": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS/IBGE_CENSO-2022_LAYERS_X_X.csv",
+  "input_folder": "/path/to/IBGE/CENSO-2022/V300/T0/ASSETS",
+  "output_folder": "/path/to/IBGE/CENSO-2022/V300/T1/ASSETS",
   "report_folder": "flags_report",
   "name_pattern": "IBGE_CENSO-2022_{NAME}_BRASIL_2022.csv",
   "skip_themes": [

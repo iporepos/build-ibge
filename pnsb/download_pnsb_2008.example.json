@@ -1,0 +1,13 @@
+{
+  "output_folder": "/path/to/IBGE/PNSB-2008/V1/SRC/SIDRA",
+  "report_folder": "download_report",
+  "survey": "SB",
+  "years": [2008],
+  "level": "N6",
+  "max_values": 50000,
+  "expected_locations": 5600,
+  "workers": 4,
+  "timeout": 300,
+  "retries": 4,
+  "manifest_name": "SIDRA_SB_MANIFEST.csv"
+}
